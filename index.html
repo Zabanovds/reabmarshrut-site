@@ -102,6 +102,39 @@ footer a{color:#fff;text-decoration:none;}
 }
 
 </style>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LECXN94BQF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LECXN94BQF', {
+    'send_page_view': true
+  });
+  
+  // Отслеживание кликов по кнопкам
+  document.addEventListener('click', function(e) {
+    if (e.target.closest('.btn-tg')) {
+      gtag('event', 'click_telegram', {
+        'event_category': 'engagement',
+        'event_label': 'Telegram button'
+      });
+    }
+    if (e.target.closest('.btn-max')) {
+      gtag('event', 'click_max', {
+        'event_category': 'engagement',
+        'event_label': 'MAX button'
+      });
+    }
+    if (e.target.closest('.btn-premium')) {
+      gtag('event', 'click_premium', {
+        'event_category': 'engagement',
+        'event_label': 'Premium community button'
+      });
+    }
+  });
+</script>
+<!-- /Google Analytics 4 -->
 </head>
 <body>
 
