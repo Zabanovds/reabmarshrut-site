@@ -94,11 +94,32 @@ footer{background:#111827;color:#9CA3AF;padding:48px 20px;font-size:14px;}
 footer a{color:#fff;text-decoration:none;}
 .disclaimer{margin-top:28px;padding-top:20px;border-top:1px solid #374151;font-size:12px;line-height:1.6;}
 
-@media(max-width:700px){
+@media (max-width: 700px) {
   .hero h1{font-size:30px;}
   .nav-links a:not(.cta){display:none;}
   .section-title{font-size:26px;}
   .hero-logo img{height:80px;}
+  
+  /* Заголовок карточки плана — ломаем длинные слова */
+  .plan-title {
+    font-size: 14px !important;
+    word-break: break-all !important;
+    overflow-wrap: anywhere !important;
+    hyphens: auto !important;
+    line-height: 1.4 !important;
+  }
+  
+  /* Карточка плана — убираем фиксированную ширину */
+  .plan, .plan-premium {
+    max-width: 100% !important;
+    flex: 1 1 100% !important;
+  }
+  
+  /* Hero-планы — вертикально на мобильных */
+  .hero-plans {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
 }
 
 /* Мобильная адаптация заголовка премиум-карточки */
