@@ -99,77 +99,7 @@ footer a{color:#fff;text-decoration:none;}
   .nav-links a:not(.cta){display:none;}
   .section-title{font-size:26px;}
   .hero-logo img{height:80px;}
-  
-  /* Заголовок карточки плана — ломаем длинные слова */
-  .plan-title {
-    font-size: 14px !important;
-    word-break: break-all !important;
-    overflow-wrap: anywhere !important;
-    hyphens: auto !important;
-    line-height: 1.4 !important;
-  }
-  
-  /* Карточка плана — убираем фиксированную ширину */
-  .plan, .plan-premium {
-    max-width: 100% !important;
-    flex: 1 1 100% !important;
-  }
-  
-  /* Hero-планы — вертикально на мобильных */
-  .hero-plans {
-    flex-direction: column !important;
-    align-items: center !important;
-  }
-}
-
-/* Мобильная адаптация заголовка премиум-карточки */
-@media (max-width: 600px) {
-  /* Заголовок карточки плана — ломаем все ограничения */
-  .plan-title,
-  .plan-premium .plan-title,
-  [class*="plan"] .plan-title {
-    font-size: 1.2rem !important;
-    word-break: break-word !important;
-    overflow-wrap: break-word !important;
-    white-space: normal !important;
-    line-height: 1.3 !important;
-    padding: 0 8px !important;
-    max-width: 100% !important;
-    overflow: visible !important;
-    text-overflow: clip !important;
-  }
-
-  /* Родительский контейнер карточки — разрешаем переполнение */
-  .plan,
-  .plan-premium,
-  [class*="plan"] {
-    overflow: visible !important;
-    max-width: 100% !important;
-  }
-
-  /* Логотип в шапке — уменьшаем */
-  .logo img,
-  .logo svg,
-  .logo-mark {
-    height: 28px !important;
-    width: auto !important;
-  }
-  .logo-text, .logo {
-    font-size: 0.95rem !important;
-  }
-
-  /* Кнопка Telegram в шапке — компактная */
-  .cta {
-    padding: 8px 12px !important;
-    font-size: 0.85rem !important;
-  }
-}
-
-/* Универсальное правило для всех заголовков */
-h3, .plan-title {
-  word-break: break-word !important;
-  overflow-wrap: break-word !important;
-}
+} 
 
 </style>
 <!-- Google Analytics 4 -->
@@ -239,7 +169,7 @@ h3, .plan-title {
   </div>
   <a href="#premium" class="plan plan-premium">
     <div class="plan-badge premium-badge">890 ₽/МЕС</div>
-    <div class="plan-title">Закрытое сообщество «РеабМаршрут.Забота»</div>
+    <div class="plan-title">Закрытое сообщество «РеабМаршрут.<br>Забота»</div>
     <div class="plan-text">Эксперты на связи, школа ухода, личный разбор вашей ситуации — для тех, кому нужна опора каждый день.</div>
     <div class="plan-link">Подробнее о сообществе →</div>
   </a>
