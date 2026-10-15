@@ -101,6 +101,24 @@ footer a{color:#fff;text-decoration:none;}
   .hero-logo img{height:80px;}
 }
 
+/* Мобильная адаптация заголовка премиум-карточки */
+@media (max-width: 600px) {
+  .premium-card h3,
+  .premium-card .card-title {
+    font-size: 1.1rem !important;
+    word-break: break-word;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Шапка в одну строку: логотип слева, Telegram справа */
+  header .nav-links { display: none; } /* скрываем текстовые ссылки */
+  header .header-buttons { gap: 8px; }
+  header .btn-max { display: none; } /* оставляем только Telegram */
+  header .logo-text { font-size: 1rem; }
+}
+
 </style>
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LECXN94BQF"></script>
