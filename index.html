@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>РеабМаршрут — сообщество поддержки после инсульта</title>
-<meta name="description" content="Бесплатное сообщество для родственников инсультников: ОМС-гид, шаблоны жалоб, поддержка 24/7. Закрытый клуб с экспертами.">
+<meta name="description" content="Бесплатное сообщество для семей после инсульта: ОМС-гид, шаблоны жалоб, поддержка 24/7.">
 <link rel="icon" type="image/svg+xml" href="logo-mark.svg">
 <style>
 html{scroll-behavior:smooth;}
@@ -133,12 +133,14 @@ footer a{color:#fff;text-decoration:none;}
         'event_label': 'MAX button'
       });
     }
-    if (e.target.closest('.btn-premium')) {
-      gtag('event', 'click_premium', {
-        'event_category': 'engagement',
-        'event_label': 'Premium community button'
-      });
-    }
+    /*
+if (e.target.closest('.btn-premium')) {
+  gtag('event', 'click_premium', {
+    'event_category': 'engagement',
+    'event_label': 'Premium community button'
+  });
+}
+*/
   });
 </script>
 <!-- /Google Analytics 4 -->
@@ -148,11 +150,11 @@ footer a{color:#fff;text-decoration:none;}
 <header>
   <div class="nav container">
     <a href="#" class="logo"><img src="logo-mark.svg" alt="РеабМаршрут"> РеабМаршрут</a>
-    <nav class="nav-links">
-      <a href="#value">Что внутри</a>
-      <a href="#premium">Закрытое сообщество</a>
-      <a href="https://t.me/Rehab_irk" target="_blank" class="cta">Telegram</a>
-    </nav>
+<nav class="nav-links">
+  <a href="#value">Что внутри</a>
+  <!-- <a href="#premium">Закрытое сообщество</a> -->
+  <a href="https://t.me/Rehab_irk" target="_blank" class="cta">Telegram</a>
+</nav>
   </div>
 </header>
 
@@ -169,17 +171,19 @@ footer a{color:#fff;text-decoration:none;}
       МАХ
     </a>
   </div>
-  <div class="hero-plans">
+<div class="hero-plans">
   <div class="plan plan-free">
     <div class="plan-badge">БЕСПЛАТНО НАВСЕГДА</div>
     <div class="plan-text">Каналы в Telegram и MAX: ОМС-гид, шаблоны жалоб, разборы реальных кейсов и поддержка таких же семей. Без регистрации и оплат.</div>
   </div>
+  <!--
   <a href="#premium" class="plan plan-premium">
     <div class="plan-badge premium-badge">890 ₽/МЕС</div>
     <div class="plan-title">Закрытое сообщество «РеабМаршрут.<br>Забота»</div>
     <div class="plan-text">Эксперты на связи, школа ухода, личный разбор вашей ситуации — для тех, кому нужна опора каждый день.</div>
     <div class="plan-link">Подробнее о сообществе →</div>
   </a>
+  -->
 </div>
 </section>
 
@@ -261,6 +265,7 @@ footer a{color:#fff;text-decoration:none;}
   </div>
 </section>
 
+<!--
 <section id="premium">
   <div class="container">
     <div class="premium">
@@ -275,26 +280,27 @@ footer a{color:#fff;text-decoration:none;}
       </div>
 
       <ul>
-<li><b>Четверговые разборы с экспертами</b> — вопросы собираем через форму, ответы выходят постами; весь архив разборов доступен с первого дня</li>
-<li><b>Школа ухода</b> — пошаговые уроки и инструкции: безопасное перемещение, профилактика пролежней, питание при дисфагии</li>
-<li><b>Модерируемый чат поддержки</b> — безопасное пространство без токсичности и рекламы; орг. вопросы закрываем за 24 часа</li>
-<li><b>Разбор вашей ситуации юристом</b> — 1 личная консультация по ОМС/МСЭ в месяц</li>
-<li><b>Библиотека из 15+ шаблонов</b> — жалобы, заявления на МСЭ, скрипты разговора с врачами</li>
-<li><b>Партнёрские скидки</b> — промокоды на аренду ТСР и спец. условия в проверенных центрах</li>
-</ul>
+        <li><b>Четверговые разборы с экспертами</b> — вопросы собираем через форму, ответы выходят постами; весь архив разборов доступен с первого дня</li>
+        <li><b>Школа ухода</b> — пошаговые уроки и инструкции: безопасное перемещение, профилактика пролежней, питание при дисфагии</li>
+        <li><b>Модерируемый чат поддержки</b> — безопасное пространство без токсичности и рекламы; орг. вопросы закрываем за 24 часа</li>
+        <li><b>Разбор вашей ситуации юристом</b> — 1 личная консультация по ОМС/МСЭ в месяц</li>
+        <li><b>Библиотека из 15+ шаблонов</b> — жалобы, заявления на МСЭ, скрипты разговора с врачами</li>
+        <li><b>Партнёрские скидки</b> — промокоды на аренду ТСР и спец. условия в проверенных центрах</li>
+      </ul>
       <div class="premium-btns">
-  <a href="https://t.me/Rehab_irk" target="_blank" class="btn btn-premium">
-    <svg class="btn-icon" viewBox="0 0 24 24" fill="none"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.941z" fill="#FFFFFF"/></svg>
-    Написать в Telegram
-  </a>
-  <a href="https://max.ru/u/f9LHodD0cOLKsU1sxwfhzIcMG88hWVGP1Hl_yLIygdYZDziQuMM2Cdmym80" target="_blank" class="btn btn-max">
-    <img src="logo-max.svg" alt="МАХ" class="btn-icon">
-    Написать в МАХ
-  </a>
-</div>
+        <a href="https://t.me/Rehab_irk" target="_blank" class="btn btn-premium">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.941z" fill="#FFFFFF"/></svg>
+          Написать в Telegram
+        </a>
+        <a href="https://max.ru/u/f9LHodD0cOLKsU1sxwfhzIcMG88hWVGP1Hl_yLIygdYZDziQuMM2Cdmym80" target="_blank" class="btn btn-max">
+          <img src="logo-max.svg" alt="МАХ" class="btn-icon">
+          Написать в МАХ
+        </a>
+      </div>
     </div>
   </div>
 </section>
+-->
 
 <section style="background:var(--teal);color:#fff;text-align:center;">
   <div class="container">
