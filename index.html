@@ -63,6 +63,48 @@ header{background:#fff;border-bottom:1px solid var(--border);position:sticky;top
 .logo img{height:40px;}
 .nav-links a{margin-left:24px;text-decoration:none;color:var(--text);font-weight:500;}
 .nav-links a.cta{background:var(--teal);color:#fff;padding:10px 20px;border-radius:8px;}
+.hero-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  max-width: 900px;
+  margin: 32px auto 0;
+  padding: 0 20px;
+}
+
+.hero-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 24px 20px;
+  text-decoration: none;
+  color: var(--text);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: block;
+}
+
+.hero-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.card-icon {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.hero-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--teal-dark);
+  margin: 0 0 8px 0;
+}
+
+.hero-card p {
+  font-size: 14px;
+  color: var(--text-light);
+  margin: 0;
+  line-height: 1.4;
+}
 
 /* Hero */
 .hero{background:linear-gradient(160deg,var(--teal),var(--teal-dark));color:#fff;text-align:center;padding:80px 20px;}
@@ -223,19 +265,30 @@ if (e.target.closest('.btn-premium')) {
       МАХ
     </a>
   </div>
-<div class="hero-plans">
-  <div class="plan plan-free">
-    <div class="plan-badge">БЕСПЛАТНО НАВСЕГДА</div>
-    <div class="plan-text">Каналы в Telegram и MAX: ОМС-гид, шаблоны жалоб, разборы реальных кейсов и поддержка таких же семей. Без регистрации и оплат.</div>
-  </div>
-  <!--
-  <a href="#premium" class="plan plan-premium">
-    <div class="plan-badge premium-badge">890 ₽/МЕС</div>
-    <div class="plan-title">Закрытое сообщество «РеабМаршрут.<br>Забота»</div>
-    <div class="plan-text">Эксперты на связи, школа ухода, личный разбор вашей ситуации — для тех, кому нужна опора каждый день.</div>
-    <div class="plan-link">Подробнее о сообществе →</div>
+<div class="hero-cards">
+  <a href="/oms-rehabilitation/" class="hero-card">
+    <div class="card-icon">📘</div>
+    <h3>ОМС-гид</h3>
+    <p>Пошаговая инструкция: как получить бесплатную реабилитацию</p>
   </a>
-  -->
+  
+  <a href="/centers/" class="hero-card">
+    <div class="card-icon"></div>
+    <h3>Центры реабилитации</h3>
+    <p>Как выбрать и попасть по ОМС, отзывы без рекламы</p>
+  </a>
+  
+  <a href="/tsr/" class="hero-card">
+    <div class="card-icon">🦾</div>
+    <h3>ТСР бесплатно</h3>
+    <p>Ходунки, перчатки, тренажёры — как получить от государства</p>
+  </a>
+  
+  <a href="/recovery-stages/" class="hero-card">
+    <div class="card-icon">⏱️</div>
+    <h3>Сроки восстановления</h3>
+    <p>Что нормально на каждом этапе после инсульта</p>
+  </a>
 </div>
 </section>
 
