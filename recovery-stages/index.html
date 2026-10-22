@@ -82,6 +82,49 @@ footer a{color:#fff;text-decoration:none;}
   .nav-links a:not(.cta){display:none;}
   .article h2{font-size:22px;}
 }
+
+.read-more {
+  margin-top: 64px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border, #E5E7EB);
+}
+.read-more h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: var(--text, #1F2937);
+}
+.read-more-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+.read-more-card {
+  display: block;
+  padding: 24px;
+  background: #fff;
+  border: 1px solid var(--border, #E5E7EB);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all .2s;
+}
+.read-more-card:hover {
+  border-color: var(--teal, #0E7C6B);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(14,124,107,.08);
+}
+.read-more-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--teal, #0E7C6B);
+  margin: 0 0 8px;
+}
+.read-more-card p {
+  font-size: .95rem;
+  color: var(--text-light, #6B7280);
+  margin: 0;
+  line-height: 1.5;
+}
 </style>
 
 <!-- Google Analytics 4 -->
@@ -293,24 +336,21 @@ footer a{color:#fff;text-decoration:none;}
 </article>
 </main>
 
-<section class="also">
-  <div class="container">
-    <h2 class="section-title">Читайте также</h2>
-    <p class="section-sub">Пошаговые гиды сообщества — бесплатно и без регистрации.</p>
-    <div class="grid">
-      <a href="/oms-rehabilitation/" class="card">
-        <h3>Реабилитация по ОМС: пошаговая инструкция</h3>
-        <p>Форма 057/у-04, сроки комиссии, 4 шага защиты при отказе. Приказ 788н простым языком.</p>
-      </a>
-      <a href="/centers/" class="card">
-        <h3>Центры реабилитации: как выбрать</h3>
-        <p>ОМС или платно, 7 критериев выбора, вопросы центру и отзывы без рекламы.</p>
-      </a>
-	        <a href="/tsr/" class="card">
-        <h3>ТСР: ходунки, перчатка, тренажёры</h3>
-        <p>Бесплатный маршрут по ИПРА через СФР, компенсация, аренда и б/у.</p>
-      </a>
-    </div>
+<section class="read-more">
+  <h2>Читайте также</h2>
+  <div class="read-more-grid">
+    <a href="/home-rehab/" class="read-more-card">
+      <h3>Реабилитация в домашних условиях</h3>
+      <p>7 правил занятий и красные флаги дома.</p>
+    </a>
+    <a href="/care/" class="read-more-card">
+      <h3>Уход за лежачим больным</h3>
+      <p>Пролежни, пересаживание, питание при дисфагии.</p>
+    </a>
+    <a href="/tsr/" class="read-more-card">
+      <h3>ТСР бесплатно</h3>
+      <p>Ходунки, перчатки, кровати — маршрут получения.</p>
+    </a>
   </div>
 </section>
 

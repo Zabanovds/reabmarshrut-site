@@ -78,6 +78,49 @@ footer a{color:#fff;text-decoration:none;}
   .nav-links a:not(.cta){display:none;}
   .article h2{font-size:22px;}
 }
+
+.read-more {
+  margin-top: 64px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border, #E5E7EB);
+}
+.read-more h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: var(--text, #1F2937);
+}
+.read-more-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+.read-more-card {
+  display: block;
+  padding: 24px;
+  background: #fff;
+  border: 1px solid var(--border, #E5E7EB);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all .2s;
+}
+.read-more-card:hover {
+  border-color: var(--teal, #0E7C6B);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(14,124,107,.08);
+}
+.read-more-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--teal, #0E7C6B);
+  margin: 0 0 8px;
+}
+.read-more-card p {
+  font-size: .95rem;
+  color: var(--text-light, #6B7280);
+  margin: 0;
+  line-height: 1.5;
+}
 </style>
 
 <!-- Google Analytics 4 -->
@@ -271,23 +314,25 @@ footer a{color:#fff;text-decoration:none;}
     </div>
     <div class="lead-gift">🎁 Гид доступен сразу после подписки — в закреплённом сообщении. Бесплатно навсегда.</div>
   </div>
+  
 </article>
 </main>
 
-<section class="also">
-  <div class="container">
-    <h2 class="section-title">Читайте также</h2>
-    <p class="section-sub">Сообщество «РеабМаршрут» — бесплатная поддержка на всём пути восстановления.</p>
-    <div class="grid">
-      <a href="/" class="card">
-        <h3>Сообщество семей после инсульта</h3>
-        <p>Разборы реальных кейсов, проверенная информация и люди, которые проходят тот же путь. Без осуждения и без оплат.</p>
-      </a>
-            <a href="/centers/" class="card">
-        <h3>Центры реабилитации после инсульта</h3>
-        <p>Как выбрать: ОМС или платно, 7 критериев, вопросы центру и честные отзывы.</p>
-      </a>
-    </div>
+<section class="read-more">
+  <h2>Читайте также</h2>
+  <div class="read-more-grid">
+    <a href="/centers/" class="read-more-card">
+      <h3>Центры реабилитации: как выбрать</h3>
+      <p>7 критериев выбора, вопросы центру и отзывы без рекламы.</p>
+    </a>
+    <a href="/tsr/" class="read-more-card">
+      <h3>ТСР бесплатно: ходунки, перчатки, тренажёры</h3>
+      <p>Как получить оборудование по ИПРА и не переплатить.</p>
+    </a>
+    <a href="/mse/" class="read-more-card">
+      <h3>МСЭ и инвалидность после инсульта</h3>
+      <p>Пошаговый маршрут оформления и типичные ошибки.</p>
+    </a>
   </div>
 </section>
 

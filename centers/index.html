@@ -86,6 +86,49 @@ footer a{color:#fff;text-decoration:none;}
   .cmp{font-size:13px;}
   .cmp th,.cmp td{padding:8px 10px;}
 }
+
+.read-more {
+  margin-top: 64px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border, #E5E7EB);
+}
+.read-more h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: var(--text, #1F2937);
+}
+.read-more-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+.read-more-card {
+  display: block;
+  padding: 24px;
+  background: #fff;
+  border: 1px solid var(--border, #E5E7EB);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all .2s;
+}
+.read-more-card:hover {
+  border-color: var(--teal, #0E7C6B);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(14,124,107,.08);
+}
+.read-more-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--teal, #0E7C6B);
+  margin: 0 0 8px;
+}
+.read-more-card p {
+  font-size: .95rem;
+  color: var(--text-light, #6B7280);
+  margin: 0;
+  line-height: 1.5;
+}
 </style>
 
 <!-- Google Analytics 4 -->
@@ -271,24 +314,21 @@ footer a{color:#fff;text-decoration:none;}
 </article>
 </main>
 
-<section class="also">
-  <div class="container">
-    <h2 class="section-title">Читайте также</h2>
-    <p class="section-sub">Пошаговые гиды сообщества — бесплатно и без регистрации.</p>
-    <div class="grid">
-      <a href="/oms-rehabilitation/" class="card">
-        <h3>Реабилитация по ОМС: пошаговая инструкция</h3>
-        <p>Форма 057/у-04, сроки комиссии, 4 шага защиты при отказе. Приказ 788н простым языком.</p>
-      </a>
-      <a href="/" class="card">
-        <h3>Сообщество семей после инсульта</h3>
-        <p>Разборы реальных кейсов, проверенная информация и люди, которые проходят тот же путь.</p>
-      </a>
-	        <a href="/recovery-stages/" class="card">
-        <h3>Сроки и этапы восстановления</h3>
-        <p>Что нормально на каждом сроке после инсульта и когда нужна помощь врача.</p>
-      </a>
-    </div>
+<section class="read-more">
+  <h2>Читайте также</h2>
+  <div class="read-more-grid">
+    <a href="/oms-rehabilitation/" class="read-more-card">
+      <h3>Реабилитация по ОМС: пошаговая инструкция</h3>
+      <p>Форма 057/у-04, сроки комиссии, защита при отказе.</p>
+    </a>
+    <a href="/home-rehab/" class="read-more-card">
+      <h3>Домашняя реабилитация: 7 правил</h3>
+      <p>Безопасное пространство, распорядок, красные флаги.</p>
+    </a>
+    <a href="/tsr/" class="read-more-card">
+      <h3>ТСР и оборудование</h3>
+      <p>Ходунки, перчатки, кровати — как получить бесплатно.</p>
+    </a>
   </div>
 </section>
 

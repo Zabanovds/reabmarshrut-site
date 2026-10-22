@@ -82,6 +82,49 @@ footer a{color:#fff;text-decoration:none;}
   .nav-links a:not(.cta){display:none;}
   .article h2{font-size:22px;}
 }
+
+.read-more {
+  margin-top: 64px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border, #E5E7EB);
+}
+.read-more h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: var(--text, #1F2937);
+}
+.read-more-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+.read-more-card {
+  display: block;
+  padding: 24px;
+  background: #fff;
+  border: 1px solid var(--border, #E5E7EB);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all .2s;
+}
+.read-more-card:hover {
+  border-color: var(--teal, #0E7C6B);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(14,124,107,.08);
+}
+.read-more-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--teal, #0E7C6B);
+  margin: 0 0 8px;
+}
+.read-more-card p {
+  font-size: .95rem;
+  color: var(--text-light, #6B7280);
+  margin: 0;
+  line-height: 1.5;
+}
 </style>
 
 <!-- Google Analytics 4 -->
@@ -298,24 +341,21 @@ footer a{color:#fff;text-decoration:none;}
 </article>
 </main>
 
-<section class="also">
-  <div class="container">
-    <h2 class="section-title">Читайте также</h2>
-    <p class="section-sub">Пошаговые гиды сообщества — бесплатно и без регистрации.</p>
-    <div class="grid">
-      <a href="/recovery-stages/" class="card">
-        <h3>Сроки и этапы восстановления</h3>
-        <p>Что нормально на каждом сроке после инсульта и когда нужна помощь врача.</p>
-      </a>
-      <a href="/tsr/" class="card">
-        <h3>ТСР: ходунки, перчатка, тренажёры</h3>
-        <p>Бесплатный маршрут по ИПРА через СФР, компенсация, аренда и б/у.</p>
-      </a>
-	        <a href="/care/" class="card">
-        <h3>Уход за лежачим больным</h3>
-        <p>Профилактика пролежней, пересаживание, питание при дисфагии и защита от выгорания.</p>
-      </a>
-    </div>
+<section class="read-more">
+  <h2>Читайте также</h2>
+  <div class="read-more-grid">
+    <a href="/recovery-stages/" class="read-more-card">
+      <h3>Сроки и этапы восстановления</h3>
+      <p>Что нормально в 1, 3 и 6 месяцев после инсульта.</p>
+    </a>
+    <a href="/care/" class="read-more-card">
+      <h3>Уход за лежачим</h3>
+      <p>Профилактика пролежней, пересаживание, питание.</p>
+    </a>
+    <a href="/tsr/" class="read-more-card">
+      <h3>ТСР для дома</h3>
+      <p>Функциональная кровать, матрас, подъёмник — бесплатно по ИПРА.</p>
+    </a>
   </div>
 </section>
 
