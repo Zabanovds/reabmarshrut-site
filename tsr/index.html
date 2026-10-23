@@ -418,6 +418,166 @@ footer a{color:#fff;text-decoration:none;}
   </p>
 </section>
 
+<!-- КАЛЬКУЛЯТОР ТСР ПО РЕГИОНАМ -->
+<section class="tsr-calc" style="max-width: 900px; margin: 64px auto; padding: 32px; background: #f0fdf9; border: 1px solid #0E7C6B; border-radius: 12px;">
+  <h2 style="color: #0E7C6B; margin-top: 0;">🧮 Калькулятор ТСР: ваш регион и ваш маршрут</h2>
+  <p style="color: #475569; margin-bottom: 24px;">Выберите регион, отметьте средства реабилитации из вашей ИПРА и укажите способ получения — калькулятор покажет пошаговый план, ориентировочную стоимость набора и вашу экономию.</p>
+
+  <!-- Шаг 1: регион -->
+  <label for="tsr-region" style="font-weight:600; display:block; margin-bottom:8px;">Шаг 1. Ваш регион</label>
+  <select id="tsr-region" style="width:100%; padding:12px; border:1px solid #cbd5e1; border-radius:8px; margin-bottom:20px; font-size:1rem;"></select>
+
+  <!-- Шаг 2: перечень ТСР -->
+  <p style="font-weight:600; margin-bottom:8px;">Шаг 2. Что нужно получить (из ИПРА)</p>
+  <div id="tsr-items" style="display:grid; gap:10px; margin-bottom:20px;"></div>
+
+  <!-- Шаг 3: маршрут -->
+  <p style="font-weight:600; margin-bottom:8px;">Шаг 3. Как планируете получать</p>
+  <div style="display:grid; gap:10px; margin-bottom:24px;">
+    <label style="display:flex; gap:10px; align-items:flex-start; background:#fff; padding:12px; border-radius:8px; cursor:pointer;">
+      <input type="radio" name="tsr-route" value="ipra" checked style="margin-top:4px; accent-color:#0E7C6B;">
+      <span><strong>Бесплатно по ИПРА через СФР</strong> — стандартный маршрут</span>
+    </label>
+    <label style="display:flex; gap:10px; align-items:flex-start; background:#fff; padding:12px; border-radius:8px; cursor:pointer;">
+      <input type="radio" name="tsr-route" value="cert" style="margin-top:4px; accent-color:#0E7C6B;">
+      <span><strong>Электронный сертификат</strong> — выбираю и покупаю сам в пределах номинала</span>
+    </label>
+    <label style="display:flex; gap:10px; align-items:flex-start; background:#fff; padding:12px; border-radius:8px; cursor:pointer;">
+      <input type="radio" name="tsr-route" value="comp" style="margin-top:4px; accent-color:#0E7C6B;">
+      <span><strong>Купил сам — получаю компенсацию</strong> от СФР</span>
+    </label>
+  </div>
+
+  <!-- Результат -->
+  <div id="tsr-result" style="background:#fff; border-radius:8px; padding:24px;"></div>
+
+  <p style="margin-top:16px; font-size:0.85rem; color:#64748b; font-style:italic;">⚠️ Цены — справочные рыночные диапазоны для ориентира. Точный размер компенсации и сроки предоставления определяет отделение СФР по вашему региону. Информация не является офертой.</p>
+</section>
+
+<script>
+(function(){
+  var TSR_ITEMS = [
+    {id:'wheel',   name:'Кресло-коляска механическая',      min:15000, max:60000},
+    {id:'bed',     name:'Кровать функциональная',           min:35000, max:120000},
+    {id:'mattress',name:'Матрас противопролежневый',        min:5000,  max:25000},
+    {id:'walker',  name:'Ходунки (роллаторы)',              min:2500,  max:9000},
+    {id:'crutch',  name:'Костыли / трость опорная',         min:1500,  max:6000},
+    {id:'orthosis',name:'Ортез (тутор) на конечность',      min:4000,  max:30000},
+    {id:'toilet',  name:'Стул-туалет / санитарное кресло',  min:3000,  max:12000},
+    {id:'hearing', name:'Слуховой аппарат',                 min:12000, max:60000}
+  ];
+  var REGIONS = [
+    {name:'Москва', note:'Заявления — через СФР, МФЦ или mos.ru. Дополнительные меры поддержки для инвалидов — через Департамент труда и соцзащиты Москвы.'},
+    {name:'Московская область', note:'Заявления — через СФР, МФЦ «Мои документы» или портал госуслуг.'},
+    {name:'Санкт-Петербург', note:'Заявления — через СФР и МФЦ; городские допмеры поддержки уточняйте в соцзащите района.'},
+    {name:'Ленинградская область', note:'Заявления — через СФР и МФЦ.'},
+    {name:'Республика Татарстан', note:'Заявления — через СФР, МФЦ или региональный портал госуслуг.'},
+    {name:'Свердловская область', note:'Заявления — через СФР и МФЦ.'},
+    {name:'Нижегородская область', note:'Заявления — через СФР и МФЦ.'},
+    {name:'Новосибирская область', note:'Заявления — через СФР и МФЦ.'},
+    {name:'Челябинская область', note:'Заявления — через СФР и МФЦ.'},
+    {name:'Самарская область', note:'Заявления — через СФР и МФЦ.'},
+    {name:'Ростовская область', note:'Заявления — через СФР и МФЦ.'},
+    {name:'Краснодарский край', note:'Заявления — через СФР и МФЦ.'},
+    {name:'Республика Башкортостан', note:'Заявления — через СФР и МФЦ.'},
+    {name:'Пермский край', note:'Заявления — через СФР и МФЦ.'},
+    {name:'Волгоградская область', note:'Заявления — через СФР и МФЦ.'},
+    {name:'Воронежская область', note:'Заявления — через СФР и МФЦ.'},
+    {name:'Омская область', note:'Заявления — через СФР и МФЦ.'},
+    {name:'Красноярский край', note:'Заявления — через СФР и МФЦ.'},
+    {name:'Другой регион РФ', note:'Заявления — через СФР, МФЦ или портал госуслуг. Контакты вашего отделения — на sfr.gov.ru в разделе «Отделения».'}
+  ];
+  var GENERIC = 'Заявления на ТСР подаются в отделение СФР по месту жительства, через МФЦ или портал госуслуг.';
+
+  var regionSel = document.getElementById('tsr-region');
+  REGIONS.forEach(function(r,i){
+    var o = document.createElement('option');
+    o.value = i; o.textContent = r.name;
+    regionSel.appendChild(o);
+  });
+
+  var itemsBox = document.getElementById('tsr-items');
+  TSR_ITEMS.forEach(function(it){
+    var l = document.createElement('label');
+    l.style.cssText = 'display:flex; gap:10px; align-items:flex-start; background:#fff; padding:12px; border-radius:8px; cursor:pointer;';
+    l.innerHTML = '<input type="checkbox" class="tsr-item" data-id="'+it.id+'" style="margin-top:4px; accent-color:#0E7C6B;">' +
+      '<span>'+it.name+' <span style="color:#64748b; font-size:0.85rem;">(ориентировочно '+it.min.toLocaleString('ru-RU')+'–'+it.max.toLocaleString('ru-RU')+' ₽)</span></span>';
+    itemsBox.appendChild(l);
+  });
+
+  function fmt(n){ return n.toLocaleString('ru-RU') + ' ₽'; }
+
+  function render(){
+    var region = REGIONS[+regionSel.value];
+    var chosen = TSR_ITEMS.filter(function(it){
+      return document.querySelector('.tsr-item[data-id="'+it.id+'"]').checked;
+    });
+    var route = document.querySelector('input[name="tsr-route"]:checked').value;
+    var box = document.getElementById('tsr-result');
+
+    if(!chosen.length){
+      box.innerHTML = '<p style="color:#64748b; margin:0;">Отметьте хотя бы одно средство реабилитации на шаге 2 — и здесь появится ваш расчёт.</p>';
+      return;
+    }
+    var min = chosen.reduce(function(s,it){return s+it.min;},0);
+    var max = chosen.reduce(function(s,it){return s+it.max;},0);
+
+    var rows = chosen.map(function(it){
+      return '<tr><td style="padding:8px 12px; border-bottom:1px solid #e5e7eb;">'+it.name+'</td>' +
+             '<td style="padding:8px 12px; border-bottom:1px solid #e5e7eb; white-space:nowrap;">'+fmt(it.min)+' – '+fmt(it.max)+'</td></tr>';
+    }).join('');
+
+    var routeBlock = '';
+    if(route === 'ipra'){
+      routeBlock =
+        '<h3 style="color:#0E7C6B; margin:0 0 12px;">Ваш маршрут: бесплатно по ИПРА</h3>' +
+        '<ol style="margin:0 0 16px; padding-left:20px; line-height:1.7;">' +
+        '<li>Проверьте, что каждое ТСР из списка вписано в вашу ИПРА (выписка МСЭ). Если чего-то нет — сначала внесите изменение в ИПРА, инструкция на странице <a href="/mse/" style="color:#0E7C6B;">МСЭ и инвалидность</a>.</li>' +
+        '<li>Подайте заявление в СФР: портал госуслуг, МФЦ или лично. Документы: паспорт, СНИЛС, ИПРА.</li>' +
+        '<li>Дождитесь уведомления о порядке обеспечения (стандартный срок рассмотрения заявления — до 30 дней).</li>' +
+        '<li>Получите ТСР или направление на получение. Отказ можно обжаловать — шаблоны жалоб в разделе <a href="/#materials" style="color:#0E7C6B;">Материалы</a>.</li>' +
+        '</ol>' +
+        '<p style="margin:0; padding:14px; background:#f0fdf9; border-radius:8px;"><strong>Ваши расходы: 0 ₽.</strong> Экономия против покупки: <strong>'+fmt(min)+' – '+fmt(max)+'</strong>.</p>';
+    } else if(route === 'cert'){
+      routeBlock =
+        '<h3 style="color:#0E7C6B; margin:0 0 12px;">Ваш маршрут: электронный сертификат</h3>' +
+        '<ol style="margin:0 0 16px; padding-left:20px; line-height:1.7;">' +
+        '<li>Убедитесь, что ТСР вписаны в ИПРА.</li>' +
+        '<li>Подайте заявление на электронный сертификат через госуслуги — он привязывается к карте «Мир».</li>' +
+        '<li>Выберите изделие в каталоге: номинал сертификата равен цене, установленной в вашем регионе.</li>' +
+        '<li>Оплатите сертификатом при покупке; если изделие дороже номинала — разницу доплачиваете сами.</li>' +
+        '</ol>' +
+        '<p style="margin:0; padding:14px; background:#f0fdf9; border-radius:8px;"><strong>Ваши расходы: 0 ₽ в пределах номинала</strong> (возможна доплата за модель дороже). Ориентир рынка: '+fmt(min)+' – '+fmt(max)+'.</p>';
+    } else {
+      routeBlock =
+        '<h3 style="color:#0E7C6B; margin:0 0 12px;">Ваш маршрут: компенсация за самостоятельно купленное ТСР</h3>' +
+        '<ol style="margin:0 0 16px; padding-left:20px; line-height:1.7;">' +
+        '<li>Купите ТСР, сохранив чеки и документы на изделие (сертификат/паспорт, регистрационное удостоверение).</li>' +
+        '<li>Подайте в СФР заявление о компенсации с приложением чеков и документов на изделие.</li>' +
+        '<li>Решение принимается в срок до 30 дней; выплата — по цене, установленной в вашем регионе.</li>' +
+        '<li>Если купили дороже регионального номинала — разницу не компенсируют, учитывайте это при выборе модели.</li>' +
+        '</ol>' +
+        '<p style="margin:0; padding:14px; background:#fff7ed; border-radius:8px;"><strong>Сначала вы платите: ориентировочно '+fmt(min)+' – '+fmt(max)+',</strong> затем получаете компенсацию в пределах региональной цены.</p>';
+    }
+
+    box.innerHTML =
+      '<h3 style="margin:0 0 12px; color:#1f2937;">Регион: '+region.name+'</h3>' +
+      '<p style="margin:0 0 16px; color:#475569; font-size:0.95rem;">'+(region.note || GENERIC)+'</p>' +
+      '<table style="width:100%; border-collapse:collapse; margin-bottom:20px; font-size:0.95rem;">' +
+      '<tr style="background:#f8fafc;"><th style="padding:8px 12px; text-align:left;">ТСР из вашего списка</th><th style="padding:8px 12px; text-align:left;">Ориентировочная цена</th></tr>' +
+      rows +
+      '<tr><td style="padding:10px 12px; font-weight:700;">Итого набор</td><td style="padding:10px 12px; font-weight:700; white-space:nowrap;">'+fmt(min)+' – '+fmt(max)+'</td></tr>' +
+      '</table>' +
+      routeBlock;
+  }
+
+  regionSel.addEventListener('change', render);
+  document.getElementById('tsr-items').addEventListener('change', render);
+  document.querySelectorAll('input[name="tsr-route"]').forEach(function(r){ r.addEventListener('change', render); });
+  render();
+})();
+</script>
+
 <section class="read-more">
   <h2>Читайте также</h2>
   <div class="read-more-grid">
