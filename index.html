@@ -453,6 +453,72 @@ if (e.target.closest('.btn-premium')) {
   </div>
 </section>
 
+<!-- Интерактивный чек-лист -->
+<section class="interactive-checklist" style="max-width: 900px; margin: 48px auto; padding: 32px; background: #f0fdf9; border: 1px solid #0E7C6B; border-radius: 12px;">
+  <h2 style="color: #0E7C6B; margin-top: 0; display: flex; align-items: center; gap: 10px;">
+    ✅ Чек-лист: Готовы ли вы к выписке домой?
+  </h2>
+  <p style="color: #475569; margin-bottom: 20px;">Отметьте пункты, которые уже выполнены. Прогресс сохранится автоматически.</p>
+  
+  <div id="checklist-container" style="display: grid; gap: 12px;">
+    <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer; padding: 12px; background: #fff; border-radius: 8px; transition: 0.2s;">
+      <input type="checkbox" class="care-check" data-id="1" style="margin-top: 4px; width: 18px; height: 18px; accent-color: #0E7C6B;">
+      <span>Получена выписка из стационара с рекомендациями</span>
+    </label>
+    <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer; padding: 12px; background: #fff; border-radius: 8px; transition: 0.2s;">
+      <input type="checkbox" class="care-check" data-id="2" style="margin-top: 4px; width: 18px; height: 18px; accent-color: #0E7C6B;">
+      <span>Оформлена заявка на ТСР (кровать, матрас, коляска) через СФР</span>
+    </label>
+    <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer; padding: 12px; background: #fff; border-radius: 8px; transition: 0.2s;">
+      <input type="checkbox" class="care-check" data-id="3" style="margin-top: 4px; width: 18px; height: 18px; accent-color: #0E7C6B;">
+      <span>Квартира подготовлена: убраны ковры, установлены поручни</span>
+    </label>
+    <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer; padding: 12px; background: #fff; border-radius: 8px; transition: 0.2s;">
+      <input type="checkbox" class="care-check" data-id="4" style="margin-top: 4px; width: 18px; height: 18px; accent-color: #0E7C6B;">
+      <span>Назначена дата первого визита врача или инструктора ЛФК на дом</span>
+    </label>
+  </div>
+
+  <div id="checklist-progress" style="margin-top: 20px; padding: 16px; background: #0E7C6B; color: #fff; border-radius: 8px; text-align: center; font-weight: 600; display: none;">
+    🎉 Отлично! Вы отметили <span id="checked-count">0</span> из 4 пунктов. 
+    <a href="/care/" style="color: #fff; text-decoration: underline; margin-left: 8px;">Перейти к полному гайду по уходу →</a>
+  </div>
+</section>
+
+<script>
+  // Логика сохранения чек-листа
+  document.addEventListener('DOMContentLoaded', () => {
+    const checkboxes = document.querySelectorAll('.care-check');
+    const progressBox = document.getElementById('checklist-progress');
+    const countSpan = document.getElementById('checked-count');
+
+    // Загрузка сохраненных данных
+    checkboxes.forEach(cb => {
+      const isChecked = localStorage.getItem('checklist_' + cb.dataset.id) === 'true';
+      cb.checked = isChecked;
+      
+      // Сохранение при изменении
+      cb.addEventListener('change', () => {
+        localStorage.setItem('checklist_' + cb.dataset.id, cb.checked);
+        updateProgress();
+      });
+    });
+
+    function updateProgress() {
+      const checked = document.querySelectorAll('.care-check:checked').length;
+      countSpan.textContent = checked;
+      if (checked > 0) {
+        progressBox.style.display = 'block';
+      } else {
+        progressBox.style.display = 'none';
+      }
+    }
+    
+    // Инициализация прогресса при загрузке
+    updateProgress();
+  });
+</script>
+
 <section id="materials" style="background:#F9FAFB;padding:70px 0;">
   <div class="container">
     <h2 class="section-title">Полезные материалы</h2>
