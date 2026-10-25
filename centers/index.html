@@ -367,8 +367,366 @@ footer a{color:#fff;text-decoration:none;}
   <!-- Карточки будут генерироваться JavaScript -->
 </div>
 
+<!-- Стили для карточек клиник -->
+<style>
+.clinics-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+.clinics-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.clinics-header h2 {
+  color: #0E7C6B;
+  font-size: 2rem;
+  margin: 0 0 12px;
+  font-weight: 700;
+}
+
+.clinics-header p {
+  color: #64748b;
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+.clinics-filters {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 32px;
+}
+
+.filters-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.filter-select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background: #fff;
+  color: #1e293b;
+  cursor: pointer;
+  transition: all 0.2s;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2364748b' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+}
+
+.filter-select:hover {
+  border-color: #0E7C6B;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: #0E7C6B;
+  box-shadow: 0 0 0 3px rgba(14, 124, 107, 0.1);
+}
+
+.search-box {
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 16px 12px 44px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+}
+
+.search-input:hover {
+  border-color: #0E7C6B;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #0E7C6B;
+  box-shadow: 0 0 0 3px rgba(14, 124, 107, 0.1);
+}
+
+.search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  font-size: 1.1rem;
+}
+
+.clinics-counter {
+  text-align: center;
+  color: #64748b;
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+  padding: 12px;
+  background: #f0fdf9;
+  border-radius: 8px;
+  border: 1px solid #d1fae5;
+}
+
+.clinics-counter strong {
+  color: #0E7C6B;
+  font-weight: 700;
+}
+
+.clinics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 24px;
+}
+
+.clinic-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.clinic-card:hover {
+  box-shadow: 0 8px 24px rgba(14, 124, 107, 0.12);
+  transform: translateY(-4px);
+  border-color: #0E7C6B;
+}
+
+.clinic-name {
+  color: #0E7C6B;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0 0 16px;
+  line-height: 1.4;
+}
+
+.clinic-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.badge {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.badge-oms {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.badge-bedridden {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.badge-speech {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.badge-region {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.clinic-info {
+  margin-bottom: 20px;
+}
+
+.clinic-info p {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+.clinic-info strong {
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.clinic-price {
+  color: #0E7C6B;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 12px 0;
+  padding: 8px 12px;
+  background: #f0fdf9;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.clinic-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background: #0E7C6B;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #0a5c4f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(14, 124, 107, 0.3);
+}
+
+.btn-secondary {
+  background: #fff;
+  color: #0E7C6B;
+  border: 2px solid #0E7C6B;
+}
+
+.btn-secondary:hover {
+  background: #f0fdf9;
+  transform: translateY(-2px);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 64px 24px;
+  color: #64748b;
+}
+
+.empty-state-icon {
+  font-size: 4rem;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.empty-state h3 {
+  color: #1e293b;
+  font-size: 1.3rem;
+  margin: 0 0 8px;
+}
+
+.empty-state p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .clinics-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .filters-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .clinics-header h2 {
+    font-size: 1.5rem;
+  }
+}
+</style>
+
+<!-- Раздел клиник -->
+<section class="clinics-section">
+  <div class="clinics-header">
+    <h2>🏥 База центров реабилитации</h2>
+    <p>Проверенные клиники с отзывами пациентов. Фильтруйте по региону и условиям.</p>
+  </div>
+
+  <!-- Фильтры -->
+  <div class="clinics-filters">
+    <div class="filters-row">
+      <select id="filter-region" class="filter-select">
+        <option value="">Все регионы</option>
+        <option value="Москва">Москва</option>
+        <option value="Московская область">Московская область</option>
+        <option value="Санкт-Петербург">Санкт-Петербург</option>
+        <option value="Ленинградская область">Ленинградская область</option>
+        <option value="Свердловская область">Свердловская область</option>
+        <option value="Республика Татарстан">Республика Татарстан</option>
+        <option value="Краснодарский край">Краснодарский край</option>
+        <option value="Другие регионы">Другие регионы</option>
+      </select>
+      
+      <select id="filter-type" class="filter-select">
+        <option value="">Все типы</option>
+        <option value="Федеральный центр">Федеральный центр</option>
+        <option value="стационар">Стационар</option>
+        <option value="санаторий">Санаторий</option>
+        <option value="реабилитационный центр">Реабилитационный центр</option>
+      </select>
+      
+      <select id="filter-oms" class="filter-select">
+        <option value="">Все условия</option>
+        <option value="oms">По ОМС / бесплатно</option>
+        <option value="paid">Платно</option>
+      </select>
+    </div>
+    
+    <div class="search-box">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="search-clinic" class="search-input" placeholder="Поиск по названию или городу...">
+    </div>
+  </div>
+
+  <!-- Счетчик -->
+  <div class="clinics-counter" id="clinics-counter">
+    Найдено: <strong>0</strong> клиник
+  </div>
+
+  <!-- Сетка клиник -->
+  <div id="clinics-grid" class="clinics-grid">
+    <!-- Карточки генерируются JavaScript -->
+  </div>
+</section>
+
 <script>
-// База клиник (расширь своими данными)
+// База клиник (замени на свои данные)
 const clinics = [
   {
     name: "ФЦМН ФМБА России (Центр мозга и нейротехнологий)",
@@ -413,69 +771,87 @@ const clinics = [
     price: 3500,
     phone: "+7 (351) 456-78-90",
     address: "Челябинская обл., Аргаяшский р-н, оз. Увильды"
-  },
-  // Добавь остальные клиники из своей базы...
+  }
+  // Добавь остальные клиники...
 ];
 
 function renderClinics(data) {
   const grid = document.getElementById('clinics-grid');
+  const counter = document.getElementById('clinics-counter');
+  
   grid.innerHTML = '';
+  counter.innerHTML = `Найдено: <strong>${data.length}</strong> ${getClinicWord(data.length)}`;
+  
+  if (data.length === 0) {
+    grid.innerHTML = `
+      <div class="empty-state" style="grid-column: 1/-1;">
+        <div class="empty-state-icon"></div>
+        <h3>Клиники не найдены</h3>
+        <p>Попробуйте изменить параметры фильтрации или поисковый запрос</p>
+      </div>
+    `;
+    return;
+  }
   
   data.forEach(clinic => {
     const card = document.createElement('div');
     card.className = 'clinic-card';
-    card.style.cssText = 'background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);';
     
     const badges = [];
-    if (clinic.oms) badges.push('<span style="background: #d1fae5; color: #065f46; padding: 4px 8px; border-radius: 6px; font-size: 0.75rem; font-weight: 600;">ОМС</span>');
-    if (clinic.bedridden) badges.push('<span style="background: #fee2e2; color: #991b1b; padding: 4px 8px; border-radius: 6px; font-size: 0.75rem; font-weight: 600;">Лежачие</span>');
-    if (clinic.speech) badges.push('<span style="background: #dbeafe; color: #1e40af; padding: 4px 8px; border-radius: 6px; font-size: 0.75rem; font-weight: 600;">Логопед</span>');
+    if (clinic.oms) badges.push('<span class="badge badge-oms">✓ ОМС</span>');
+    if (clinic.bedridden) badges.push('<span class="badge badge-bedridden"> Лежачие</span>');
+    if (clinic.speech) badges.push('<span class="badge badge-speech">💬 Логопед</span>');
+    badges.push(`<span class="badge badge-region">📍 ${clinic.region}</span>`);
+    
+    const priceHtml = clinic.price > 0 
+      ? `<div class="clinic-price">от ${clinic.price.toLocaleString('ru-RU')} ₽/день</div>` 
+      : '<div class="clinic-price" style="background: #d1fae5; color: #065f46;">Бесплатно по ОМС</div>';
     
     card.innerHTML = `
-      <h3 style="color: #0E7C6B; margin: 0 0 12px; font-size: 1.1rem; line-height: 1.4;">${clinic.name}</h3>
+      <h3 class="clinic-name">${clinic.name}</h3>
       
-      <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px;">
+      <div class="clinic-badges">
         ${badges.join('')}
-        <span style="background: #f1f5f9; color: #475569; padding: 4px 8px; border-radius: 6px; font-size: 0.75rem;">${clinic.region}</span>
       </div>
       
-      <p style="color: #64748b; font-size: 0.9rem; margin: 8px 0;"><strong>Тип:</strong> ${clinic.type}</p>
-      <p style="color: #64748b; font-size: 0.9rem; margin: 8px 0;"><strong>Адрес:</strong> ${clinic.address}</p>
-      ${clinic.price > 0 ? `<p style="color: #0E7C6B; font-size: 0.95rem; margin: 8px 0; font-weight: 600;">от ${clinic.price.toLocaleString('ru-RU')} ₽/день</p>` : ''}
+      <div class="clinic-info">
+        <p><strong>Тип:</strong> ${clinic.type}</p>
+        <p><strong>Адрес:</strong> ${clinic.address}</p>
+        ${priceHtml}
+      </div>
       
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px;">
-        <a href="tel:${clinic.phone.replace(/\D/g, '')}" 
-           style="background: #0E7C6B; color: #fff; padding: 12px; border-radius: 8px; text-align: center; text-decoration: none; font-weight: 600; transition: 0.2s;">
+      <div class="clinic-actions">
+        <a href="tel:${clinic.phone.replace(/\D/g, '')}" class="btn btn-primary">
           📞 Позвонить
         </a>
         <a href="https://yandex.ru/maps/?text=${encodeURIComponent(clinic.address)}" 
-           target="_blank"
-           style="background: #fff; color: #0E7C6B; border: 2px solid #0E7C6B; padding: 12px; border-radius: 8px; text-align: center; text-decoration: none; font-weight: 600; transition: 0.2s;">
-           Карта
+           target="_blank" class="btn btn-secondary">
+          🗺 Карта
         </a>
       </div>
     `;
     
     grid.appendChild(card);
   });
-  
-  if (data.length === 0) {
-    grid.innerHTML = '<p style="text-align: center; color: #64748b; grid-column: 1/-1; padding: 40px;">Клиники не найдены. Попробуйте изменить фильтры.</p>';
-  }
 }
 
-// Фильтрация
+function getClinicWord(count) {
+  if (count % 10 === 1 && count % 100 !== 11) return 'клиника';
+  if (count % 10 >= 2 && count % 10 <= 4 && (count % 100 < 10 || count % 100 >= 20)) return 'клиники';
+  return 'клиник';
+}
+
 function filterClinics() {
   const region = document.getElementById('filter-region').value;
   const type = document.getElementById('filter-type').value;
   const oms = document.getElementById('filter-oms').value;
   const search = document.getElementById('search-clinic').value.toLowerCase();
   
-  let filtered = clinics.filter(c => {
+  const filtered = clinics.filter(c => {
     const matchRegion = !region || c.region === region;
     const matchType = !type || c.type === type;
     const matchOms = !oms || (oms === 'oms' && c.oms) || (oms === 'paid' && !c.oms);
-    const matchSearch = !search || c.name.toLowerCase().includes(search) || c.region.toLowerCase().includes(search);
+    const matchSearch = !search || c.name.toLowerCase().includes(search) || c.region.toLowerCase().includes(search) || c.address.toLowerCase().includes(search);
     
     return matchRegion && matchType && matchOms && matchSearch;
   });
