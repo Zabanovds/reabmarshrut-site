@@ -329,6 +329,170 @@ footer a{color:#fff;text-decoration:none;}
   </table>
   <div class="warn-card">⚠️ Платно оправдано, когда: окно восстановления закрывается из-за очереди, нужна конкретная методика или специалист, курс продолжается дома. Но сначала исчерпайте маршрут ОМС — это ваше законное право, а не «милость системы».</div>
 
+<!-- Фильтры -->
+<div class="clinics-filters" style="max-width: 900px; margin: 32px auto; padding: 0 24px;">
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 24px;">
+    <select id="filter-region" style="padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.95rem;">
+      <option value="">Все регионы</option>
+      <option value="Москва">Москва</option>
+      <option value="Московская область">Московская область</option>
+      <option value="Санкт-Петербург">Санкт-Петербург</option>
+      <option value="Ленинградская область">Ленинградская область</option>
+      <option value="Свердловская область">Свердловская область</option>
+      <option value="Республика Татарстан">Республика Татарстан</option>
+      <option value="Краснодарский край">Краснодарский край</option>
+      <option value="Другие регионы">Другие регионы</option>
+    </select>
+    
+    <select id="filter-type" style="padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.95rem;">
+      <option value="">Все типы</option>
+      <option value="стационар">Стационар</option>
+      <option value="санаторий">Санаторий</option>
+      <option value="реабилитационный центр">Реабилитационный центр</option>
+    </select>
+    
+    <select id="filter-oms" style="padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.95rem;">
+      <option value="">Все условия</option>
+      <option value="oms">По ОМС / бесплатно</option>
+      <option value="paid">Платно</option>
+    </select>
+  </div>
+  
+  <input type="text" id="search-clinic" placeholder="🔍 Поиск по названию или городу..." 
+         style="width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.95rem; margin-bottom: 32px;">
+</div>
+
+<!-- Сетка клиник -->
+<div id="clinics-grid" style="max-width: 1200px; margin: 0 auto; padding: 0 24px 64px; display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 24px;">
+  <!-- Карточки будут генерироваться JavaScript -->
+</div>
+
+<script>
+// База клиник (расширь своими данными)
+const clinics = [
+  {
+    name: "ФЦМН ФМБА России (Центр мозга и нейротехнологий)",
+    region: "Москва",
+    type: "Федеральный центр",
+    oms: true,
+    bedridden: false,
+    speech: true,
+    price: 0,
+    phone: "+7 (495) 123-45-67",
+    address: "г. Москва, ул. Примерная, д. 1"
+  },
+  {
+    name: "ГКБ №40 им. В.В. Виноградова",
+    region: "Москва",
+    type: "стационар",
+    oms: true,
+    bedridden: true,
+    speech: true,
+    price: 0,
+    phone: "+7 (495) 234-56-78",
+    address: "г. Москва, ул. Ленинский проспект, д. 60"
+  },
+  {
+    name: "Реабилитационный центр «Три сестры»",
+    region: "Московская область",
+    type: "реабилитационный центр",
+    oms: false,
+    bedridden: true,
+    speech: true,
+    price: 8500,
+    phone: "+7 (495) 345-67-89",
+    address: "Московская обл., Истринский р-н, д. Три сестры"
+  },
+  {
+    name: "Санаторий «Увильды»",
+    region: "Свердловская область",
+    type: "санаторий",
+    oms: false,
+    bedridden: true,
+    speech: false,
+    price: 3500,
+    phone: "+7 (351) 456-78-90",
+    address: "Челябинская обл., Аргаяшский р-н, оз. Увильды"
+  },
+  // Добавь остальные клиники из своей базы...
+];
+
+function renderClinics(data) {
+  const grid = document.getElementById('clinics-grid');
+  grid.innerHTML = '';
+  
+  data.forEach(clinic => {
+    const card = document.createElement('div');
+    card.className = 'clinic-card';
+    card.style.cssText = 'background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);';
+    
+    const badges = [];
+    if (clinic.oms) badges.push('<span style="background: #d1fae5; color: #065f46; padding: 4px 8px; border-radius: 6px; font-size: 0.75rem; font-weight: 600;">ОМС</span>');
+    if (clinic.bedridden) badges.push('<span style="background: #fee2e2; color: #991b1b; padding: 4px 8px; border-radius: 6px; font-size: 0.75rem; font-weight: 600;">Лежачие</span>');
+    if (clinic.speech) badges.push('<span style="background: #dbeafe; color: #1e40af; padding: 4px 8px; border-radius: 6px; font-size: 0.75rem; font-weight: 600;">Логопед</span>');
+    
+    card.innerHTML = `
+      <h3 style="color: #0E7C6B; margin: 0 0 12px; font-size: 1.1rem; line-height: 1.4;">${clinic.name}</h3>
+      
+      <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px;">
+        ${badges.join('')}
+        <span style="background: #f1f5f9; color: #475569; padding: 4px 8px; border-radius: 6px; font-size: 0.75rem;">${clinic.region}</span>
+      </div>
+      
+      <p style="color: #64748b; font-size: 0.9rem; margin: 8px 0;"><strong>Тип:</strong> ${clinic.type}</p>
+      <p style="color: #64748b; font-size: 0.9rem; margin: 8px 0;"><strong>Адрес:</strong> ${clinic.address}</p>
+      ${clinic.price > 0 ? `<p style="color: #0E7C6B; font-size: 0.95rem; margin: 8px 0; font-weight: 600;">от ${clinic.price.toLocaleString('ru-RU')} ₽/день</p>` : ''}
+      
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px;">
+        <a href="tel:${clinic.phone.replace(/\D/g, '')}" 
+           style="background: #0E7C6B; color: #fff; padding: 12px; border-radius: 8px; text-align: center; text-decoration: none; font-weight: 600; transition: 0.2s;">
+          📞 Позвонить
+        </a>
+        <a href="https://yandex.ru/maps/?text=${encodeURIComponent(clinic.address)}" 
+           target="_blank"
+           style="background: #fff; color: #0E7C6B; border: 2px solid #0E7C6B; padding: 12px; border-radius: 8px; text-align: center; text-decoration: none; font-weight: 600; transition: 0.2s;">
+           Карта
+        </a>
+      </div>
+    `;
+    
+    grid.appendChild(card);
+  });
+  
+  if (data.length === 0) {
+    grid.innerHTML = '<p style="text-align: center; color: #64748b; grid-column: 1/-1; padding: 40px;">Клиники не найдены. Попробуйте изменить фильтры.</p>';
+  }
+}
+
+// Фильтрация
+function filterClinics() {
+  const region = document.getElementById('filter-region').value;
+  const type = document.getElementById('filter-type').value;
+  const oms = document.getElementById('filter-oms').value;
+  const search = document.getElementById('search-clinic').value.toLowerCase();
+  
+  let filtered = clinics.filter(c => {
+    const matchRegion = !region || c.region === region;
+    const matchType = !type || c.type === type;
+    const matchOms = !oms || (oms === 'oms' && c.oms) || (oms === 'paid' && !c.oms);
+    const matchSearch = !search || c.name.toLowerCase().includes(search) || c.region.toLowerCase().includes(search);
+    
+    return matchRegion && matchType && matchOms && matchSearch;
+  });
+  
+  renderClinics(filtered);
+}
+
+// Слушатели событий
+document.getElementById('filter-region').addEventListener('change', filterClinics);
+document.getElementById('filter-type').addEventListener('change', filterClinics);
+document.getElementById('filter-oms').addEventListener('change', filterClinics);
+document.getElementById('search-clinic').addEventListener('input', filterClinics);
+
+// Инициализация
+renderClinics(clinics);
+</script>
+
   <h2>Как выбрать центр: 7 критериев, которые важнее ремонта</h2>
   <ul class="check">
     <li><b>Лицензия</b> на «медицинскую реабилитацию», «неврологию», «физическую и реабилитационную медицину» — просите номер и проверяйте в реестре Росздравнадзора.</li>
