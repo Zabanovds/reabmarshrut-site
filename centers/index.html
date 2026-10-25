@@ -104,6 +104,10 @@ footer{background:#1F2937;color:#94A3B8;padding:40px 0;font-size:0.9rem;margin-t
 .footer-inner a{color:#94A3B8;text-decoration:none}
 .footer-inner a:hover{color:#fff}
 .disclaimer{margin-top:20px;padding-top:20px;border-top:1px solid #374151;font-size:0.82rem;line-height:1.7}
+.load-more-wrap{text-align:center;padding:8px 0 40px;display:none}
+.btn-load-more{background:var(--teal);color:#fff;border:none;padding:14px 36px;border-radius:10px;font-size:1rem;font-weight:600;cursor:pointer;transition:all .2s}
+.btn-load-more:hover{background:var(--teal-dark);transform:translateY(-2px);box-shadow:0 6px 16px rgba(14,124,107,.25)}
+.showing-text{margin-top:10px;color:var(--text-light);font-size:0.88rem}
 @media(max-width:768px){
 .filters-grid{grid-template-columns:1fr 1fr}
 .search-box{grid-column:1/-1}
@@ -164,6 +168,10 @@ footer{background:#1F2937;color:#94A3B8;padding:40px 0;font-size:0.9rem;margin-t
     <button class="reset-btn" id="reset">✕ Сбросить фильтры</button>
   </div>
   <div class="clinics-grid" id="grid"></div>
+  <div class="load-more-wrap" id="load-more-wrap">
+  <button class="btn-load-more" id="load-more">Показать ещё</button>
+  <div class="showing-text" id="showing-text"></div>
+</div>
 
   <!-- ЧИТАЙТЕ ТАКЖЕ -->
   <div class="read-also">
@@ -304,6 +312,8 @@ const CLINICS = [
 
 const $ = id => document.getElementById(id);
 let favs = JSON.parse(localStorage.getItem('reab_favs') || '[]');
+const PAGE_SIZE = 9;
+let visibleCount = PAGE_SIZE;
 
 function plural(n){const a=n%10,b=n%100;if(a===1&&b!==11)return'клиника';if(a>=2&&a<=4&&(b<10||b>=20))return'клиники';return'клиник';}
 
@@ -340,8 +350,14 @@ function render(){
   const hasFilters=$('search').value||$('f-region').value||$('f-type').value||$('f-oms').value||$('f-bed').checked||$('f-speech').checked||$('f-fav').checked;
   $('reset').classList.toggle('visible',!!hasFilters);
   const grid=$('grid');
-  if(!list.length){grid.innerHTML='<div class="empty-state"><div style="font-size:3rem;margin-bottom:12px;">🔍</div><h3 style="margin-bottom:8px;color:#1F2937;">Ничего не найдено</h3><p>Попробуйте смягчить фильтры или сбросить их.</p></div>';return;}
-  grid.innerHTML=list.map(c=>{
+  const wrap=$('load-more-wrap');
+  if(!list.length){
+    grid.innerHTML='<div class="empty-state"><div style="font-size:3rem;margin-bottom:12px;">🔍</div><h3 style="margin-bottom:8px;color:#1F2937;">Ничего не найдено</h3><p>Попробуйте смягчить фильтры или сбросить их.</p></div>';
+    wrap.style.display='none';
+    return;
+  }
+  const shown=list.slice(0,visibleCount);
+  grid.innerHTML=shown.map(c=>{
     const isFav=favs.includes(c.name);
     const badges=[
       c.oms?'<span class="badge badge-oms">✓ ОМС</span>':'<span class="badge badge-paid">₽ Платно</span>',
@@ -363,6 +379,13 @@ function render(){
       '<a class="btn btn-map" target="_blank" rel="noopener" href="https://yandex.ru/maps/?text='+encodeURIComponent(c.name+' '+c.address)+'">🗺 Карта</a>'+
       '</div></article>';
   }).join('');
+  $('showing-text').textContent='Показано '+shown.length+' из '+list.length;
+  if(list.length>visibleCount){
+    wrap.style.display='block';
+    $('load-more').textContent='Показать ещё (+'+Math.min(PAGE_SIZE,list.length-visibleCount)+')';
+  } else {
+    wrap.style.display='none';
+  }
 }
 
 $('grid').addEventListener('click',e=>{
@@ -373,15 +396,17 @@ $('grid').addEventListener('click',e=>{
   localStorage.setItem('reab_favs',JSON.stringify(favs));
   render();
 });
-['search','f-region','f-type','f-oms','f-sort'].forEach(id=>$(id).addEventListener('input',render));
+function applyFilters(){visibleCount=PAGE_SIZE;render();}
+['search','f-region','f-type','f-oms','f-sort'].forEach(id=>$(id).addEventListener('input',applyFilters));
 ['f-bed','f-speech','f-fav'].forEach(id=>$(id).addEventListener('change',e=>{
   e.target.closest('.toggle-chip').classList.toggle('active',e.target.checked);
-  render();
+  applyFilters();
 }));
+$('load-more').addEventListener('click',()=>{visibleCount+=PAGE_SIZE;render();});
 $('reset').addEventListener('click',()=>{
   $('search').value='';$('f-region').value='';$('f-type').value='';$('f-oms').value='';$('f-sort').value='default';
   ['f-bed','f-speech','f-fav'].forEach(id=>{$(id).checked=false;$(id).closest('.toggle-chip').classList.remove('active');});
-  render();
+  applyFilters();
 });
 initFilters();
 render();
