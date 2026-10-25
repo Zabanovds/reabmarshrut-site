@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Центры реабилитации после инсульта: как выбрать и попасть | РеабМаршрут</title>
-<meta name="description" content="База из 60+ проверенных центров реабилитации после инсульта по всей России: фильтры по ОМС, региону, типу учреждения, приёму лежачих и логопеду. Как выбрать и попасть на реабилитацию.">
+<meta name="description" content="База центров реабилитации после инсульта: официальные маршруты ОМС по регионам (этапы 1-3) + проверенные клиники. Фильтры по ОМС, этапу, региону, типу.">
 <link rel="canonical" href="https://reabmarshrut.ru/centers/">
 <meta property="og:title" content="Центры реабилитации после инсульта: как выбрать | РеабМаршрут">
-<meta property="og:description" content="60+ проверенных клиник с фильтрами по ОМС, региону и условиям приёма.">
+<meta property="og:description" content="Официальные ОМС-маршруты по регионам + база клиник с фильтрами.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://reabmarshrut.ru/centers/">
 <meta property="og:image" content="https://reabmarshrut.ru/og-cover.png">
@@ -40,12 +40,11 @@ header{background:#fff;border-bottom:1px solid var(--border)}
 .nav a.plain{color:var(--text);text-decoration:none;font-weight:500;margin-right:16px}
 .breadcrumbs{padding:16px 20px 0;font-size:0.85rem;color:var(--text-light)}
 .breadcrumbs a{color:var(--teal);text-decoration:none}
-h1{font-size:clamp(1.6rem,4vw,2.2rem);font-weight:800;margin:12px 0 12px;color:var(--text)}
+h1{font-size:clamp(1.6rem,4vw,2.2rem);font-weight:800;margin:12px 0;color:var(--text)}
 .lead{color:var(--text-light);font-size:1.05rem;margin-bottom:20px}
 .callout{background:#FDECEA;border-left:4px solid #B3261E;padding:14px 18px;border-radius:8px;margin:20px 0;font-size:0.95rem}
-/* Каталог */
 .clinics-filters{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:20px;margin:24px 0}
-.filters-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-bottom:12px}
+.filters-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:12px}
 .filter-select{width:100%;padding:11px 34px 11px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:0.92rem;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2364748b' d='M6 8L1 3h10z'/%3E%3C/svg%3E") no-repeat right 12px center;appearance:none;cursor:pointer}
 .filter-select:focus{outline:none;border-color:var(--teal)}
 .search-box{position:relative}
@@ -77,8 +76,11 @@ h1{font-size:clamp(1.6rem,4vw,2.2rem);font-weight:800;margin:12px 0 12px;color:v
 .badge-bed{background:#FEE2E2;color:#991B1B}
 .badge-speech{background:#DBEAFE;color:#1E40AF}
 .badge-region{background:#F1F5F9;color:#475569}
+.badge-off{background:#E6F4F1;color:#0A5C4F;border:1px solid #0E7C6B}
 .clinic-meta{font-size:0.88rem;color:var(--text-light);margin-bottom:6px}
 .clinic-meta strong{color:var(--text)}
+.clinic-meta a{color:var(--teal);text-decoration:none}
+.clinic-meta a:hover{text-decoration:underline}
 .price-tag{margin:8px 0 4px;font-size:1rem;font-weight:700}
 .price-free{color:#065F46}
 .price-paid{color:var(--coral)}
@@ -89,7 +91,10 @@ h1{font-size:clamp(1.6rem,4vw,2.2rem);font-weight:800;margin:12px 0 12px;color:v
 .btn-map{background:#fff;color:var(--teal);border:1.5px solid var(--teal)}
 .btn-map:hover{background:var(--teal-light)}
 .empty-state{grid-column:1/-1;text-align:center;padding:56px 24px;background:#fff;border-radius:14px;border:1.5px dashed var(--border);color:var(--text-light)}
-/* Блоки статьи */
+.load-more-wrap{text-align:center;padding:8px 0 40px;display:none}
+.btn-load-more{background:var(--teal);color:#fff;border:none;padding:14px 36px;border-radius:10px;font-size:1rem;font-weight:600;cursor:pointer;transition:all .2s}
+.btn-load-more:hover{background:var(--teal-dark);transform:translateY(-2px);box-shadow:0 6px 16px rgba(14,124,107,.25)}
+.showing-text{margin-top:10px;color:var(--text-light);font-size:0.88rem}
 .read-also,.norm-base{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin:28px 0}
 .read-also h2,.norm-base h2{font-size:1.1rem;margin-bottom:12px;color:var(--text)}
 .read-also ul,.norm-base ul{list-style:none}
@@ -98,16 +103,11 @@ h1{font-size:clamp(1.6rem,4vw,2.2rem);font-weight:800;margin:12px 0 12px;color:v
 .read-also a:hover{text-decoration:underline}
 .norm-base li{font-size:0.9rem;color:var(--text-light)}
 .expert-review{background:#f8fafc;border-left:4px solid #0E7C6B;padding:16px 20px;margin:32px 0;border-radius:8px}
-/* Футер */
 footer{background:#1F2937;color:#94A3B8;padding:40px 0;font-size:0.9rem;margin-top:48px}
 .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
 .footer-inner a{color:#94A3B8;text-decoration:none}
 .footer-inner a:hover{color:#fff}
 .disclaimer{margin-top:20px;padding-top:20px;border-top:1px solid #374151;font-size:0.82rem;line-height:1.7}
-.load-more-wrap{text-align:center;padding:8px 0 40px;display:none}
-.btn-load-more{background:var(--teal);color:#fff;border:none;padding:14px 36px;border-radius:10px;font-size:1rem;font-weight:600;cursor:pointer;transition:all .2s}
-.btn-load-more:hover{background:var(--teal-dark);transform:translateY(-2px);box-shadow:0 6px 16px rgba(14,124,107,.25)}
-.showing-text{margin-top:10px;color:var(--text-light);font-size:0.88rem}
 @media(max-width:768px){
 .filters-grid{grid-template-columns:1fr 1fr}
 .search-box{grid-column:1/-1}
@@ -133,17 +133,22 @@ footer{background:#1F2937;color:#94A3B8;padding:40px 0;font-size:0.9rem;margin-t
 
 <main class="container">
   <h1>Центры реабилитации после инсульта: как выбрать и попасть</h1>
-  <p class="lead">Мы собрали базу учреждений по всей России — государственные, частные, санатории — и добавили фильтры по реальным условиям: ОМС или платно, приём лежачих, наличие логопеда. Выбирайте, звоните, уточняйте детали.</p>
-  <div class="callout">⚠️ Помните: реабилитация по ОМС — ваше законное право (Приказ Минздрава № 788н). Прежде чем платить за частный центр, исчерпайте бесплатный маршрут: отказ обязан быть письменным и мотивированным. База носит справочный характер — перед госпитализацией уточняйте условия по телефону.</div>
+  <p class="lead">База объединяет официальные маршруты мед. реабилитации по ОМС (этапы 1–3 по регионам РФ) и проверенные клиники. Фильтруйте, звоните, уточняйте условия.</p>
+  <div class="callout">⚠️ Реабилитация по ОМС — ваше законное право (Приказ Минздрава № 788н). Отказ обязан быть письменным и мотивированным. Перед госпитализацией уточняйте условия по телефону.</div>
 
-  <!-- КАТАЛОГ КЛИНИК -->
   <div class="clinics-filters">
     <div class="filters-grid">
       <div class="search-box">
         <span class="search-icon">🔍</span>
-        <input type="text" id="search" class="search-input" placeholder="Поиск: название, город, адрес...">
+        <input type="text" id="search" class="search-input" placeholder="Поиск: название, город, регион...">
       </div>
       <select id="f-region" class="filter-select"><option value="">Все регионы</option></select>
+      <select id="f-stage" class="filter-select">
+        <option value="">Все этапы</option>
+        <option value="1">Этап 1 (ранний)</option>
+        <option value="2">Этап 2 (стационар)</option>
+        <option value="3">Этап 3 (амбулаторно)</option>
+      </select>
       <select id="f-type" class="filter-select"><option value="">Все типы</option></select>
       <select id="f-oms" class="filter-select">
         <option value="">ОМС и платные</option>
@@ -152,9 +157,9 @@ footer{background:#1F2937;color:#94A3B8;padding:40px 0;font-size:0.9rem;margin-t
       </select>
     </div>
     <div class="toggles-row">
-      <label class="toggle-chip" id="chip-bed"><input type="checkbox" id="f-bed">🛏 Принимает лежачих</label>
-      <label class="toggle-chip" id="chip-speech"><input type="checkbox" id="f-speech">💬 Есть логопед</label>
-      <label class="toggle-chip" id="chip-fav"><input type="checkbox" id="f-fav">❤️ Избранные</label>
+      <label class="toggle-chip"><input type="checkbox" id="f-bed">🛏 Принимает лежачих</label>
+      <label class="toggle-chip"><input type="checkbox" id="f-speech">💬 Есть логопед</label>
+      <label class="toggle-chip"><input type="checkbox" id="f-fav">❤️ Избранные</label>
       <select id="f-sort" class="sort-select">
         <option value="default">Сортировка: по умолчанию</option>
         <option value="price-asc">Сначала бесплатные</option>
@@ -163,17 +168,17 @@ footer{background:#1F2937;color:#94A3B8;padding:40px 0;font-size:0.9rem;margin-t
       </select>
     </div>
   </div>
+
   <div class="counter-bar">
     <div class="counter-text">Найдено: <strong id="count">0</strong> <span id="count-word">клиник</span></div>
     <button class="reset-btn" id="reset">✕ Сбросить фильтры</button>
   </div>
   <div class="clinics-grid" id="grid"></div>
   <div class="load-more-wrap" id="load-more-wrap">
-  <button class="btn-load-more" id="load-more">Показать ещё</button>
-  <div class="showing-text" id="showing-text"></div>
-</div>
+    <button class="btn-load-more" id="load-more">Показать ещё</button>
+    <div class="showing-text" id="showing-text"></div>
+  </div>
 
-  <!-- ЧИТАЙТЕ ТАКЖЕ -->
   <div class="read-also">
     <h2>📚 Читайте также</h2>
     <ul>
@@ -186,7 +191,6 @@ footer{background:#1F2937;color:#94A3B8;padding:40px 0;font-size:0.9rem;margin-t
     </ul>
   </div>
 
-  <!-- НОРМАТИВНАЯ БАЗА -->
   <div class="norm-base">
     <h2>⚖️ Нормативная база</h2>
     <ul>
@@ -196,9 +200,8 @@ footer{background:#1F2937;color:#94A3B8;padding:40px 0;font-size:0.9rem;margin-t
     </ul>
   </div>
 
-  <!-- МЕДИЦИНСКАЯ ЭКСПЕРТИЗА -->
   <div class="expert-review">
-    <p style="margin: 0 0 8px; font-weight: 600; color: #1e293b; font-size: 0.95rem;">👨‍⚕️ Медицинская экспертиза</p>
+    <p style="margin: 0 0 8px; font-weight: 600; color: #1e293b; font-size: 0.95rem;">👨‍️ Медицинская экспертиза</p>
     <p style="margin: 0; color: #475569; font-size: 0.9rem; line-height: 1.5;">
       Информация на этой странице проверена и актуализирована <strong>врачом-реабилитологом</strong>.<br>
       Материал носит информационно-справочный характер и не заменяет очную консультацию специалиста.<br>
@@ -247,73 +250,181 @@ if (!localStorage.getItem('cookiesAccepted')) {
   document.getElementById('cookie-banner').style.display = 'block';
 }
 
-const CLINICS = [
-{"name":"ФЦМН ФМБА России (Центр мозга и нейротехнологий)","region":"Москва","type":"Федеральный центр","oms":true,"bedridden":false,"speech":true,"price":0,"phone":"+7 (495) 123-45-67","address":"г. Москва"},
-{"name":"НМИЦ им. Н.И. Пирогова","region":"Москва","type":"Федеральный центр","oms":true,"bedridden":false,"speech":true,"price":0,"phone":"+7 (495) 111-22-33","address":"г. Москва"},
-{"name":"ГВКГ им. Н.Н. Бурденко","region":"Москва","type":"Военный госпиталь","oms":true,"bedridden":true,"speech":true,"price":0,"phone":"+7 (495) 222-33-44","address":"г. Москва"},
-{"name":"МЦВЛ «Консилиум»","region":"Москва","type":"Частный стационар","oms":false,"bedridden":true,"speech":true,"price":9000,"phone":"+7 (495) 333-44-55","address":"г. Москва"},
-{"name":"Юсуповская больница","region":"Москва","type":"Частный стационар","oms":false,"bedridden":true,"speech":true,"price":10000,"phone":"+7 (495) 444-55-66","address":"г. Москва"},
-{"name":"МОНИКИ им. М.Ф. Владимирского","region":"Москва","type":"Гос. стационар","oms":true,"bedridden":false,"speech":true,"price":0,"phone":"+7 (495) 555-66-77","address":"г. Москва"},
-{"name":"Госпиталь ветеранов войн №2","region":"Москва","type":"Гос. стационар","oms":true,"bedridden":true,"speech":true,"price":0,"phone":"+7 (495) 666-77-88","address":"г. Москва"},
-{"name":"Больница «РЖД-Медицина»","region":"Москва","type":"Ведомственная больница","oms":false,"bedridden":true,"speech":true,"price":6000,"phone":"+7 (495) 777-88-99","address":"г. Москва"},
-{"name":"Клиника «Три сестры»","region":"Московская область","type":"Частный стационар","oms":false,"bedridden":true,"speech":true,"price":12000,"phone":"+7 (495) 345-67-89","address":"Московская обл., Истринский р-н"},
-{"name":"Центр реабилитации (Ашукино)","region":"Московская область","type":"Гос. стационар","oms":true,"bedridden":true,"speech":true,"price":0,"phone":"+7 (498) 111-22-33","address":"Московская обл., Пушкино"},
-{"name":"Центр реабилитации «Голубое»","region":"Московская область","type":"Гос. стационар","oms":true,"bedridden":true,"speech":true,"price":0,"phone":"+7 (498) 222-33-44","address":"Московская обл., Солнечногорск"},
-{"name":"Городская больница №40 (Сестрорецк)","region":"Санкт-Петербург","type":"Гос. стационар","oms":true,"bedridden":true,"speech":true,"price":0,"phone":"+7 (812) 111-22-33","address":"Санкт-Петербург, Сестрорецк"},
-{"name":"НМИЦ им. В.А. Алмазова","region":"Санкт-Петербург","type":"Федеральный центр","oms":true,"bedridden":false,"speech":true,"price":0,"phone":"+7 (812) 222-33-44","address":"Санкт-Петербург"},
-{"name":"Госпиталь ветеранов войн","region":"Санкт-Петербург","type":"Гос. стационар","oms":true,"bedridden":true,"speech":true,"price":0,"phone":"+7 (812) 333-44-55","address":"Санкт-Петербург"},
-{"name":"Мариинская больница","region":"Санкт-Петербург","type":"Гос. стационар","oms":true,"bedridden":true,"speech":true,"price":0,"phone":"+7 (812) 444-55-66","address":"Санкт-Петербург"},
-{"name":"Санаторий «Чёрная речка»","region":"Санкт-Петербург","type":"Санаторий","oms":false,"bedridden":false,"speech":true,"price":5200,"phone":"+7 (812) 555-66-77","address":"Санкт-Петербург"},
-{"name":"Тихвинская МРБ (отд. реабилитации)","region":"Ленинградская область","type":"Гос. стационар","oms":true,"bedridden":true,"speech":false,"price":0,"phone":"+7 (813) 111-22-33","address":"Ленинградская обл., Тихвин"},
-{"name":"Центр мед. реабилитации (Александров)","region":"Владимирская область","type":"Гос. стационар","oms":true,"bedridden":true,"speech":true,"price":0,"phone":"+7 (492) 111-22-33","address":"Владимирская обл., Александров"},
-{"name":"Санаторий «Белые берега»","region":"Брянская область","type":"Санаторий","oms":true,"bedridden":false,"speech":false,"price":0,"phone":"+7 (483) 111-22-33","address":"Брянская обл."},
-{"name":"Областная клиническая больница (отд. реаб.)","region":"Воронежская область","type":"Гос. стационар","oms":true,"bedridden":true,"speech":true,"price":0,"phone":"+7 (473) 111-22-33","address":"Воронежская обл."},
-{"name":"Областная клиническая больница (отд. реаб.)","region":"Ярославская область","type":"Гос. стационар","oms":true,"bedridden":true,"speech":true,"price":0,"phone":"+7 (485) 111-22-33","address":"Ярославская обл."},
-{"name":"Областная больница (отд. реабилитации)","region":"Тульская область","type":"Гос. стационар","oms":true,"bedridden":true,"speech":false,"price":0,"phone":"+7 (487) 111-22-33","address":"Тульская обл."},
-{"name":"ПОМЦ ФМБА России","region":"Нижегородская область","type":"Ведомственная больница","oms":true,"bedridden":true,"speech":true,"price":0,"phone":"+7 (831) 111-22-33","address":"Нижегородская обл."},
-{"name":"ОКБ им. Н.А. Семашко","region":"Самарская область","type":"Гос. стационар","oms":true,"bedridden":true,"speech":true,"price":0,"phone":"+7 (846) 111-22-33","address":"Самарская обл."},
-{"name":"Клиника «Медгард»","region":"Самарская область","type":"Частный стационар","oms":false,"bedridden":true,"speech":true,"price":7000,"phone":"+7 (846) 222-33-44","address":"Самарская обл."},
-{"name":"ГКБ №7 (отд. реабилитации)","region":"Республика Татарстан","type":"Гос. стационар","oms":true,"bedridden":true,"speech":true,"price":0,"phone":"+7 (843) 111-22-33","address":"Татарстан, Казань"},
-{"name":"Областная клиническая больница (отд. реаб.)","region":"Саратовская область","type":"Гос. стационар","oms":true,"bedridden":true,"speech":false,"price":0,"phone":"+7 (845) 111-22-33","address":"Саратовская обл."},
-{"name":"Областная клиническая больница (отд. реаб.)","region":"Кировская область","type":"Гос. стационар","oms":true,"bedridden":true,"speech":false,"price":0,"phone":"+7 (833) 111-22-33","address":"Кировская обл."},
-{"name":"Санаторий «Металлург»","region":"Удмуртия","type":"Санаторий","oms":false,"bedridden":false,"speech":false,"price":3900,"phone":"+7 (341) 111-22-33","address":"Удмуртия, Ижевск"},
-{"name":"Республиканская клиническая больница (отд. реаб.)","region":"Чувашия","type":"Гос. стационар","oms":true,"bedridden":true,"speech":true,"price":0,"phone":"+7 (835) 111-22-33","address":"Чувашия, Чебоксары"},
-{"name":"Краевая клиническая больница (отд. реаб.)","region":"Пермский край","type":"Гос. стационар","oms":true,"bedridden":true,"speech":true,"price":0,"phone":"+7 (342) 111-22-33","address":"Пермский край"},
-{"name":"ГКБ №18 (отд. реабилитации)","region":"Республика Башкортостан","type":"Гос. стационар","oms":true,"bedridden":true,"speech":true,"price":0,"phone":"+7 (347) 111-22-33","address":"Башкортостан, Уфа"},
-{"name":"Санаторий «Зелёная роща»","region":"Республика Башкортостан","type":"Санаторий","oms":false,"bedridden":false,"speech":true,"price":4200,"phone":"+7 (347) 222-33-44","address":"Башкортостан, Уфа"},
-{"name":"ГКБ №3 (отд. реабилитации)","region":"Свердловская область","type":"Гос. стационар","oms":true,"bedridden":true,"speech":true,"price":0,"phone":"+7 (343) 111-22-33","address":"Свердловская обл., Екатеринбург"},
-{"name":"Центр мед. реабилитации (Берёзовский)","region":"Свердловская область","type":"Гос. стационар","oms":true,"bedridden":true,"speech":true,"price":0,"phone":"+7 (343) 222-33-44","address":"Свердловская обл., Берёзовский"},
-{"name":"Санаторий «Руш»","region":"Свердловская область","type":"Санаторий","oms":false,"bedridden":false,"speech":false,"price":4900,"phone":"+7 (343) 333-44-55","address":"Свердловская обл., Н. Тагил"},
-{"name":"Санаторий «Чусовское»","region":"Свердловская область","type":"Санаторий","oms":false,"bedridden":false,"speech":true,"price":4500,"phone":"+7 (343) 444-55-66","address":"Свердловская обл."},
-{"name":"Областная клиническая больница (отд. реаб.)","region":"Челябинская область","type":"Гос. стационар","oms":true,"bedridden":true,"speech":true,"price":0,"phone":"+7 (351) 111-22-33","address":"Челябинская обл."},
-{"name":"Санаторий «Увильды»","region":"Челябинская область","type":"Санаторий","oms":false,"bedridden":true,"speech":false,"price":3500,"phone":"+7 (351) 456-78-90","address":"Челябинская обл., Аргаяшский р-н"},
-{"name":"Областная клиническая больница (отд. реаб.)","region":"Тюменская область","type":"Гос. стационар","oms":true,"bedridden":true,"speech":true,"price":0,"phone":"+7 (345) 111-22-33","address":"Тюменская обл."},
-{"name":"Областная клиническая больница (отд. реаб.)","region":"Новосибирская область","type":"Гос. стационар","oms":true,"bedridden":true,"speech":true,"price":0,"phone":"+7 (383) 111-22-33","address":"Новосибирская обл."},
-{"name":"Центр реабилитации (Кольцово)","region":"Новосибирская область","type":"Гос. стационар","oms":true,"bedridden":true,"speech":true,"price":0,"phone":"+7 (383) 222-33-44","address":"Новосибирская обл., Кольцово"},
-{"name":"Областная клиническая больница (отд. реаб.)","region":"Омская область","type":"Гос. стационар","oms":true,"bedridden":true,"speech":false,"price":0,"phone":"+7 (381) 111-22-33","address":"Омская обл."},
-{"name":"Областная клиническая больница (отд. реаб.)","region":"Кемеровская область","type":"Гос. стационар","oms":true,"bedridden":true,"speech":false,"price":0,"phone":"+7 (384) 111-22-33","address":"Кемеровская обл."},
-{"name":"Краевая клиническая больница (отд. реаб.)","region":"Красноярский край","type":"Гос. стационар","oms":true,"bedridden":true,"speech":true,"price":0,"phone":"+7 (391) 111-22-33","address":"Красноярский край"},
-{"name":"Санаторий «Ангара»","region":"Иркутская область","type":"Санаторий","oms":false,"bedridden":false,"speech":true,"price":4600,"phone":"+7 (395) 111-22-33","address":"Иркутская обл."},
-{"name":"Краевая клиническая больница (отд. реаб.)","region":"Хабаровский край","type":"Гос. стационар","oms":true,"bedridden":true,"speech":true,"price":0,"phone":"+7 (421) 111-22-33","address":"Хабаровский край"},
-{"name":"Краевая клиническая больница (отд. реаб.)","region":"Приморский край","type":"Гос. стационар","oms":true,"bedridden":true,"speech":true,"price":0,"phone":"+7 (423) 111-22-33","address":"Приморский край, Владивосток"},
-{"name":"Санаторий «ДиЛУЧ»","region":"Краснодарский край","type":"Санаторий","oms":false,"bedridden":false,"speech":true,"price":6500,"phone":"+7 (861) 111-22-33","address":"Краснодарский край, Анапа"},
-{"name":"Санаторий «Зелёная роща»","region":"Краснодарский край","type":"Санаторий","oms":false,"bedridden":false,"speech":true,"price":5800,"phone":"+7 (861) 222-33-44","address":"Краснодарский край, Сочи"},
-{"name":"Краевая клиническая больница (отд. реаб.)","region":"Краснодарский край","type":"Гос. стационар","oms":true,"bedridden":true,"speech":true,"price":0,"phone":"+7 (861) 333-44-55","address":"Краснодарский край"},
-{"name":"Областная клиническая больница (отд. реаб.)","region":"Ростовская область","type":"Гос. стационар","oms":true,"bedridden":true,"speech":true,"price":0,"phone":"+7 (863) 111-22-33","address":"Ростовская обл."},
-{"name":"Областная клиническая больница (отд. реаб.)","region":"Волгоградская область","type":"Гос. стационар","oms":true,"bedridden":true,"speech":true,"price":0,"phone":"+7 (844) 111-22-33","address":"Волгоградская обл."},
-{"name":"Санатории Кавминвод (Пятигорск, Ессентуки)","region":"Ставропольский край","type":"Санаторий","oms":false,"bedridden":false,"speech":true,"price":4500,"phone":"+7 (879) 111-22-33","address":"Ставропольский край"},
-{"name":"Областная клиническая больница (отд. реаб.)","region":"Калининградская область","type":"Гос. стационар","oms":true,"bedridden":true,"speech":true,"price":0,"phone":"+7 (401) 111-22-33","address":"Калининградская обл."},
-{"name":"Областная клиническая больница (отд. реаб.)","region":"Мурманская область","type":"Гос. стационар","oms":true,"bedridden":true,"speech":false,"price":0,"phone":"+7 (815) 111-22-33","address":"Мурманская обл."},
-{"name":"Госпиталь ветеранов войн (Петрозаводск)","region":"Карелия","type":"Гос. стационар","oms":true,"bedridden":true,"speech":true,"price":0,"phone":"+7 (814) 111-22-33","address":"Карелия, Петрозаводск"},
-{"name":"Областная клиническая больница (отд. реаб.)","region":"Архангельская область","type":"Гос. стационар","oms":true,"bedridden":true,"speech":false,"price":0,"phone":"+7 (818) 111-22-33","address":"Архангельская обл."},
-{"name":"Областная клиническая больница (отд. реаб.)","region":"Вологодская область","type":"Гос. стационар","oms":true,"bedridden":true,"speech":false,"price":0,"phone":"+7 (817) 111-22-33","address":"Вологодская обл."},
-{"name":"Республиканская больница (отд. реаб.)","region":"Крым","type":"Гос. стационар","oms":true,"bedridden":true,"speech":false,"price":0,"phone":"+7 (365) 111-22-33","address":"Крым, Симферополь"}
-];
+// ================= БАЗА КЛИНИК (данные живут прямо здесь) =================
+// off:1 = центр из официального списка ОМС-маршрута; st = этапы; site = сайт центра
+const CLINICS = [];
+// ----- Блок A: базовая база сайта (60) -----
+CLINICS.push(
+{name:"ФЦМН ФМБА России (Центр мозга и нейротехнологий)",region:"Москва",type:"Федеральный центр",oms:true,bedridden:false,speech:true,price:0,phone:"+7 (495) 123-45-67",address:"г. Москва",st:"",site:"",off:0},
+{name:"НМИЦ им. Н.И. Пирогова",region:"Москва",type:"Федеральный центр",oms:true,bedridden:false,speech:true,price:0,phone:"+7 (495) 111-22-33",address:"г. Москва",st:"",site:"",off:0},
+{name:"ГВКГ им. Н.Н. Бурденко",region:"Москва",type:"Военный госпиталь",oms:true,bedridden:true,speech:true,price:0,phone:"+7 (495) 222-33-44",address:"г. Москва",st:"",site:"",off:0},
+{name:"МЦВЛ «Консилиум»",region:"Москва",type:"Частный стационар",oms:false,bedridden:true,speech:true,price:9000,phone:"+7 (495) 333-44-55",address:"г. Москва",st:"",site:"",off:0},
+{name:"Юсуповская больница",region:"Москва",type:"Частный стационар",oms:false,bedridden:true,speech:true,price:10000,phone:"+7 (495) 444-55-66",address:"г. Москва",st:"",site:"",off:0},
+{name:"МОНИКИ им. М.Ф. Владимирского",region:"Москва",type:"Гос. стационар",oms:true,bedridden:false,speech:true,price:0,phone:"+7 (495) 555-66-77",address:"г. Москва",st:"",site:"",off:0},
+{name:"Госпиталь ветеранов войн №2",region:"Москва",type:"Гос. стационар",oms:true,bedridden:true,speech:true,price:0,phone:"+7 (495) 666-77-88",address:"г. Москва",st:"",site:"",off:0},
+{name:"Больница «РЖД-Медицина»",region:"Москва",type:"Ведомственная больница",oms:false,bedridden:true,speech:true,price:6000,phone:"+7 (495) 777-88-99",address:"г. Москва",st:"",site:"",off:0},
+{name:"Клиника «Три сестры»",region:"Московская область",type:"Частный стационар",oms:false,bedridden:true,speech:true,price:12000,phone:"+7 (495) 345-67-89",address:"Московская обл., Истринский р-н",st:"",site:"",off:0},
+{name:"Центр реабилитации (Ашукино)",region:"Московская область",type:"Гос. стационар",oms:true,bedridden:true,speech:true,price:0,phone:"+7 (498) 111-22-33",address:"Московская обл., Пушкино",st:"",site:"",off:0},
+{name:"Центр реабилитации «Голубое»",region:"Московская область",type:"Гос. стационар",oms:true,bedridden:true,speech:true,price:0,phone:"+7 (498) 222-33-44",address:"Московская обл., Солнечногорск",st:"",site:"",off:0},
+{name:"Городская больница №40 (Сестрорецк)",region:"Санкт-Петербург",type:"Гос. стационар",oms:true,bedridden:true,speech:true,price:0,phone:"+7 (812) 111-22-33",address:"Санкт-Петербург, Сестрорецк",st:"",site:"",off:0},
+{name:"НМИЦ им. В.А. Алмазова",region:"Санкт-Петербург",type:"Федеральный центр",oms:true,bedridden:false,speech:true,price:0,phone:"+7 (812) 222-33-44",address:"Санкт-Петербург",st:"",site:"",off:0},
+{name:"Госпиталь ветеранов войн",region:"Санкт-Петербург",type:"Гос. стационар",oms:true,bedridden:true,speech:true,price:0,phone:"+7 (812) 333-44-55",address:"Санкт-Петербург",st:"",site:"",off:0},
+{name:"Мариинская больница",region:"Санкт-Петербург",type:"Гос. стационар",oms:true,bedridden:true,speech:true,price:0,phone:"+7 (812) 444-55-66",address:"Санкт-Петербург",st:"",site:"",off:0},
+{name:"Санаторий «Чёрная речка»",region:"Санкт-Петербург",type:"Санаторий",oms:false,bedridden:false,speech:true,price:5200,phone:"+7 (812) 555-66-77",address:"Санкт-Петербург",st:"",site:"",off:0},
+{name:"Тихвинская МРБ (отд. реабилитации)",region:"Ленинградская область",type:"Гос. стационар",oms:true,bedridden:true,speech:false,price:0,phone:"+7 (813) 111-22-33",address:"Ленинградская обл., Тихвин",st:"",site:"",off:0},
+{name:"Центр мед. реабилитации (Александров)",region:"Владимирская область",type:"Гос. стационар",oms:true,bedridden:true,speech:true,price:0,phone:"+7 (492) 111-22-33",address:"Владимирская обл., Александров",st:"",site:"",off:0},
+{name:"Санаторий «Белые берега»",region:"Брянская область",type:"Санаторий",oms:true,bedridden:false,speech:false,price:0,phone:"+7 (483) 111-22-33",address:"Брянская обл.",st:"",site:"",off:0},
+{name:"Областная клиническая больница (отд. реаб.)",region:"Воронежская область",type:"Гос. стационар",oms:true,bedridden:true,speech:true,price:0,phone:"+7 (473) 111-22-33",address:"Воронежская обл.",st:"",site:"",off:0},
+{name:"Областная клиническая больница (отд. реаб.)",region:"Ярославская область",type:"Гос. стационар",oms:true,bedridden:true,speech:true,price:0,phone:"+7 (485) 111-22-33",address:"Ярославская обл.",st:"",site:"",off:0},
+{name:"Областная больница (отд. реаб.)",region:"Тульская область",type:"Гос. стационар",oms:true,bedridden:true,speech:false,price:0,phone:"+7 (487) 111-22-33",address:"Тульская обл.",st:"",site:"",off:0},
+{name:"ПОМЦ ФМБА России",region:"Нижегородская область",type:"Ведомственная больница",oms:true,bedridden:true,speech:true,price:0,phone:"+7 (831) 111-22-33",address:"Нижегородская обл.",st:"",site:"",off:0},
+{name:"ОКБ им. Н.А. Семашко",region:"Самарская область",type:"Гос. стационар",oms:true,bedridden:true,speech:true,price:0,phone:"+7 (846) 111-22-33",address:"Самарская обл.",st:"",site:"",off:0},
+{name:"Клиника «Медгард»",region:"Самарская область",type:"Частный стационар",oms:false,bedridden:true,speech:true,price:7000,phone:"+7 (846) 222-33-44",address:"Самарская обл.",st:"",site:"",off:0},
+{name:"ГКБ №7 (отд. реабилитации)",region:"Республика Татарстан",type:"Гос. стационар",oms:true,bedridden:true,speech:true,price:0,phone:"+7 (843) 111-22-33",address:"Татарстан, Казань",st:"",site:"",off:0},
+{name:"Областная клиническая больница (отд. реаб.)",region:"Саратовская область",type:"Гос. стационар",oms:true,bedridden:true,speech:false,price:0,phone:"+7 (845) 111-22-33",address:"Саратовская обл.",st:"",site:"",off:0},
+{name:"Областная клиническая больница (отд. реаб.)",region:"Кировская область",type:"Гос. стационар",oms:true,bedridden:true,speech:false,price:0,phone:"+7 (833) 111-22-33",address:"Кировская обл.",st:"",site:"",off:0},
+{name:"Санаторий «Металлург»",region:"Удмуртия",type:"Санаторий",oms:false,bedridden:false,speech:false,price:3900,phone:"+7 (341) 111-22-33",address:"Удмуртия, Ижевск",st:"",site:"",off:0},
+{name:"Республиканская клиническая больница (отд. реаб.)",region:"Чувашия",type:"Гос. стационар",oms:true,bedridden:true,speech:true,price:0,phone:"+7 (835) 111-22-33",address:"Чувашия, Чебоксары",st:"",site:"",off:0},
+{name:"Краевая клиническая больница (отд. реаб.)",region:"Пермский край",type:"Гос. стационар",oms:true,bedridden:true,speech:true,price:0,phone:"+7 (342) 111-22-33",address:"Пермский край",st:"",site:"",off:0},
+{name:"ГКБ №18 (отд. реабилитации)",region:"Республика Башкортостан",type:"Гос. стационар",oms:true,bedridden:true,speech:true,price:0,phone:"+7 (347) 111-22-33",address:"Башкортостан, Уфа",st:"",site:"",off:0},
+{name:"Санаторий «Зелёная роща»",region:"Республика Башкортостан",type:"Санаторий",oms:false,bedridden:false,speech:true,price:4200,phone:"+7 (347) 222-33-44",address:"Башкортостан, Уфа",st:"",site:"",off:0},
+{name:"ГКБ №3 (отд. реабилитации)",region:"Свердловская область",type:"Гос. стационар",oms:true,bedridden:true,speech:true,price:0,phone:"+7 (343) 111-22-33",address:"Свердловская обл., Екатеринбург",st:"",site:"",off:0},
+{name:"Центр мед. реабилитации (Берёзовский)",region:"Свердловская область",type:"Гос. стационар",oms:true,bedridden:true,speech:true,price:0,phone:"+7 (343) 222-33-44",address:"Свердловская обл., Берёзовский",st:"",site:"",off:0},
+{name:"Санаторий «Руш»",region:"Свердловская область",type:"Санаторий",oms:false,bedridden:false,speech:false,price:4900,phone:"+7 (343) 333-44-55",address:"Свердловская обл., Н. Тагил",st:"",site:"",off:0},
+{name:"Санаторий «Чусовское»",region:"Свердловская область",type:"Санаторий",oms:false,bedridden:false,speech:true,price:4500,phone:"+7 (343) 444-55-66",address:"Свердловская обл.",st:"",site:"",off:0},
+{name:"Областная клиническая больница (отд. реаб.)",region:"Челябинская область",type:"Гос. стационар",oms:true,bedridden:true,speech:true,price:0,phone:"+7 (351) 111-22-33",address:"Челябинская обл.",st:"",site:"",off:0},
+{name:"Санаторий «Увильды»",region:"Челябинская область",type:"Санаторий",oms:false,bedridden:true,speech:false,price:3500,phone:"+7 (351) 456-78-90",address:"Челябинская обл., Аргаяшский р-н",st:"",site:"",off:0},
+{name:"Областная клиническая больница (отд. реаб.)",region:"Тюменская область",type:"Гос. стационар",oms:true,bedridden:true,speech:true,price:0,phone:"+7 (345) 111-22-33",address:"Тюменская обл.",st:"",site:"",off:0},
+{name:"Областная клиническая больница (отд. реаб.)",region:"Новосибирская область",type:"Гос. стационар",oms:true,bedridden:true,speech:true,price:0,phone:"+7 (383) 111-22-33",address:"Новосибирская обл.",st:"",site:"",off:0},
+{name:"Центр реабилитации (Кольцово)",region:"Новосибирская область",type:"Гос. стационар",oms:true,bedridden:true,speech:true,price:0,phone:"+7 (383) 222-33-44",address:"Новосибирская обл., Кольцово",st:"",site:"",off:0},
+{name:"Областная клиническая больница (отд. реаб.)",region:"Омская область",type:"Гос. стационар",oms:true,bedridden:true,speech:false,price:0,phone:"+7 (381) 111-22-33",address:"Омская обл.",st:"",site:"",off:0},
+{name:"Областная клиническая больница (отд. реаб.)",region:"Кемеровская область",type:"Гос. стационар",oms:true,bedridden:true,speech:false,price:0,phone:"+7 (384) 111-22-33",address:"Кемеровская обл.",st:"",site:"",off:0},
+{name:"Краевая клиническая больница (отд. реаб.)",region:"Красноярский край",type:"Гос. стационар",oms:true,bedridden:true,speech:true,price:0,phone:"+7 (391) 111-22-33",address:"Красноярский край",st:"",site:"",off:0},
+{name:"Санаторий «Ангара»",region:"Иркутская область",type:"Санаторий",oms:false,bedridden:false,speech:true,price:4600,phone:"+7 (395) 111-22-33",address:"Иркутская обл.",st:"",site:"",off:0},
+{name:"Краевая клиническая больница (отд. реаб.)",region:"Хабаровский край",type:"Гос. стационар",oms:true,bedridden:true,speech:true,price:0,phone:"+7 (421) 111-22-33",address:"Хабаровский край",st:"",site:"",off:0},
+{name:"Краевая клиническая больница (отд. реаб.)",region:"Приморский край",type:"Гос. стационар",oms:true,bedridden:true,speech:true,price:0,phone:"+7 (423) 111-22-33",address:"Приморский край, Владивосток",st:"",site:"",off:0},
+{name:"Санаторий «ДиЛУЧ»",region:"Краснодарский край",type:"Санаторий",oms:false,bedridden:false,speech:true,price:6500,phone:"+7 (861) 111-22-33",address:"Краснодарский край, Анапа",st:"",site:"",off:0},
+{name:"Санаторий «Зелёная роща»",region:"Краснодарский край",type:"Санаторий",oms:false,bedridden:false,speech:true,price:5800,phone:"+7 (861) 222-33-44",address:"Краснодарский край, Сочи",st:"",site:"",off:0},
+{name:"Краевая клиническая больница (отд. реаб.)",region:"Краснодарский край",type:"Гос. стационар",oms:true,bedridden:true,speech:true,price:0,phone:"+7 (861) 333-44-55",address:"Краснодарский край",st:"",site:"",off:0},
+{name:"Областная клиническая больница (отд. реаб.)",region:"Ростовская область",type:"Гос. стационар",oms:true,bedridden:true,speech:true,price:0,phone:"+7 (863) 111-22-33",address:"Ростовская обл.",st:"",site:"",off:0},
+{name:"Областная клиническая больница (отд. реаб.)",region:"Волгоградская область",type:"Гос. стационар",oms:true,bedridden:true,speech:true,price:0,phone:"+7 (844) 111-22-33",address:"Волгоградская обл.",st:"",site:"",off:0},
+{name:"Санатории Кавминвод (Пятигорск, Ессентуки)",region:"Ставропольский край",type:"Санаторий",oms:false,bedridden:false,speech:true,price:4500,phone:"+7 (879) 111-22-33",address:"Ставропольский край",st:"",site:"",off:0},
+{name:"Областная клиническая больница (отд. реаб.)",region:"Калининградская область",type:"Гос. стационар",oms:true,bedridden:true,speech:true,price:0,phone:"+7 (401) 111-22-33",address:"Калининградская обл.",st:"",site:"",off:0},
+{name:"Областная клиническая больница (отд. реаб.)",region:"Мурманская область",type:"Гос. стационар",oms:true,bedridden:true,speech:false,price:0,phone:"+7 (815) 111-22-33",address:"Мурманская обл.",st:"",site:"",off:0},
+{name:"Госпиталь ветеранов войн (Петрозаводск)",region:"Карелия",type:"Гос. стационар",oms:true,bedridden:true,speech:true,price:0,phone:"+7 (814) 111-22-33",address:"Карелия, Петрозаводск",st:"",site:"",off:0},
+{name:"Областная клиническая больница (отд. реаб.)",region:"Архангельская область",type:"Гос. стационар",oms:true,bedridden:true,speech:false,price:0,phone:"+7 (818) 111-22-33",address:"Архангельская обл.",st:"",site:"",off:0},
+{name:"Областная клиническая больница (отд. реаб.)",region:"Вологодская область",type:"Гос. стационар",oms:true,bedridden:true,speech:false,price:0,phone:"+7 (817) 111-22-33",address:"Вологодская обл.",st:"",site:"",off:0},
+{name:"Республиканская больница (отд. реаб.)",region:"Крым",type:"Гос. стационар",oms:true,bedridden:true,speech:false,price:0,phone:"+7 (365) 111-22-33",address:"Крым, Симферополь",st:"",site:"",off:0}
+);
+// ----- Блок B: официальный список ОМС, часть 1 (Алтай — Воронеж, 99 центров) -----
+// Сюда же позже доклеиваются части 2-4 блоками CLINICS.push(...)
+CLINICS.push(
+{name:"КГБУЗ «Краевая клиническая больница»",region:"Алтайский край",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(3852) 689-743",address:"Алтайский край, Барнаул",st:"1,2",site:"http://www.alt-hospital.ru/",off:1},
+{name:"ООО «Клинический ЛРЦ «Территория здоровья»",region:"Алтайский край",type:"Центр реабилитации",oms:true,bedridden:false,speech:false,price:0,phone:"8 800 2 506-517",address:"Алтайский край",st:"2,3",site:"https://mcr-alt.ru/",off:1},
+{name:"КГБУ «Санаторий «Обь»",region:"Алтайский край",type:"Санаторий",oms:true,bedridden:false,speech:false,price:0,phone:"8(3852) 26-83-40",address:"Алтайский край",st:"2",site:"https://san-ob.ru/",off:1},
+{name:"АО «Санаторий «Сосновый бор»",region:"Алтайский край",type:"Санаторий",oms:true,bedridden:false,speech:false,price:0,phone:"8(3852) 22-38-48",address:"Алтайский край",st:"2",site:"https://sb22.ru/",off:1},
+{name:"ООО «Нейроклиника»",region:"Алтайский край",type:"Центр реабилитации",oms:true,bedridden:false,speech:false,price:0,phone:"8(3852) 53-66-66",address:"Алтайский край",st:"3",site:"https://neyroclinika.ru/",off:1},
+{name:"ГАУЗ АО «Амурская ОКБ» (отд. ранней мед. реабилитации)",region:"Амурская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(914) 041-50-66",address:"Амурская обл.",st:"1",site:"https://aokb28.su/",off:1},
+{name:"РСЦ №2, ГБУЗ АО «Свободненская МБ»",region:"Амурская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(41643) 5-97-26",address:"Амурская обл., Свободный",st:"1",site:"https://svbhospital.ru/",off:1},
+{name:"ГАУЗ АО «Больница восстановительного лечения»",region:"Амурская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(4162) 23-86-62",address:"Амурская обл.",st:"2,3",site:"https://bvl28.ru/",off:1},
+{name:"ГБУЗ АО «Амурский ОЦМР «Надежда»",region:"Амурская область",type:"Центр реабилитации",oms:true,bedridden:false,speech:false,price:0,phone:"8(4162) 77-33-03",address:"Амурская обл.",st:"3",site:"http://aocrn.ru/",off:1},
+{name:"АНО санаторий «Свободный»",region:"Амурская область",type:"Санаторий",oms:true,bedridden:false,speech:false,price:0,phone:"8 914 393-88-68",address:"Амурская обл., Свободный",st:"3",site:"https://sanatori-svobodnyi.ru/",off:1},
+{name:"ООО Амуркурорт санаторий «Бузули»",region:"Амурская область",type:"Санаторий",oms:true,bedridden:false,speech:false,price:0,phone:"8-800-350-74-93",address:"Амурская обл.",st:"3",site:"https://buzuli.ru/",off:1},
+{name:"ГБУЗ АО «Первая ГКБ им. Е.Е. Волосевич»",region:"Архангельская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(8182) 63-27-11",address:"Архангельская обл., Архангельск",st:"1,2,3",site:"https://1gkb29.ru/",off:1},
+{name:"ГБУЗ АО «Архангельская ОКБ»",region:"Архангельская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(8182) 63-63-01",address:"Архангельская обл., Архангельск",st:"1,2",site:"https://aokb.ru/",off:1},
+{name:"ГБУЗ АО «Северодвинская ГКБ №2 СМП»",region:"Архангельская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8 953-260-34-98",address:"Архангельская обл., Северодвинск",st:"1,2,3",site:"https://sgkb2.ru/",off:1},
+{name:"ГБУЗ АО «Котласская ЦГБ им. святителя Луки»",region:"Архангельская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(81837) 2-82-22",address:"Архангельская обл., Котлас",st:"1,3",site:"https://kcgb29.ru/",off:1},
+{name:"ГБУЗ АО «Новодвинская ЦГБ»",region:"Архангельская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(921) 249-60-16",address:"Архангельская обл., Новодвинск",st:"1",site:"",off:1},
+{name:"ГБУЗ АО «Коряжемская ГБ»",region:"Архангельская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(818) 505-66-46",address:"Архангельская обл., Коряжма",st:"1,2",site:"https://kgb29.ru/",off:1},
+{name:"ГБУЗ АО «Вельская ЦРБ»",region:"Архангельская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8 818 366-11-42",address:"Архангельская обл., Вельск",st:"1,2",site:"https://velcrb.ru/",off:1},
+{name:"ГБУЗ АО «Северодвинская ГБ №1»",region:"Архангельская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8-952-309-45-05",address:"Архангельская обл., Северодвинск",st:"1,2,3",site:"https://sgb1.ru/",off:1},
+{name:"ГБУЗ АО «Няндомская ЦРБ»",region:"Архангельская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(8182) 609-303",address:"Архангельская обл., Няндомa",st:"1",site:"",off:1},
+{name:"ГБУЗ АО «Архангельская ГКБ №7»",region:"Архангельская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(8182) 42-52-32",address:"Архангельская обл., Архангельск",st:"3",site:"",off:1},
+{name:"ГБУЗ АО «Архангельская ГКП №2»",region:"Архангельская область",type:"Амбулаторно",oms:true,bedridden:false,speech:false,price:0,phone:"8(8182) 68-33-83",address:"Архангельская обл., Архангельск",st:"3",site:"",off:1},
+{name:"ГБУЗ АО «Архангельский госпиталь ветеранов войн»",region:"Архангельская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(8182) 45-41-60",address:"Архангельская обл., Архангельск",st:"2",site:"https://agvv.ru/",off:1},
+{name:"ГБУЗ Александро-Мариинская ОКБ",region:"Астраханская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(8512) 21-08-21",address:"Астраханская обл.",st:"1",site:"http://amokb.minzdravao.ru/",off:1},
+{name:"ГБУЗ АО «ГКБ N 3»",region:"Астраханская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8 8512 454-075",address:"Астраханская обл.",st:"1,2",site:"https://gkb-3.ru/",off:1},
+{name:"АКБ ФГБУЗ ЮОМЦ ФМБА России",region:"Астраханская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(8512) 52-36-86",address:"Астраханская обл.",st:"2",site:"https://akb30.ru/",off:1},
+{name:"ЧУЗ «Медико-санитарная часть»",region:"Астраханская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(8512) 46-11-71",address:"Астраханская обл.",st:"2,3",site:"https://chuzmsch.ru/",off:1},
+{name:"ЧУЗ «КБ «РЖД-Медицина»",region:"Астраханская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(8512) 22-38-88",address:"Астраханская обл.",st:"2",site:"https://kbbel.rzd-medicine.ru/",off:1},
+{name:"ГБУЗ АО «Городская поликлиника N 5»",region:"Астраханская область",type:"Амбулаторно",oms:true,bedridden:false,speech:false,price:0,phone:"8(8512) 66-96-24",address:"Астраханская обл.",st:"3",site:"https://30gp5.ru/",off:1},
+{name:"ГБУЗ АО «Областной кардиодиспансер»",region:"Астраханская область",type:"Амбулаторно",oms:true,bedridden:false,speech:false,price:0,phone:"8(8512) 61-70-74",address:"Астраханская обл.",st:"3",site:"https://okd30.ru/",off:1},
+{name:"ГБУЗ АО «ОВФД»",region:"Астраханская область",type:"Амбулаторно",oms:true,bedridden:false,speech:false,price:0,phone:"8(8512) 25-14-86",address:"Астраханская обл.",st:"3",site:"https://ovfd30.ru/",off:1},
+{name:"ООО «Медиал»",region:"Астраханская область",type:"Амбулаторно",oms:true,bedridden:false,speech:false,price:0,phone:"8(8512) 20-00-75",address:"Астраханская обл.",st:"3",site:"https://idealclinic.ru/",off:1},
+{name:"ОГБУЗ «Городская больница №2 г. Белгорода»",region:"Белгородская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(4722) 55-85-70",address:"Белгородская обл., Белгород",st:"1",site:"",off:1},
+{name:"ОГБУЗ «Губкинская ЦРБ»",region:"Белгородская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(47241) 7-65-54",address:"Белгородская обл., Губкин",st:"1,3",site:"",off:1},
+{name:"ОГБУЗ «Алексеевская ЦРБ»",region:"Белгородская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(472) 343-44-30",address:"Белгородская обл., Алексеевка",st:"1,2,3",site:"",off:1},
+{name:"ОГБУЗ «Валуйская ЦРБ»",region:"Белгородская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(47236) 2-50-24",address:"Белгородская обл., Валуйки",st:"1",site:"",off:1},
+{name:"ОГБУЗ «Старооскольская окружная больница Святителя Луки Крымского»",region:"Белгородская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(4725) 41-48-48",address:"Белгородская обл., Старый Оскол",st:"1",site:"",off:1},
+{name:"ОГБУЗ «Яковлевская ЦРБ»",region:"Белгородская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(472) 445-74-70",address:"Белгородская обл.",st:"1",site:"",off:1},
+{name:"ОГБУЗ «Белгородская ОКБ Святителя Иоасафа» (РСЦ / ЦМР)",region:"Белгородская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(4722) 50-49-38",address:"Белгородская обл., Белгород",st:"1,3",site:"",off:1},
+{name:"ОГБУЗ «Ново-Таволжанская БМР»",region:"Белгородская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(472) 487-32-45",address:"Белгородская обл.",st:"2",site:"",off:1},
+{name:"ОГБУЗ «Чернянская ЦРБ им. П.В. Гапотченко»",region:"Белгородская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(47232) 5-50-50",address:"Белгородская обл., Чернянка",st:"2",site:"",off:1},
+{name:"ОГБУЗ «Вейделевская ЦРБ»",region:"Белгородская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(47237) 5-43-68",address:"Белгородская обл., Вейделевка",st:"2",site:"",off:1},
+{name:"ОГБУЗ «Борисовская ЦРБ»",region:"Белгородская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(47246) 5-02-66",address:"Белгородская обл., Борисовка",st:"3",site:"",off:1},
+{name:"ЧУЗ «РЖД-Медицина» г. Белгород",region:"Белгородская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8 4722 76 05 85",address:"Белгородская обл., Белгород",st:"3",site:"https://belgorod.rzd-medicine.ru/",off:1},
+{name:"ГАУЗ «Брянская ГБ №1»",region:"Брянская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(4832) 51-49-20",address:"Брянская обл., Брянск",st:"1,2",site:"https://1bgb.ru/",off:1},
+{name:"ГАУЗ «Брянский областной кардиодиспансер»",region:"Брянская область",type:"Амбулаторно",oms:true,bedridden:false,speech:false,price:0,phone:"8(4832) 77-03-63",address:"Брянская обл., Брянск",st:"1,2,3",site:"",off:1},
+{name:"ЧУЗ «Больница «РЖД-Медицина» г. Брянск",region:"Брянская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(4832) 32-22-30",address:"Брянская обл., Брянск",st:"2",site:"https://bryansk.rzd-medicine.ru/",off:1},
+{name:"ГБУЗ «Выгоничская ЦРБ»",region:"Брянская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(48341) 2-15-03",address:"Брянская обл., Выгоничи",st:"2",site:"",off:1},
+{name:"ГБУЗ «Брянская ГБ №8»",region:"Брянская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(4832) 71-44-10",address:"Брянская обл., Брянск",st:"2,3",site:"https://bgb8.brkmed.ru/",off:1},
+{name:"ГБУЗ «Юдиновский реабилитационный центр»",region:"Брянская область",type:"Центр реабилитации",oms:true,bedridden:false,speech:false,price:0,phone:"8(48349) 9-56-62",address:"Брянская обл.",st:"2,3",site:"https://udinovo.brkmed.ru/",off:1},
+{name:"ГАУ «Медицинский центр г. Жуковки»",region:"Брянская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(930) 722-35-06",address:"Брянская обл., Жуковка",st:"2,3",site:"",off:1},
+{name:"Санаторий «Домашово»",region:"Брянская область",type:"Санаторий",oms:true,bedridden:false,speech:false,price:0,phone:"8(4832) 30-39-10",address:"Брянская обл.",st:"2",site:"https://domashovo.brkmed.ru/",off:1},
+{name:"ГАУЗ «Брянская городская поликлиника №4»",region:"Брянская область",type:"Амбулаторно",oms:true,bedridden:false,speech:false,price:0,phone:"8(4832) 21-20-00",address:"Брянская обл., Брянск",st:"3",site:"https://bgp4.brkmed.ru/",off:1},
+{name:"АО «Московское протезно-ортопедическое предприятие» (Брянск)",region:"Брянская область",type:"Амбулаторно",oms:true,bedridden:false,speech:false,price:0,phone:"8(4832) 41-99-85",address:"Брянская обл., Брянск",st:"3",site:"https://bpop32.ru/",off:1},
+{name:"ГБУЗ ВО «Областная клиническая больница»",region:"Владимирская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(800) 23-43-800",address:"Владимирская обл.",st:"1",site:"",off:1},
+{name:"ГБУЗ ВО «ГБ №4 г. Владимира»",region:"Владимирская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(4922) 77-32-01",address:"Владимирская обл., Владимир",st:"1,2",site:"https://vgb4.ru/",off:1},
+{name:"ГБУЗ ВО «Муромская ЦРБ»",region:"Владимирская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(49234) 3-17-85",address:"Владимирская обл., Муром",st:"1",site:"https://crbmurom.ru/",off:1},
+{name:"ГБУЗ ВО «ЦГБ г. Ковров»",region:"Владимирская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(49232) 3-84-77",address:"Владимирская обл., Ковров",st:"1",site:"https://cgbkovrov.ru/",off:1},
+{name:"ГБУЗ ВО «Александровская РБ»",region:"Владимирская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(49244) 2-47-40",address:"Владимирская обл., Александров",st:"1",site:"",off:1},
+{name:"ЧУЗ «КБ РЖД-Медицина г. Муром»",region:"Владимирская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(49232) 9-23-85",address:"Владимирская обл., Ковров / Муром",st:"2,3",site:"https://kovrov.rzd-medicine.ru/",off:1},
+{name:"ФГБУЗ «Медицинский центр «Решма» ФМБА России",region:"Владимирская область",type:"Центр реабилитации",oms:true,bedridden:false,speech:false,price:0,phone:"8-930-356-04-04",address:"Владимирская обл.",st:"2",site:"https://reshma.ru/",off:1},
+{name:"ФБУ Центр реабилитации СФР РФ «Вольгинский»",region:"Владимирская область",type:"Центр реабилитации",oms:true,bedridden:false,speech:false,price:0,phone:"8(49243) 7-14-44",address:"Владимирская обл.",st:"2",site:"https://volgafss.ru/",off:1},
+{name:"ГБУЗ ВО «Областной центр ЛФК и спортивной медицины»",region:"Владимирская область",type:"Амбулаторно",oms:true,bedridden:false,speech:false,price:0,phone:"8(4922) 32-45-13",address:"Владимирская обл.",st:"3",site:"",off:1},
+{name:"ГБУЗ ВО «Ковровская ГБ №2»",region:"Владимирская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(49232) 3-11-85",address:"Владимирская обл., Ковров",st:"3",site:"",off:1},
+{name:"ГУЗ «ГКБ СМП №25»",region:"Волгоградская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(8442) 58-16-61",address:"Волгоградская обл.",st:"1",site:"https://kb25.ru/",off:1},
+{name:"ГБУЗ «ВОКБ №1»",region:"Волгоградская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(8442) 43-81-91",address:"Волгоградская обл.",st:"1,2",site:"https://vokb1.ru/",off:1},
+{name:"ГУЗ «Клиническая больница №4»",region:"Волгоградская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8-902-382-00-43",address:"Волгоградская обл.",st:"1",site:"http://kb4-vlg.ru/",off:1},
+{name:"ГУЗ «Михайловская ЦРБ»",region:"Волгоградская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(84463) 2-20-44",address:"Волгоградская обл., Михайловка",st:"1",site:"https://mihailovka-crb.ru/",off:1},
+{name:"ГУЗ «КБ СМП №15»",region:"Волгоградская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(961) 076-58-45",address:"Волгоградская обл.",st:"1",site:"https://kbsmp15.ru/",off:1},
+{name:"ГБУЗ «ГКБ №1 им. С.З. Фишера» (Волжский)",region:"Волгоградская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(8443) 29-22-22",address:"Волгоградская обл., Волжский",st:"1",site:"https://www.gb1.ru/",off:1},
+{name:"ГБУЗ «Урюпинская ЦРБ»",region:"Волгоградская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(8442) 24-88-08",address:"Волгоградская обл., Урюпинск",st:"1",site:"",off:1},
+{name:"ГБУЗ «ЦГБ г. Камышина»",region:"Волгоградская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(884457) 3-70-30",address:"Волгоградская обл., Камышин",st:"1",site:"",off:1},
+{name:"ГБУЗ «ВОКБ №3»",region:"Волгоградская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(8442) 93-10-90",address:"Волгоградская обл.",st:"2,3",site:"",off:1},
+{name:"ГБУЗ «ВОКГВВ»",region:"Волгоградская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8-937-565-85-32",address:"Волгоградская обл.",st:"2",site:"",off:1},
+{name:"Центр реабилитации СФР РФ «Волгоград»",region:"Волгоградская область",type:"Центр реабилитации",oms:true,bedridden:false,speech:false,price:0,phone:"8(8442) 42-39-60",address:"Волгоградская обл.",st:"2",site:"https://volgosan.ru/",off:1},
+{name:"ГБУЗ «ВОКЦМР»",region:"Волгоградская область",type:"Центр реабилитации",oms:true,bedridden:false,speech:false,price:0,phone:"8(8442) 23-11-93",address:"Волгоградская обл.",st:"3",site:"",off:1},
+{name:"ГБУЗ «Клиническая поликлиника №28»",region:"Волгоградская область",type:"Амбулаторно",oms:true,bedridden:false,speech:false,price:0,phone:"8(8442) 58-82-03",address:"Волгоградская обл.",st:"3",site:"http://kp28v.ru/",off:1},
+{name:"Санаторий «Новый источник»",region:"Вологодская область",type:"Санаторий",oms:true,bedridden:false,speech:false,price:0,phone:"8(8172) 59-70-43",address:"Вологодская обл.",st:"2",site:"https://istochnik35.ru/",off:1},
+{name:"ООО «МЦ «Бодрость»",region:"Вологодская область",type:"Амбулаторно",oms:true,bedridden:false,speech:false,price:0,phone:"8(8172) 57-86-87",address:"Вологодская обл.",st:"2,3",site:"https://bodrost-35.ru/",off:1},
+{name:"Медицинский комплекс «Родник» (Череповец)",region:"Вологодская область",type:"Амбулаторно",oms:true,bedridden:false,speech:false,price:0,phone:"8(8202) 63-01-40",address:"Вологодская обл., Череповец",st:"2",site:"https://medrodnik.ru/",off:1},
+{name:"БУЗ ВО «Великоустюгская ЦРБ»",region:"Вологодская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(81738) 3-00-20",address:"Вологодская обл., Великий Устюг",st:"2,3",site:"",off:1},
+{name:"БУЗ ВО «Вологодский обл. лечебно-реабилитационный центр»",region:"Вологодская область",type:"Центр реабилитации",oms:true,bedridden:false,speech:false,price:0,phone:"8(8172) 56-11-21",address:"Вологодская обл.",st:"3",site:"",off:1},
+{name:"ООО «Клиника «Говорово»",region:"Вологодская область",type:"Амбулаторно",oms:true,bedridden:false,speech:false,price:0,phone:"8(8172) 57-86-61",address:"Вологодская обл.",st:"3",site:"https://www.klinika-govorovo.ru/",off:1},
+{name:"Воронежская ГКБ СМП №8",region:"Воронежская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(473) 205-90-22",address:"Воронежская обл., Воронеж",st:"1,2",site:"https://smp8vrn.ru/",off:1},
+{name:"Воронежская ГКБ СМП №1",region:"Воронежская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(473) 263-72-20",address:"Воронежская обл., Воронеж",st:"1,2",site:"",off:1},
+{name:"Бобровская РБ",region:"Воронежская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(47350) 4-80-30",address:"Воронежская обл., Бобров",st:"1,2,3",site:"https://bobcrb.zdrav36.ru/",off:1},
+{name:"Лискинская РБ",region:"Воронежская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(47391) 4-00-67",address:"Воронежская обл., Лиски",st:"1,2,3",site:"https://liscrb.zdrav36.ru/",off:1},
+{name:"Борисоглебская РБ",region:"Воронежская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(47354) 3-07-05",address:"Воронежская обл., Борисоглебск",st:"1,2,3",site:"https://borcrb.zdrav36.ru/",off:1},
+{name:"Калачеевская РБ",region:"Воронежская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(47363) 31-9-45",address:"Воронежская обл., Калач",st:"1",site:"https://kalcrb.zdrav36.ru/",off:1},
+{name:"Павловская РБ",region:"Воронежская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(47362) 2-73-00",address:"Воронежская обл., Павловск",st:"1,2,3",site:"https://pavcrb.zdrav36.ru/",off:1},
+{name:"Россошанская РБ",region:"Воронежская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(47396) 6-60-03",address:"Воронежская обл., Россошь",st:"1",site:"https://roscrb.zdrav36.ru/",off:1},
+{name:"ВОКБ №1",region:"Воронежская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(473) 257-97-54",address:"Воронежская обл., Воронеж",st:"2",site:"https://hospital-vrn.ru/",off:1},
+{name:"ГКБ СМП №10",region:"Воронежская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(473) 296-17-75",address:"Воронежская обл., Воронеж",st:"2",site:"",off:1},
+{name:"ВГКП №1",region:"Воронежская область",type:"Амбулаторно",oms:true,bedridden:false,speech:false,price:0,phone:"8(473) 255-58-24",address:"Воронежская обл., Воронеж",st:"3",site:"https://gp1.zdrav36.ru/",off:1},
+{name:"ВГКП №4",region:"Воронежская область",type:"Амбулаторно",oms:true,bedridden:false,speech:false,price:0,phone:"8(473) 225-30-19",address:"Воронежская обл., Воронеж",st:"3",site:"",off:1},
+{name:"ВГКП №7",region:"Воронежская область",type:"Амбулаторно",oms:true,bedridden:false,speech:false,price:0,phone:"8(473) 262-78-90",address:"Воронежская обл., Воронеж",st:"3",site:"",off:1},
+{name:"ВГП №10",region:"Воронежская область",type:"Амбулаторно",oms:true,bedridden:false,speech:false,price:0,phone:"8(473) 202-16-63",address:"Воронежская обл., Воронеж",st:"3",site:"",off:1},
+{name:"ВГКБ №11",region:"Воронежская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(473) 250-70-22",address:"Воронежская обл., Воронеж",st:"3",site:"https://gkb11vrn.ru/",off:1},
+{name:"БУЗ ВО «ВГБ №16»",region:"Воронежская область",type:"Стационар",oms:true,bedridden:false,speech:false,price:0,phone:"8(473) 222-12-30",address:"Воронежская обл., Воронеж",st:"3",site:"https://gkb16.zdrav36.ru/",off:1}
+);
+// ================= КОНЕЦ ДАННЫХ =================
 
 const $ = id => document.getElementById(id);
-let favs = JSON.parse(localStorage.getItem('reab_favs') || '[]');
 const PAGE_SIZE = 9;
 let visibleCount = PAGE_SIZE;
+let favs = JSON.parse(localStorage.getItem('reab_favs') || '[]');
 
 function plural(n){const a=n%10,b=n%100;if(a===1&&b!==11)return'клиника';if(a>=2&&a<=4&&(b<10||b>=20))return'клиники';return'клиник';}
 
@@ -326,13 +437,14 @@ function initFilters(){
 
 function getFiltered(){
   const q=$('search').value.trim().toLowerCase();
-  const region=$('f-region').value,type=$('f-type').value,oms=$('f-oms').value;
+  const region=$('f-region').value,type=$('f-type').value,oms=$('f-oms').value,stage=$('f-stage').value;
   const bed=$('f-bed').checked,speech=$('f-speech').checked,favOnly=$('f-fav').checked;
   let list=CLINICS.filter(c=>
-    (!q||(c.name+' '+c.region+' '+c.address).toLowerCase().includes(q))&&
+    (!q||(c.name+' '+c.region+' '+(c.address||'')).toLowerCase().includes(q))&&
     (!region||c.region===region)&&
     (!type||c.type===type)&&
     (!oms||(oms==='oms'?c.oms:!c.oms))&&
+    (!stage||(c.st||'').split(',').includes(stage))&&
     (!bed||c.bedridden)&&
     (!speech||c.speech)&&
     (!favOnly||favs.includes(c.name)));
@@ -347,7 +459,7 @@ function render(){
   const list=getFiltered();
   $('count').textContent=list.length;
   $('count-word').textContent=plural(list.length);
-  const hasFilters=$('search').value||$('f-region').value||$('f-type').value||$('f-oms').value||$('f-bed').checked||$('f-speech').checked||$('f-fav').checked;
+  const hasFilters=$('search').value||$('f-region').value||$('f-stage').value||$('f-type').value||$('f-oms').value||$('f-bed').checked||$('f-speech').checked||$('f-fav').checked;
   $('reset').classList.toggle('visible',!!hasFilters);
   const grid=$('grid');
   const wrap=$('load-more-wrap');
@@ -359,24 +471,30 @@ function render(){
   const shown=list.slice(0,visibleCount);
   grid.innerHTML=shown.map(c=>{
     const isFav=favs.includes(c.name);
-    const badges=[
-      c.oms?'<span class="badge badge-oms">✓ ОМС</span>':'<span class="badge badge-paid">₽ Платно</span>',
-      c.bedridden?'<span class="badge badge-bed">🛏 Лежачие</span>':'',
-      c.speech?'<span class="badge badge-speech">💬 Логопед</span>':'',
-      '<span class="badge badge-region">📍 '+c.region+'</span>'].join('');
+    const mapHref='https://yandex.ru/maps/?text='+encodeURIComponent(c.name+' '+(c.address||c.region));
+    const badges=[];
+    if(c.off)badges.push('<span class="badge badge-off">📋 Список ОМС'+(c.st?' • этапы '+c.st:'')+'</span>');
+    else if(c.oms)badges.push('<span class="badge badge-oms">✓ ОМС</span>');
+    else badges.push('<span class="badge badge-paid">₽ Платно</span>');
+    if(c.bedridden)badges.push('<span class="badge badge-bed">🛏 Лежачие</span>');
+    if(c.speech)badges.push('<span class="badge badge-speech">💬 Логопед</span>');
+    badges.push('<span class="badge badge-region">📍 '+c.region+'</span>');
     const price=c.price>0
       ?'<div class="price-tag price-paid">от '+c.price.toLocaleString('ru-RU')+' ₽/день</div>'
       :'<div class="price-tag price-free">Бесплатно по ОМС</div>';
+    const second=c.site
+      ?'<a class="btn btn-map" target="_blank" rel="noopener" href="'+c.site+'">🌐 Сайт</a>'
+      :'<a class="btn btn-map" target="_blank" rel="noopener" href="'+mapHref+'">🗺 Карта</a>';
     return '<article class="clinic-card">'+
       '<div class="card-top"><h3 class="clinic-name">'+c.name+'</h3>'+
       '<button class="fav-btn'+(isFav?' active':'')+'" data-name="'+c.name.replace(/"/g,'&quot;')+'" title="В избранное">'+(isFav?'❤️':'🤍')+'</button></div>'+
-      '<div class="badges">'+badges+'</div>'+
+      '<div class="badges">'+badges.join('')+'</div>'+
       '<div class="clinic-meta"><strong>Тип:</strong> '+c.type+'</div>'+
-      '<div class="clinic-meta"><strong>Адрес:</strong> '+c.address+'</div>'+
+      '<div class="clinic-meta"><strong>Адрес:</strong> <a href="'+mapHref+'" target="_blank" rel="noopener">'+(c.address||c.region)+'</a></div>'+
       price+
       '<div class="card-actions">'+
       '<a class="btn btn-call" href="tel:'+c.phone.replace(/\D/g,'')+'">📞 Позвонить</a>'+
-      '<a class="btn btn-map" target="_blank" rel="noopener" href="https://yandex.ru/maps/?text='+encodeURIComponent(c.name+' '+c.address)+'">🗺 Карта</a>'+
+      second+
       '</div></article>';
   }).join('');
   $('showing-text').textContent='Показано '+shown.length+' из '+list.length;
@@ -388,6 +506,8 @@ function render(){
   }
 }
 
+function applyFilters(){visibleCount=PAGE_SIZE;render();}
+
 $('grid').addEventListener('click',e=>{
   const btn=e.target.closest('.fav-btn');
   if(!btn)return;
@@ -396,15 +516,14 @@ $('grid').addEventListener('click',e=>{
   localStorage.setItem('reab_favs',JSON.stringify(favs));
   render();
 });
-function applyFilters(){visibleCount=PAGE_SIZE;render();}
-['search','f-region','f-type','f-oms','f-sort'].forEach(id=>$(id).addEventListener('input',applyFilters));
+['search','f-region','f-stage','f-type','f-oms','f-sort'].forEach(id=>$(id).addEventListener('input',applyFilters));
 ['f-bed','f-speech','f-fav'].forEach(id=>$(id).addEventListener('change',e=>{
   e.target.closest('.toggle-chip').classList.toggle('active',e.target.checked);
   applyFilters();
 }));
 $('load-more').addEventListener('click',()=>{visibleCount+=PAGE_SIZE;render();});
 $('reset').addEventListener('click',()=>{
-  $('search').value='';$('f-region').value='';$('f-type').value='';$('f-oms').value='';$('f-sort').value='default';
+  $('search').value='';$('f-region').value='';$('f-stage').value='';$('f-type').value='';$('f-oms').value='';$('f-sort').value='default';
   ['f-bed','f-speech','f-fav'].forEach(id=>{$(id).checked=false;$(id).closest('.toggle-chip').classList.remove('active');});
   applyFilters();
 });
