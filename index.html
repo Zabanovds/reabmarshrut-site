@@ -363,7 +363,7 @@ if (e.target.closest('.btn-premium')) {
   <span style="font-size:2rem;display:block;margin-bottom:8px;">🕐</span>
   <h2 style="color:#0E7C6B;margin:0;font-size:1.6rem;">Определите ваш этап реабилитации за 30 секунд</h2>
 </div>
-    <p style="color:#64748b;margin:0 0 24px;">Ответьте на 4 вопроса — получите персональный план действий и ссылки на нужные разделы.</p>
+    <p style="color:#64748b;margin:0 0 24px;text-align:center;max-width:600px;margin-left:auto;margin-right:auto;">Ответьте на 4 вопроса — получите персональный план действий и ссылки на нужные разделы.</p>
     
     <div id="quiz-progress" style="height:6px;background:#e2e8f0;border-radius:3px;margin-bottom:24px;overflow:hidden;">
       <div id="quiz-bar" style="height:100%;background:#0E7C6B;width:0%;transition:width .3s;"></div>
@@ -430,14 +430,14 @@ if (e.target.closest('.btn-premium')) {
     ];
     const s = stageMap[answers[1]];
     let h = '<h3 style="color:#0E7C6B;margin:0 0 12px;">✅ '+s.title+'</h3>';
-    h += '<p style="color:#475569;margin:0 0 20px;">'+s.desc+'</p>';
+    h += '<p style="color:#475569;margin:0 0 20px;text-align:center;max-width:500px;margin-left:auto;margin-right:auto;">'+s.desc+'</p>';
     h += '<div style="display:grid;gap:10px;margin-bottom:20px;">';
     s.links.forEach(l=>{h+='<a href="'+l.u+'" style="display:block;padding:14px 18px;background:#E6F4F1;color:#0E7C6B;border-radius:10px;text-decoration:none;font-weight:600;border:1px solid #0E7C6B;transition:all .2s;text-align:center;">'+l.t+' →</a>';});
     h += '</div>';
 h += '<div style="padding:24px;background:#f8fafc;border-radius:12px;border:1.5px solid #0E7C6B;text-align:center;margin-top:20px;">';
 h += '<div style="font-size:1.8rem;margin-bottom:8px;">💬</div>';
-h += '<p style="margin:0 0 10px;color:#1F2937;font-weight:700;font-size:1.1rem;">Получите персональный план в Telegram</p>';
-h += '<p style="margin:0 0 16px;color:#64748b;font-size:0.92rem;line-height:1.5;">Напишите нам — пришлём чек-лист под ваш этап и ответим на вопросы.</p>';
+h += '<p style="margin:0 0 10px;color:#1F2937;font-weight:700;font-size:1.1rem;text-align:center;">Получите персональный план в Telegram</p>';
+h += '<p style="margin:0 0 16px;color:#64748b;font-size:0.92rem;line-height:1.5;text-align:center;max-width:400px;margin-left:auto;margin-right:auto;">Напишите нам — пришлём чек-лист под ваш этап и ответим на вопросы.</p>';
 h += '<a href="https://t.me/reabroute" target="_blank" rel="noopener" style="display:inline-block;padding:12px 28px;background:#0E7C6B;color:#fff;border-radius:10px;text-decoration:none;font-weight:600;font-size:1rem;transition:all .2s;">Открыть Telegram →</a>';
 h += '</div>';
     h += '<button id="quiz-restart" style="margin-top:16px;background:none;border:none;color:#0E7C6B;cursor:pointer;font-size:0.9rem;text-decoration:underline;">Пройти ещё раз</button>';
