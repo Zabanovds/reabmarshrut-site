@@ -359,7 +359,10 @@ if (e.target.closest('.btn-premium')) {
   <!-- КВИЗ: Ваш этап реабилитации -->
 <section id="quiz" style="max-width:900px;margin:48px auto;padding:0 20px;">
   <div style="background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:36px;box-shadow:0 4px 20px rgba(14,124,107,0.08);">
-    <h2 style="color:#0E7C6B;margin:0 0 8px;font-size:1.6rem;">🧭 Определите ваш этап реабилитации за 30 секунд</h2>
+    <div style="text-align:center;margin-bottom:8px;">
+  <span style="font-size:2rem;display:block;margin-bottom:8px;">🕐</span>
+  <h2 style="color:#0E7C6B;margin:0;font-size:1.6rem;">Определите ваш этап реабилитации за 30 секунд</h2>
+</div>
     <p style="color:#64748b;margin:0 0 24px;">Ответьте на 4 вопроса — получите персональный план действий и ссылки на нужные разделы.</p>
     
     <div id="quiz-progress" style="height:6px;background:#e2e8f0;border-radius:3px;margin-bottom:24px;overflow:hidden;">
@@ -431,7 +434,7 @@ if (e.target.closest('.btn-premium')) {
     h += '<div style="display:grid;gap:10px;margin-bottom:20px;">';
     s.links.forEach(l=>{h+='<a href="'+l.u+'" style="padding:14px 18px;background:#E6F4F1;color:#0E7C6B;border-radius:10px;text-decoration:none;font-weight:600;border:1px solid #0E7C6B;transition:all .2s;">'+l.t+' →</a>';});
     h += '</div>';
-    h += '<div style="padding:16px;background:#f8fafc;border-radius:10px;border-left:3px solid #0E7C6B;">';
+    h += '<div style="padding:20px;background:#f8fafc;border-radius:10px;border:1px solid #0E7C6B;text-align:center;">';
     h += '<p style="margin:0 0 8px;color:#1F2937;font-weight:600;">💬 Получите персональный план в Telegram</p>';
     h += '<p style="margin:0;color:#64748b;font-size:0.9rem;">Напишите нам — пришлём чек-лист под ваш этап и ответим на вопросы.</p>';
     h += '<a href="https://t.me/reabroute" target="_blank" rel="noopener" style="display:inline-block;margin-top:10px;padding:10px 20px;background:#0E7C6B;color:#fff;border-radius:8px;text-decoration:none;font-weight:600;">Открыть Telegram →</a>';
