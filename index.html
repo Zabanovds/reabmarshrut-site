@@ -355,6 +355,99 @@ if (e.target.closest('.btn-premium')) {
       МАХ
     </a>
   </div>
+  
+  <!-- КВИЗ: Ваш этап реабилитации -->
+<section id="quiz" style="max-width:900px;margin:48px auto;padding:0 20px;">
+  <div style="background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:36px;box-shadow:0 4px 20px rgba(14,124,107,0.08);">
+    <h2 style="color:#0E7C6B;margin:0 0 8px;font-size:1.6rem;">🧭 Определите ваш этап реабилитации за 30 секунд</h2>
+    <p style="color:#64748b;margin:0 0 24px;">Ответьте на 4 вопроса — получите персональный план действий и ссылки на нужные разделы.</p>
+    
+    <div id="quiz-progress" style="height:6px;background:#e2e8f0;border-radius:3px;margin-bottom:24px;overflow:hidden;">
+      <div id="quiz-bar" style="height:100%;background:#0E7C6B;width:0%;transition:width .3s;"></div>
+    </div>
+    
+    <div id="quiz-step"></div>
+    
+    <div id="quiz-result" style="display:none;"></div>
+  </div>
+</section>
+
+<script>
+(function(){
+  const Q = [
+    {q:"Кто проходит реабилитацию?",opts:["Мой близкий (я родственник)","Я сам (пациент)","Я сиделка / соцработник"]},
+    {q:"Сколько времени прошло после инсульта?",opts:["Меньше 3 недель","От 3 недель до 6 месяцев","От 6 месяцев до года","Больше года"]},
+    {q:"Где сейчас находится пациент?",opts:["В стационаре / реанимации","Дома","В реабилитационном центре / санатории"]},
+    {q:"Что для вас сейчас важнее всего?",opts:["Получить направление по ОМС","Найти подходящий центр","Организовать уход дома","Оформить ТСР / инвалидность"]}
+  ];
+  let cur = 0, answers = [];
+  const step = document.getElementById('quiz-step');
+  const bar = document.getElementById('quiz-bar');
+  const result = document.getElementById('quiz-result');
+  
+  function render(){
+    if(cur >= Q.length){ showResult(); return; }
+    bar.style.width = ((cur)/Q.length*100)+'%';
+    let h = '<h3 style="color:#1F2937;margin:0 0 20px;font-size:1.15rem;">'+(cur+1)+'. '+Q[cur].q+'</h3><div style="display:grid;gap:10px;">';
+    Q[cur].opts.forEach((o,i)=>{
+      h += '<button class="quiz-opt" data-i="'+i+'" style="padding:14px 18px;border:1.5px solid #e2e8f0;border-radius:10px;background:#fff;cursor:pointer;font-size:1rem;text-align:left;transition:all .2s;font-family:inherit;">'+o+'</button>';
+    });
+    h += '</div>';
+    if(cur>0) h += '<button id="quiz-back" style="margin-top:16px;background:none;border:none;color:#64748b;cursor:pointer;font-size:0.9rem;">← Назад</button>';
+    step.innerHTML = h;
+    step.querySelectorAll('.quiz-opt').forEach(b=>{
+      b.addEventListener('click',()=>{
+        b.style.borderColor='#0E7C6B';b.style.background='#E6F4F1';
+        setTimeout(()=>{answers[cur]=+b.dataset.i;cur++;render();},180);
+      });
+    });
+    const back = document.getElementById('quiz-back');
+    if(back) back.addEventListener('click',()=>{if(cur>0){cur--;answers.pop();render();}});
+  }
+  
+  function showResult(){
+    bar.style.width='100%';
+    const stageMap = [
+      {title:"Этап 1: Ранняя реабилитация",desc:"Сейчас главное — не упустить окно нейропластичности и оформить документы.",links:[
+        {t:"📋 Как получить направление по ОМС",u:"/oms-rehabilitation/"},
+        {t:"🏥 Подобрать центр реабилитации",u:"/centers/"},
+        {t:"🦾 Получить ТСР бесплатно",u:"/tsr/"}]},
+      {title:"Этап 2: Стационарная реабилитация",desc:"Золотое время восстановления. 3-5 часов терапии в день.",links:[
+        {t:" База из 545 центров по ОМС",u:"/centers/"},
+        {t:"🦾 ТСР и оборудование",u:"/tsr/"},
+        {t:"📖 Уход за лежачим больным",u:"/care/"}]},
+      {title:"Этап 3: Амбулаторный + санаторный",desc:"Восстановление продолжается дома. Прогресс медленнее, но реален.",links:[
+        {t:"📖 Реабилитация в домашних условиях",u:"/home-rehab/"},
+        {t:"🏥 Повторный курс по ОМС",u:"/centers/"},
+        {t:"⚖️ Оформить МСЭ / инвалидность",u:"/mse/"}]},
+      {title:"Поздний период: Поддерживающая терапия",desc:"После года восстановление идёт, но требует системности.",links:[
+        {t:"⚖️ МСЭ и переосвидетельствование",u:"/mse/"},
+        {t:" Санатории и центры",u:"/centers/"},
+        {t:" Уход и профилактика",u:"/care/"}]}
+    ];
+    const s = stageMap[answers[1]];
+    let h = '<h3 style="color:#0E7C6B;margin:0 0 12px;">✅ '+s.title+'</h3>';
+    h += '<p style="color:#475569;margin:0 0 20px;">'+s.desc+'</p>';
+    h += '<div style="display:grid;gap:10px;margin-bottom:20px;">';
+    s.links.forEach(l=>{h+='<a href="'+l.u+'" style="padding:14px 18px;background:#E6F4F1;color:#0E7C6B;border-radius:10px;text-decoration:none;font-weight:600;border:1px solid #0E7C6B;transition:all .2s;">'+l.t+' →</a>';});
+    h += '</div>';
+    h += '<div style="padding:16px;background:#f8fafc;border-radius:10px;border-left:3px solid #0E7C6B;">';
+    h += '<p style="margin:0 0 8px;color:#1F2937;font-weight:600;">💬 Получите персональный план в Telegram</p>';
+    h += '<p style="margin:0;color:#64748b;font-size:0.9rem;">Напишите нам — пришлём чек-лист под ваш этап и ответим на вопросы.</p>';
+    h += '<a href="https://t.me/reabroute" target="_blank" rel="noopener" style="display:inline-block;margin-top:10px;padding:10px 20px;background:#0E7C6B;color:#fff;border-radius:8px;text-decoration:none;font-weight:600;">Открыть Telegram →</a>';
+    h += '</div>';
+    h += '<button id="quiz-restart" style="margin-top:16px;background:none;border:none;color:#0E7C6B;cursor:pointer;font-size:0.9rem;text-decoration:underline;">Пройти ещё раз</button>';
+    result.innerHTML = h;
+    result.style.display='block';
+    step.style.display='none';
+    document.getElementById('quiz-restart').addEventListener('click',()=>{cur=0;answers=[];result.style.display='none';step.style.display='block';render();});
+    // событие для Метрики
+    if(window.ym) ym(113671243,'reachGoal','quiz_completed');
+  }
+  render();
+})();
+</script>
+  
 <div class="hero-cards">
   <a href="/oms-rehabilitation/" class="hero-card">
     <h3>ОМС-гид</h3>
@@ -656,5 +749,34 @@ if (e.target.closest('.btn-premium')) {
     document.getElementById('cookie-banner').style.display = 'block';
   }
 </script>
+
+<!-- EXIT POPUP -->
+<div id="exit-popup" style="display:none;position:fixed;inset:0;background:rgba(15,23,42,0.7);z-index:9999;align-items:center;justify-content:center;padding:20px;">
+  <div style="background:#fff;border-radius:16px;padding:36px;max-width:460px;width:100%;position:relative;box-shadow:0 20px 60px rgba(0,0,0,0.3);">
+    <button id="exit-close" style="position:absolute;top:12px;right:16px;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#64748b;">×</button>
+    <h3 style="color:#0E7C6B;margin:0 0 12px;font-size:1.4rem;">Подождите — у нас есть то, что вам нужно</h3>
+    <p style="color:#475569;margin:0 0 20px;line-height:1.5;">Собрали <strong>545 центров реабилитации по ОМС</strong> во всех регионах России + пошаговый гид, как получить направление бесплатно.</p>
+    <a href="/centers/" style="display:block;padding:14px;background:#0E7C6B;color:#fff;border-radius:10px;text-align:center;text-decoration:none;font-weight:600;margin-bottom:10px;"> Открыть каталог центров</a>
+    <a href="/oms-rehabilitation/" style="display:block;padding:14px;background:#fff;color:#0E7C6B;border:1.5px solid #0E7C6B;border-radius:10px;text-align:center;text-decoration:none;font-weight:600;">📋 Гид по ОМС: пошаговая инструкция</a>
+    <p style="color:#94a3b8;font-size:0.8rem;margin:16px 0 0;text-align:center;">Бесплатно. Без регистрации.</p>
+  </div>
+</div>
+
+<script>
+(function(){
+  const popup = document.getElementById('exit-popup');
+  let shown = false;
+  document.addEventListener('mouseleave', e=>{
+    if(e.clientY < 10 && !shown && !sessionStorage.getItem('exitSeen')){
+      popup.style.display='flex'; shown=true;
+      sessionStorage.setItem('exitSeen','1');
+      if(window.ym) ym(113671243,'reachGoal','exit_popup_shown');
+    }
+  });
+  document.getElementById('exit-close').addEventListener('click',()=>popup.style.display='none');
+  popup.addEventListener('click',e=>{if(e.target===popup)popup.style.display='none';});
+})();
+</script>
+
 </body>
 </html>
