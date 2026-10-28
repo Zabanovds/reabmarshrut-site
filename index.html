@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>РеабМаршрут — навигатор реабилитации после инсульта по ОМС</title>
-<meta name="description" content="Бесплатный навигатор для семей после инсульта: 545 центров реабилитации по ОМС в 85 регионах, пошаговый гид по документам, генератор жалоб, дневник ухода.">
+<meta name="description" content="Бесплатное сообщество для семей после инсульта: пошаговый ОМС-гид, шаблоны жалоб при отказах, разборы кейсов и поддержка. Как получить бесплатную реабилитацию по ОМС — пошагово.">
 <link rel="canonical" href="https://reabmarshrut.ru/">
 <meta property="og:title" content="РеабМаршрут — реабилитация после инсульта по ОМС: 545 центров в базе">
 <meta property="og:description" content="Понятный маршрут восстановления: что положено бесплатно, куда обратиться, как не потерять время.">
@@ -69,93 +69,60 @@ header{background:#fff;border-bottom:1px solid var(--border);position:sticky;top
 .stat b{display:block;font-size:1.8rem;font-weight:800;color:var(--teal)}
 .stat span{color:var(--text-light);font-size:.9rem}
 
-/* Problem */
-.problem{background:var(--bg)}
-.problem-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
-.problem-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:all .2s}
-.problem-card:hover{border-color:var(--teal);transform:translateY(-3px);box-shadow:0 8px 20px rgba(14,124,107,.08)}
-.problem-card .num{font-size:2rem;font-weight:800;color:var(--coral);margin-bottom:12px}
-.problem-card h3{font-size:1.1rem;color:var(--text)}
-.problem-card p{font-size:.95rem;margin-top:8px}
+/* Route Section (бывший квиз) */
+.route-section{max-width:900px;margin:0 auto;padding:0 20px 80px}
+.route-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:36px;box-shadow:0 4px 20px rgba(14,124,107,.08)}
+.route-card h2{color:var(--teal);text-align:center;margin-bottom:8px;font-size:1.6rem}
+.route-card>p{color:var(--text-light);text-align:center;margin-bottom:24px}
+.route-progress{height:6px;background:var(--border);border-radius:3px;margin-bottom:24px;overflow:hidden}
+.route-bar{height:100%;background:var(--teal);width:0%;transition:width .3s}
+.route-step{min-height:200px}
+.route-opt{padding:14px 18px;border:1.5px solid var(--border);border-radius:10px;background:#fff;cursor:pointer;font-size:1rem;text-align:left;transition:all .2s;font-family:inherit;width:100%;margin-bottom:10px;display:block}
+.route-opt:hover{border-color:var(--teal);background:var(--teal-light)}
+.route-back{margin-top:16px;background:none;border:none;color:var(--text-light);cursor:pointer;font-size:.9rem}
+.route-result{display:none}
+.route-result h3{color:var(--teal);margin-bottom:12px;text-align:center}
+.route-result>p{color:var(--text-light);text-align:center;margin-bottom:20px}
+.route-links{display:grid;gap:10px;margin-bottom:20px}
+.route-links a{display:block;padding:14px 18px;background:var(--teal-light);color:var(--teal);border-radius:10px;text-decoration:none;font-weight:600;border:1px solid var(--teal);transition:all .2s;text-align:center}
+.route-links a:hover{background:var(--teal);color:#fff}
+.route-telegram{padding:24px;background:var(--bg);border-radius:12px;border:1.5px solid var(--teal);text-align:center;margin-top:20px}
+.route-telegram h4{color:var(--text);margin-bottom:10px;font-size:1.1rem}
+.route-telegram p{color:var(--text-light);font-size:.92rem;margin-bottom:16px}
+.route-telegram a{display:inline-block;padding:12px 28px;background:var(--teal);color:#fff;border-radius:10px;text-decoration:none;font-weight:600;font-size:1rem}
+.route-telegram a:hover{background:var(--teal-dark)}
+.route-restart{margin-top:16px;background:none;border:none;color:var(--teal);cursor:pointer;font-size:.9rem;text-decoration:underline}
 
-/* Solution */
-.solution-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.feature{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:32px;transition:all .2s}
-.feature:hover{border-color:var(--teal);transform:translateY(-4px);box-shadow:0 12px 24px rgba(14,124,107,.08)}
-.feature .icon{width:52px;height:52px;background:var(--teal-light);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:18px}
-.feature h3{color:var(--teal-dark)}
-.feature p{font-size:.95rem;margin-top:8px}
+/* Карточки */
+.cards-section{max-width:1100px;margin:0 auto;padding:0 20px 80px}
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:24px;transition:all .2s}
+.card:hover{border-color:var(--teal);box-shadow:0 4px 16px rgba(14,124,107,.1)}
+.card h3{color:var(--teal);margin-bottom:12px;font-size:1.2rem}
+.card p{color:var(--text-light);font-size:.95rem;margin-bottom:16px}
+.card a{color:var(--teal);text-decoration:none;font-weight:600}
+.card a:hover{text-decoration:underline}
 
-/* How it works */
-.how{background:var(--bg)}
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-.step{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:32px;text-align:center;transition:all .2s}
-.step:hover{border-color:var(--teal)}
-.step .step-num{width:48px;height:48px;background:var(--teal);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.2rem;margin:0 auto 18px}
-.step h3{color:var(--teal-dark)}
+/* Блок статей */
+.articles-section{background:var(--bg);padding:80px 0}
+.articles-section .cards-grid{max-width:1100px;margin:0 auto;padding:0 20px}
 
-/* Audience */
-.audience-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-.audience-card{background:var(--teal-light);border-radius:var(--radius);padding:32px;transition:all .2s}
-.audience-card:hover{transform:translateY(-3px)}
-.audience-card .emoji{font-size:2.5rem;margin-bottom:16px}
-.audience-card h3{color:var(--teal-dark)}
+/* Trust-бар */
+.trust-bar{background:var(--bg);padding:32px 20px;text-align:center;margin:0 0 48px}
+.trust-bar h3{color:var(--text);margin-bottom:20px;font-size:1.3rem}
+.trust-items{display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
+.trust-item{display:flex;flex-direction:column;align-items:center;gap:8px}
+.trust-num{font-size:2rem;font-weight:800;color:var(--teal)}
+.trust-label{color:var(--text-light);font-size:.9rem}
 
-/* Social proof */
-.proof{background:var(--teal);color:#fff;text-align:center}
-.proof h2{color:#fff}
-.proof .section-head p{color:rgba(255,255,255,.9)}
-.proof-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;max-width:900px;margin:0 auto}
-.proof-stat{background:rgba(255,255,255,.1);border-radius:var(--radius);padding:32px;backdrop-filter:blur(10px)}
-.proof-stat b{display:block;font-size:2.4rem;font-weight:800}
-.proof-stat span{color:rgba(255,255,255,.9);font-size:.95rem}
+/* Footer */
+footer{background:#1F2937;color:#94A3B8;padding:40px 0;font-size:.9rem;margin-top:0}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer-inner a{color:#94A3B8;text-decoration:none}
+.footer-inner a:hover{color:#fff}
+.disclaimer{margin-top:20px;padding-top:20px;border-top:1px solid #374151;font-size:.82rem;line-height:1.7}
 
-/* FAQ */
-.faq-list{max-width:760px;margin:0 auto}
-.faq-item{background:#fff;border:1px solid var(--border);border-radius:var(--radius);margin-bottom:12px;overflow:hidden}
-.faq-q{padding:20px 24px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;user-select:none;color:var(--text)}
-.faq-q::after{content:'+';font-size:1.4rem;color:var(--teal);transition:transform .2s}
-.faq-item.open .faq-q::after{transform:rotate(45deg)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .3s}
-.faq-item.open .faq-a{max-height:300px}
-.faq-a p{font-size:.95rem;padding:0 24px 20px}
-
-/* CTA form */
-.cta{background:var(--bg)}
-.cta-box{background:#fff;border:1px solid var(--border);border-radius:20px;padding:56px 40px;max-width:640px;margin:0 auto;text-align:center}
-.cta-box h2{margin-bottom:12px;color:var(--text)}
-.cta-box>p{margin-bottom:32px}
-.form{display:flex;flex-direction:column;gap:14px}
-.form input{padding:16px;border:1px solid var(--border);border-radius:var(--radius);font-size:1rem;font-family:inherit}
-.form input:focus{outline:none;border-color:var(--teal)}
-.form-note{font-size:.8rem;color:var(--text-light);margin-top:8px}
-.form-success{display:none;background:var(--teal-light);color:var(--teal-dark);padding:20px;border-radius:var(--radius);font-weight:600}
-
-/* Quiz */
-.quiz-section{max-width:900px;margin:48px auto;padding:0 20px 60px}
-.quiz-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:36px;box-shadow:0 4px 20px rgba(14,124,107,.08)}
-.quiz-card h2{color:var(--teal);text-align:center;margin-bottom:8px;font-size:1.6rem}
-.quiz-card>p{color:var(--text-light);text-align:center;margin-bottom:24px}
-.quiz-progress{height:6px;background:var(--border);border-radius:3px;margin-bottom:24px;overflow:hidden}
-.quiz-bar{height:100%;background:var(--teal);width:0%;transition:width .3s}
-.quiz-step{min-height:200px}
-.quiz-opt{padding:14px 18px;border:1.5px solid var(--border);border-radius:10px;background:#fff;cursor:pointer;font-size:1rem;text-align:left;transition:all .2s;font-family:inherit;width:100%;margin-bottom:10px;display:block}
-.quiz-opt:hover{border-color:var(--teal);background:var(--teal-light)}
-.quiz-back{margin-top:16px;background:none;border:none;color:var(--text-light);cursor:pointer;font-size:.9rem}
-.quiz-result{display:none}
-.quiz-result h3{color:var(--teal);margin-bottom:12px;text-align:center}
-.quiz-result>p{color:var(--text-light);text-align:center;margin-bottom:20px}
-.quiz-links{display:grid;gap:10px;margin-bottom:20px}
-.quiz-links a{display:block;padding:14px 18px;background:var(--teal-light);color:var(--teal);border-radius:10px;text-decoration:none;font-weight:600;border:1px solid var(--teal);transition:all .2s;text-align:center}
-.quiz-links a:hover{background:var(--teal);color:#fff}
-.quiz-telegram{padding:24px;background:var(--bg);border-radius:12px;border:1.5px solid var(--teal);text-align:center;margin-top:20px}
-.quiz-telegram h4{color:var(--text);margin-bottom:10px;font-size:1.1rem}
-.quiz-telegram p{color:var(--text-light);font-size:.92rem;margin-bottom:16px}
-.quiz-telegram a{display:inline-block;padding:12px 28px;background:var(--teal);color:#fff;border-radius:10px;text-decoration:none;font-weight:600;font-size:1rem}
-.quiz-telegram a:hover{background:var(--teal-dark)}
-.quiz-restart{margin-top:16px;background:none;border:none;color:var(--teal);cursor:pointer;font-size:.9rem;text-decoration:underline}
-
-/* Exit popup */
+/* Мобильный exit-popup */
 .mobile-exit{display:none;position:fixed;inset:0;background:rgba(15,23,42,.8);z-index:9999;align-items:center;justify-content:center;padding:20px}
 .mobile-exit-content{background:#fff;border-radius:16px;padding:32px;max-width:420px;width:100%;position:relative;text-align:center}
 .mobile-exit-close{position:absolute;top:12px;right:16px;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text-light)}
@@ -164,13 +131,6 @@ header{background:#fff;border-bottom:1px solid var(--border);position:sticky;top
 .mobile-exit a{display:block;padding:14px;background:var(--teal);color:#fff;border-radius:10px;text-decoration:none;font-weight:600;margin-bottom:10px}
 .mobile-exit a:hover{background:var(--teal-dark)}
 .mobile-exit a.secondary{background:#fff;color:var(--teal);border:1.5px solid var(--teal)}
-
-/* Footer */
-footer{background:#1F2937;color:#94A3B8;padding:40px 0;font-size:.9rem;margin-top:48px}
-.footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
-.footer-inner a{color:#94A3B8;text-decoration:none}
-.footer-inner a:hover{color:#fff}
-.disclaimer{margin-top:20px;padding-top:20px;border-top:1px solid #374151;font-size:.82rem;line-height:1.7}
 
 /* Cookie banner */
 .cookie-banner{display:none;position:fixed;bottom:0;left:0;right:0;background:#0F172A;color:#CBD5E1;padding:16px 24px;z-index:1000;box-shadow:0 -2px 10px rgba(0,0,0,.1)}
@@ -183,11 +143,62 @@ footer{background:#1F2937;color:#94A3B8;padding:40px 0;font-size:.9rem;margin-to
 section{padding:56px 0}
 .hero{padding:64px 0 56px}
 .hero h1{font-size:1.6rem}
+.hero p{font-size:1rem}
+.route-card{padding:24px}
+.cards-grid{grid-template-columns:1fr}
+.trust-items{gap:24px}
 .nav-links a:not(.cta){display:none}
-.cta-box{padding:40px 24px}
-.quiz-card{padding:24px}
 }
-#articles .feature .icon { display: none !important; }
+
+/* Плавающие кнопки мессенджеров */
+.floating-messengers {
+  position: fixed;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 998;
+}
+
+.floating-messengers a {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.2s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.floating-messengers a:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+
+.floating-messengers a.telegram {
+  background: #0088cc;
+}
+
+.floating-messengers a.max {
+  background: #0E7C6B;
+}
+
+.floating-messengers img {
+  width: 28px;
+  height: 28px;
+  filter: brightness(0) invert(1);
+}
+
+@media(max-width: 1200px) {
+  .floating-messengers {
+    display: none;
+  }
+}
 </style>
 </head>
 <body>
@@ -196,11 +207,10 @@ section{padding:56px 0}
   <div class="container nav">
     <a href="/" class="logo"><img src="/logo-mark.svg" alt="">РеабМаршрут</a>
     <nav class="nav-links">
-  <a href="/centers/">Центры</a>
-  <a href="#articles">Статьи</a>
-  <a href="#quiz">Определить этап</a>
-  <a href="https://t.me/reabroute" target="_blank" rel="noopener" class="cta">Telegram</a>
-</nav>
+      <a href="#route">Определить этап</a>
+      <a href="/centers/">Центры</a>
+      <a href="#articles">Статьи</a>
+    </nav>
   </div>
 </header>
 
@@ -211,7 +221,7 @@ section{padding:56px 0}
     <h1>Реабилитация после инсульта: понятный маршрут за 5 минут</h1>
     <p class="sub">Мы поможем понять, что положено бесплатно по ОМС, куда обратиться и как не потерять драгоценное время на восстановление.</p>
     <div class="hero-actions">
-      <a href="#quiz" class="btn btn-primary">🧭 Определить ваш этап за 30 секунд</a>
+      <a href="#route" class="btn btn-primary">🧭 Подобрать маршрут за 30 секунд</a>
       <a href="/centers/" class="btn btn-outline">🏥 Открыть каталог 545 центров</a>
     </div>
     <div class="hero-stats">
@@ -222,174 +232,104 @@ section{padding:56px 0}
   </div>
 </section>
 
-<!-- КВИЗ: Ваш этап реабилитации -->
-<section id="quiz" class="quiz-section" style="padding-top:0">
-  <div class="quiz-card">
-    <h2>🧭 Определите ваш этап реабилитации за 30 секунд</h2>
+<!-- БЛОК ПОДБОРА МАРШРУТА -->
+<section id="route" class="route-section">
+  <div class="route-card">
+    <h2>🧭 Подберите ваш маршрут реабилитации за 30 секунд</h2>
     <p>Ответьте на 4 вопроса — получите персональный план действий и ссылки на нужные разделы.</p>
-    <div class="quiz-progress"><div class="quiz-bar" id="quiz-bar"></div></div>
-    <div id="quiz-step" class="quiz-step"></div>
-    <div id="quiz-result" class="quiz-result"></div>
+    <div class="route-progress"><div class="route-bar" id="route-bar"></div></div>
+    <div id="route-step" class="route-step"></div>
+    <div id="route-result" class="route-result"></div>
   </div>
 </section>
 
-<!-- 2. PROBLEM -->
-<section class="problem">
-  <div class="container">
-    <div class="section-head reveal">
-      <h2>После инсульта семья оказывается в информационном вакууме</h2>
-      <p>Каждый месяц десятки тысяч людей сталкиваются с катастрофой и не знают, куда бежать. Мы собрали главные боли из реальных поисковых запросов.</p>
+<!-- Карточки -->
+<section class="cards-section">
+  <div class="cards-grid">
+    <div class="card reveal">
+      <h3>📋 ОМС-гид</h3>
+      <p>Пошаговая инструкция: как получить бесплатную реабилитацию по ОМС, что делать при отказе, шаблоны жалоб.</p>
+      <a href="/oms-rehabilitation/">Читать гид →</a>
     </div>
-    <div class="problem-grid">
-      <div class="problem-card reveal"><div class="num">01</div><h3>Бюрократия ОМС</h3><p>Люди не знают своих прав. В поликлиниках отказывают в направлении, а родственники не понимают, как оформить документы и куда жаловаться.</p></div>
-      <div class="problem-card reveal"><div class="num">02</div><h3>Страх ошибиться с центром</h3><p>Рынок платных клиник полон маркетинговых уловок. Семьи боятся отдать последние деньги за «пустышку» вместо реальной помощи.</p></div>
-      <div class="problem-card reveal"><div class="num">03</div><h3>Дорогое оборудование</h3><p>Роботизированные перчатки и тренажёры стоят сотни тысяч рублей, но нужны лишь на несколько месяцев. Где взять и как сэкономить?</p></div>
-      <div class="problem-card reveal"><div class="num">04</div><h3>Непонимание маршрута</h3><p>Сколько длится реабилитация? Какие этапы? Что делать после года? Без плана легко опустить руки и упустить время.</p></div>
+    <div class="card reveal">
+      <h3>🏥 Центры реабилитации</h3>
+      <p>База из 545 центров по ОМС во всех регионах России. Фильтры по этапу, условиям, телефону в один тап.</p>
+      <a href="/centers/">Открыть каталог →</a>
     </div>
-  </div>
-</section>
-
-<!-- 3. SOLUTION -->
-<section>
-  <div class="container">
-    <div class="section-head reveal">
-      <h2>РеабМаршрут — цифровой соцработник, юрист и помощник</h2>
-      <p>Всё, что нужно семье после инсульта, в одном месте. Бесплатно и без регистрации.</p>
-    </div>
-    <div class="solution-grid">
-      <div class="feature reveal"><div class="icon">⚖️</div><h3>ОМС-Адвокат</h3><p>Пошаговый гид по получению бесплатной реабилитации. Генератор жалоб на отказ, чек-листы документов, база законов простым языком.</p></div>
-      <div class="feature reveal"><div class="icon">🏥</div><h3>База из 545 центров</h3><p>Официальные маршруты ОМС по всем 85 регионам России. Фильтры по этапу, условиям, телефону в один тап.</p></div>
-      <div class="feature reveal"><div class="icon">🦾</div><h3>ТСР бесплатно</h3><p>Как получить перчатки, ходунки и кровати бесплатно по ИПРА. Где арендовать и купить б/у со скидкой 50–80%.</p></div>
-      <div class="feature reveal"><div class="icon">📖</div><h3>Дневник ухода</h3><p>Трекер давления, настроения и симптомов. Кнопка «Сформировать отчёт для невролога» — врач увидит динамику за минуту.</p></div>
-      <div class="feature reveal"><div class="icon">🧭</div><h3>Маршрутизатор этапов</h3><p>Приложение определяет ваш этап реабилитации по срокам и даёт персональный чек-лист действий на ближайший месяц.</p></div>
-      <div class="feature reveal"><div class="icon">🚨</div><h3>Экстренная помощь</h3><p>Тест FAST для распознавания повторного инсульта и телефоны экстренных служб всегда под рукой.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- 4. HOW IT WORKS -->
-<section class="how" id="how">
-  <div class="container">
-    <div class="section-head reveal">
-      <h2>Как это работает</h2>
-      <p>Три простых шага от растерянности к чёткому плану действий.</p>
-    </div>
-    <div class="steps">
-      <div class="step reveal"><div class="step-num">1</div><h3>Пройдите квиз</h3><p>4 вопроса: кто вы, сколько прошло времени, где пациент, что важнее всего. Занимает 30 секунд.</p></div>
-      <div class="step reveal"><div class="step-num">2</div><h3>Получите маршрут</h3><p>Приложение определит ваш этап, покажет чек-лист действий, список документов и подходящие центры.</p></div>
-      <div class="step reveal"><div class="step-num">3</div><h3>Действуйте уверенно</h3><p>Получите направление по ОМС, выберите центр, ведите дневник и не теряйте драгоценное время.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- 5. AUDIENCE -->
-<section>
-  <div class="container">
-    <div class="section-head reveal">
-      <h2>Для кого создан РеабМаршрут</h2>
-      <p>Мы понимаем, что после инсульта помощь нужна не только пациенту, но и всей семье.</p>
-    </div>
-    <div class="audience-grid">
-      <div class="audience-card reveal"><div class="emoji"></div><h3>Родственникам</h3><p>Вы только что столкнулись с инсультом у близкого и не знаете, с чего начать. Мы дадим маршрут, поможем с документами и выбором центра.</p></div>
-      <div class="audience-card reveal"><div class="emoji"></div><h3>Пациентам</h3><p>Вы хотите понять, как восстановиться, и ищете понятные инструкции. Мы покажем ваш этап и что делать дальше.</p></div>
-      <div class="audience-card reveal"><div class="emoji"></div><h3>Сиделкам и соцработникам</h3><p>Вам нужны чек-листы, планы ухода и структура. Дневник и отчёты сэкономят часы работы.</p></div>
+    <div class="card reveal">
+      <h3> ТСР бесплатно</h3>
+      <p>Ходунки, перчатки, тренажёры — как получить от государства по ИПРА. Калькулятор стоимости.</p>
+      <a href="/tsr/">Узнать как →</a>
     </div>
   </div>
 </section>
 
 <!-- БЛОК СТАТЕЙ -->
-<section id="articles" style="background:var(--bg);">
+<section id="articles" class="articles-section">
   <div class="container">
     <div class="section-head reveal">
-      <h2> Полезные материалы</h2>
+      <h2>📚 Полезные материалы</h2>
       <p>Все статьи РеабМаршрута в одном месте. Сохраняйте и делитесь с теми, кому это нужно.</p>
     </div>
-    <div class="solution-grid">
-      <div class="feature reveal">
-        <h3>Реабилитация по ОМС: пошаговая инструкция</h3>
+    <div class="cards-grid">
+      <div class="card reveal">
+        <h3>📋 Реабилитация по ОМС: пошаговая инструкция</h3>
         <p>Как получить бесплатную реабилитацию после инсульта, что делать при отказе, шаблоны жалоб.</p>
-        <a href="/oms-rehabilitation/" style="color:var(--teal);font-weight:600;text-decoration:none;">Читать →</a>
+        <a href="/oms-rehabilitation/">Читать →</a>
       </div>
-      <div class="feature reveal">
-        <h3>Центры реабилитации: база 545 клиник</h3>
+      <div class="card reveal">
+        <h3>🏥 Центры реабилитации: база 545 клиник</h3>
         <p>Официальные маршруты ОМС по всем 85 регионам. Фильтры, телефоны, сайты учреждений.</p>
-        <a href="/centers/" style="color:var(--teal);font-weight:600;text-decoration:none;">Открыть каталог →</a>
+        <a href="/centers/">Открыть каталог →</a>
       </div>
-      <div class="feature reveal">
-        <h3>ТСР бесплатно: ходунки, кровать, коляска</h3>
+      <div class="card reveal">
+        <h3> ТСР бесплатно: ходунки, кровать, коляска</h3>
         <p>Как получить оборудование по ИПРА, калькулятор стоимости, где арендовать.</p>
-        <a href="/tsr/" style="color:var(--teal);font-weight:600;text-decoration:none;">Узнать как →</a>
+        <a href="/tsr/">Узнать как →</a>
       </div>
-      <div class="feature reveal">
-        <h3>Уход за лежачим больным</h3>
+      <div class="card reveal">
+        <h3>📖 Уход за лежачим больным</h3>
         <p>Пролежни, пересаживание, питание. Чек-листы и видеоинструкции для родственников.</p>
-        <a href="/care/" style="color:var(--teal);font-weight:600;text-decoration:none;">Читать →</a>
+        <a href="/care/">Читать →</a>
       </div>
-      <div class="feature reveal">
-        <h3>Инвалидность после инсульта: как оформить МСЭ</h3>
+      <div class="card reveal">
+        <h3>⚖️ Инвалидность после инсульта: как оформить МСЭ</h3>
         <p>Пошаговый маршрут оформления, типичные ошибки, сроки и документы.</p>
-        <a href="/mse/" style="color:var(--teal);font-weight:600;text-decoration:none;">Узнать как →</a>
+        <a href="/mse/">Узнать как →</a>
       </div>
-      <div class="feature reveal">
-        <h3>Реабилитация в домашних условиях: 7 правил</h3>
+      <div class="card reveal">
+        <h3>🏠 Реабилитация в домашних условиях: 7 правил</h3>
         <p>Что делать дома, как организовать пространство, упражнения и режим.</p>
-        <a href="/home-rehab/" style="color:var(--teal);font-weight:600;text-decoration:none;">Читать →</a>
+        <a href="/home-rehab/">Читать →</a>
       </div>
-      <div class="feature reveal">
-        <h3>Этапы и сроки восстановления после инсульта</h3>
+      <div class="card reveal">
+        <h3>⏱ Этапы и сроки восстановления после инсульта</h3>
         <p>Сколько длится реабилитация, что ожидать на каждом этапе, когда ждать прогресс.</p>
-        <a href="/recovery-stages/" style="color:var(--teal);font-weight:600;text-decoration:none;">Узнать →</a>
+        <a href="/recovery-stages/">Узнать →</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 6. SOCIAL PROOF -->
-<section class="proof">
-  <div class="container">
-    <div class="section-head reveal">
-      <h2>Почему нам можно доверять</h2>
-      <p>Мы строим сервис на основе реальных запросов семей и открытых данных Минздрава РФ.</p>
+<!-- Trust-бар -->
+<section class="trust-bar">
+  <h3>Почему нам доверяют</h3>
+  <div class="trust-items">
+    <div class="trust-item">
+      <div class="trust-num">545</div>
+      <div class="trust-label">центров в базе</div>
     </div>
-    <div class="proof-stats">
-      <div class="proof-stat reveal"><b>545</b><span>центров в базе по 85 регионам</span></div>
-      <div class="proof-stat reveal"><b>32 000+</b><span>поисковых запросов в месяц легли в основу сервиса</span></div>
-      <div class="proof-stat reveal"><b>3</b><span>генератора юридических документов</span></div>
-      <div class="proof-stat reveal"><b>100%</b><span>бесплатно для пользователей</span></div>
+    <div class="trust-item">
+      <div class="trust-num">85</div>
+      <div class="trust-label">регионов России</div>
     </div>
-  </div>
-</section>
-
-<!-- 7. FAQ -->
-<section>
-  <div class="container">
-    <div class="section-head reveal">
-      <h2>Частые вопросы</h2>
-    </div>
-    <div class="faq-list">
-      <div class="faq-item reveal"><div class="faq-q">Это действительно бесплатно?</div><div class="faq-a"><p>Да. Базовые функции — ОМС-гид, база центров, дневник, генераторы документов — полностью бесплатны. Мы зарабатываем на партнёрствах с клиниками, но это никогда не влияет на ваши рекомендации.</p></div></div>
-      <div class="faq-item reveal"><div class="faq-q">Смогу ли я получить реабилитацию по ОМС?</div><div class="faq-a"><p>Да, по закону реабилитация после инсульта положена всем пациентам по ОМС (Приказ Минздрава № 788н). Наш ОМС-Адвокат поможет получить направление и обжаловать отказ, если он последует.</p></div></div>
-      <div class="faq-item reveal"><div class="faq-q">Чем вы отличаетесь от поиска в интернете?</div><div class="faq-a"><p>В интернете — разрозненная информация и рекламные уловки. Мы даём структурированный маршрут: ваш этап, конкретные шаги, 545 проверенных центров и готовые документы. Всё в одном месте.</p></div></div>
-      <div class="faq-item reveal"><div class="faq-q">Мои данные в безопасности?</div><div class="faq-a"><p>Мы не требуем регистрации и храним минимум данных. Дневник ухода хранится локально на вашем устройстве и не передаётся третьим лицам.</p></div></div>
-      <div class="faq-item reveal"><div class="faq-q">РеабМаршрут заменяет врача?</div><div class="faq-a"><p>Нет. Мы — информационный и организационный помощник. При острых симптомах всегда вызывайте скорую (103/112), а решения о лечении принимайте с врачом.</p></div></div>
-      <div class="faq-item reveal"><div class="faq-q">Как часто обновляется база центров?</div><div class="faq-a"><p>Мы добавляем новые учреждения по мере поступления официальных маршрутов ОМС от Минздрава. Последнее обновление — октябрь 2026, 545 центров в 85 регионах.</p></div></div>
+    <div class="trust-item">
+      <div class="trust-num">100%</div>
+      <div class="trust-label">бесплатно</div>
     </div>
   </div>
 </section>
 
-<!-- 8. CTA FORM -->
-<section class="cta" id="cta">
-  <div class="container">
-    <div class="cta-box reveal">
-      <h2>Получите персональный план в Telegram</h2>
-      <p>Напишите нам — пришлём чек-лист под ваш этап реабилитации и ответим на вопросы. Бесплатно, без регистрации.</p>
-      <a href="https://t.me/reabroute" target="_blank" rel="noopener" class="btn btn-primary" style="margin-bottom:16px">💬 Открыть Telegram →</a>
-      <p class="form-note">Или задайте вопрос на info@reabmarshrut.ru</p>
-    </div>
-  </div>
-</section>
-
-<!-- 9. FOOTER -->
 <footer>
   <div class="container">
     <div class="footer-inner">
@@ -448,12 +388,7 @@ const observer = new IntersectionObserver(entries=>{
 },{threshold:0.1});
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
-// FAQ accordion
-document.querySelectorAll('.faq-q').forEach(q=>{
-  q.addEventListener('click',()=>q.parentElement.classList.toggle('open'));
-});
-
-// КВИЗ
+// ПОДБОР МАРШРУТА (бывший квиз)
 (function(){
   const Q = [
     {q:"Кто проходит реабилитацию?",opts:["Мой близкий (я родственник)","Я сам (пациент)","Я сиделка / соцработник"]},
@@ -462,26 +397,26 @@ document.querySelectorAll('.faq-q').forEach(q=>{
     {q:"Что для вас сейчас важнее всего?",opts:["Получить направление по ОМС","Найти подходящий центр","Организовать уход дома","Оформить ТСР / инвалидность"]}
   ];
   let cur = 0, answers = [];
-  const step = document.getElementById('quiz-step');
-  const bar = document.getElementById('quiz-bar');
-  const result = document.getElementById('quiz-result');
+  const step = document.getElementById('route-step');
+  const bar = document.getElementById('route-bar');
+  const result = document.getElementById('route-result');
   
   function render(){
     if(cur >= Q.length){ showResult(); return; }
     bar.style.width = ((cur)/Q.length*100)+'%';
     let h = '<h3 style="color:var(--text);margin:0 0 20px;font-size:1.15rem;text-align:center;">'+(cur+1)+'. '+Q[cur].q+'</h3>';
     Q[cur].opts.forEach((o,i)=>{
-      h += '<button class="quiz-opt" data-i="'+i+'">'+o+'</button>';
+      h += '<button class="route-opt" data-i="'+i+'">'+o+'</button>';
     });
-    if(cur>0) h += '<button class="quiz-back" id="quiz-back">← Назад</button>';
+    if(cur>0) h += '<button class="route-back" id="route-back">← Назад</button>';
     step.innerHTML = h;
-    step.querySelectorAll('.quiz-opt').forEach(b=>{
+    step.querySelectorAll('.route-opt').forEach(b=>{
       b.addEventListener('click',()=>{
         b.style.borderColor='var(--teal)';b.style.background='var(--teal-light)';
         setTimeout(()=>{answers[cur]=+b.dataset.i;cur++;render();},180);
       });
     });
-    const back = document.getElementById('quiz-back');
+    const back = document.getElementById('route-back');
     if(back) back.addEventListener('click',()=>{if(cur>0){cur--;answers.pop();render();}});
   }
   
@@ -491,9 +426,9 @@ document.querySelectorAll('.faq-q').forEach(q=>{
       {title:"Этап 1: Ранняя реабилитация",desc:"Сейчас главное — не упустить окно нейропластичности и оформить документы.",links:[
         {t:"📋 Как получить направление по ОМС",u:"/oms-rehabilitation/"},
         {t:"🏥 Подобрать центр реабилитации",u:"/centers/"},
-        {t:"🦾 Получить ТСР бесплатно",u:"/tsr/"}]},
+        {t:" Получить ТСР бесплатно",u:"/tsr/"}]},
       {title:"Этап 2: Стационарная реабилитация",desc:"Золотое время восстановления. 3-5 часов терапии в день.",links:[
-        {t:"🏥 База из 545 центров по ОМС",u:"/centers/"},
+        {t:" База из 545 центров по ОМС",u:"/centers/"},
         {t:"🦾 ТСР и оборудование",u:"/tsr/"},
         {t:"📖 Уход за лежачим больным",u:"/care/"}]},
       {title:"Этап 3: Амбулаторный + санаторный",desc:"Восстановление продолжается дома. Прогресс медленнее, но реален.",links:[
@@ -502,26 +437,33 @@ document.querySelectorAll('.faq-q').forEach(q=>{
         {t:"⚖️ Оформить МСЭ / инвалидность",u:"/mse/"}]},
       {title:"Поздний период: Поддерживающая терапия",desc:"После года восстановление идёт, но требует системности.",links:[
         {t:"⚖️ МСЭ и переосвидетельствование",u:"/mse/"},
-        {t:"🏥 Санатории и центры",u:"/centers/"},
+        {t:" Санатории и центры",u:"/centers/"},
         {t:"📖 Уход и профилактика",u:"/care/"}]}
     ];
     const s = stageMap[answers[1]];
     let h = '<h3>✅ '+s.title+'</h3>';
     h += '<p>'+s.desc+'</p>';
-    h += '<div class="quiz-links">';
+    h += '<div class="route-links">';
     s.links.forEach(l=>{h+='<a href="'+l.u+'">'+l.t+' →</a>';});
     h += '</div>';
-    h += '<div class="quiz-telegram">';
-    h += '<h4>💬 Получите персональный план в Telegram</h4>';
-    h += '<p>Напишите нам — пришлём чек-лист под ваш этап и ответим на вопросы.</p>';
-    h += '<a href="https://t.me/reabroute" target="_blank" rel="noopener">Открыть Telegram →</a>';
-    h += '</div>';
-    h += '<button class="quiz-restart" id="quiz-restart">Пройти ещё раз</button>';
+h += '<div class="route-telegram">';
+h += '<h4>💬 Получите персональный план в мессенджере</h4>';
+h += '<p>Присоединяйтесь к сообществу — там ежедневные советы, истории восстановления и ответы экспертов.</p>';
+h += '<div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:12px;">';
+h += '<a href="https://t.me/reabroute?utm_source=route_result&utm_campaign=rehab_route" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:12px 24px;background:#0088cc;color:#fff;border-radius:10px;text-decoration:none;font-weight:600;font-size:1rem;transition:all .2s;">';
+h += '<img src="/logo-telegram.svg" alt="Telegram" style="width:20px;height:20px;filter:brightness(0) invert(1);">';
+h += 'Telegram</a>';
+h += '<a href="https://max.ru/join/Zr3HRfbnBpOvouCh0gf180-xrOWeSG7XalgBMxV4cuk?utm_source=route_result&utm_campaign=rehab_route" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:12px 24px;background:#0E7C6B;color:#fff;border-radius:10px;text-decoration:none;font-weight:600;font-size:1rem;transition:all .2s;">';
+h += '<img src="/logo-max.svg" alt="MAX" style="width:20px;height:20px;filter:brightness(0) invert(1);">';
+h += 'MAX</a>';
+h += '</div>';
+h += '</div>';
+    h += '<button class="route-restart" id="route-restart">Подобрать ещё раз</button>';
     result.innerHTML = h;
     result.style.display='block';
     step.style.display='none';
-    document.getElementById('quiz-restart').addEventListener('click',()=>{cur=0;answers=[];result.style.display='none';step.style.display='block';render();});
-    if(window.ym) ym(113671243,'reachGoal','quiz_completed');
+    document.getElementById('route-restart').addEventListener('click',()=>{cur=0;answers=[];result.style.display='none';step.style.display='block';render();});
+    if(window.ym) ym(113671243,'reachGoal','route_completed');
   }
   render();
 })();
@@ -555,5 +497,16 @@ document.querySelectorAll('.faq-q').forEach(q=>{
   popup.addEventListener('click',e=>{if(e.target===popup)popup.style.display='none';});
 })();
 </script>
+
+<!-- Плавающие кнопки мессенджеров -->
+<div class="floating-messengers">
+  <a href="https://t.me/reabroute?utm_source=floating&utm_campaign=messenger_signup" target="_blank" rel="noopener" class="telegram" title="Telegram">
+    <img src="/logo-telegram.svg" alt="Telegram">
+  </a>
+  <a href="https://max.ru/join/Zr3HRfbnBpOvouCh0gf180-xrOWeSG7XalgBMxV4cuk?utm_source=floating&utm_campaign=messenger_signup" target="_blank" rel="noopener" class="max" title="MAX">
+    <img src="/logo-max.svg" alt="MAX">
+  </a>
+</div>
+
 </body>
 </html>
