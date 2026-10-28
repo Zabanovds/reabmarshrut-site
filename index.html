@@ -204,6 +204,21 @@ section{padding:56px 0}
   transform: scale(1.1);
 }
 
+/* Hover для кнопок мессенджеров в квизе */
+.messenger-btn.telegram:hover {
+  background: rgba(0,136,204,0.12) !important;
+  border-color: #0088cc !important;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 16px rgba(0,136,204,0.2);
+}
+
+.messenger-btn.max:hover {
+  background: rgba(123,97,255,0.12) !important;
+  border-color: #7B61FF !important;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 16px rgba(123,97,255,0.2);
+}
+
 @media(max-width: 1200px) {
   .floating-messengers {
     display: none;
@@ -454,10 +469,10 @@ h += '<div class="route-telegram">';
 h += '<h4>💬 Получите персональный план в мессенджере</h4>';
 h += '<p>Присоединяйтесь к сообществу — там ежедневные советы, истории восстановления и ответы экспертов.</p>';
 h += '<div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:12px;">';
-h += '<a href="https://t.me/reabroute?utm_source=route_result&utm_campaign=rehab_route" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:12px 24px;background:transparent;color:#0088cc;border:2px solid #0088cc;border-radius:10px;text-decoration:none;font-weight:600;font-size:1rem;transition:all .25s ease;">';
+h += '<a href="https://t.me/reabroute?utm_source=route_result&utm_campaign=rehab_route" target="_blank" rel="noopener" class="messenger-btn telegram" style="display:inline-flex;align-items:center;gap:8px;padding:12px 24px;background:transparent;color:#0088cc;border:2px solid #0088cc;border-radius:10px;text-decoration:none;font-weight:600;font-size:1rem;transition:all .25s ease;">';
 h += '<img src="/logo-telegram.svg" alt="Telegram" style="width:20px;height:20px;">';
 h += 'Telegram</a>';
-h += '<a href="https://max.ru/join/Zr3HRfbnBpOvouCh0gf180-xrOWeSG7XalgBMxV4cuk?utm_source=route_result&utm_campaign=rehab_route" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:12px 24px;background:transparent;color:#7B61FF;border:2px solid #7B61FF;border-radius:10px;text-decoration:none;font-weight:600;font-size:1rem;transition:all .25s ease;">';
+h += '<a href="https://max.ru/join/Zr3HRfbnBpOvouCh0gf180-xrOWeSG7XalgBMxV4cuk?utm_source=route_result&utm_campaign=rehab_route" target="_blank" rel="noopener" class="messenger-btn max" style="display:inline-flex;align-items:center;gap:8px;padding:12px 24px;background:transparent;color:#7B61FF;border:2px solid #7B61FF;border-radius:10px;text-decoration:none;font-weight:600;font-size:1rem;transition:all .25s ease;">';
 h += '<img src="/logo-max.svg" alt="MAX" style="width:20px;height:20px;">';
 h += 'MAX</a>';
 h += '</div>';
