@@ -180,12 +180,23 @@ section{padding:56px 0}
   box-shadow: 0 6px 16px rgba(0,0,0,0.25);
 }
 
-.floating-messengers a.telegram {
-  background: #0088cc;
+.floating-messengers a.telegram,
+.floating-messengers a.max {
+  background: transparent;
+  border: 2px solid rgba(255,255,255,0.9);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
 }
 
-.floating-messengers a.max {
-  background: #0E7C6B;
+.floating-messengers a.telegram:hover {
+  background: rgba(0,136,204,0.12);
+  border-color: #0088cc;
+  transform: scale(1.1);
+}
+
+.floating-messengers a.max:hover {
+  background: rgba(14,124,107,0.12);
+  border-color: #0E7C6B;
+  transform: scale(1.1);
 }
 
 @media(max-width: 1200px) {
