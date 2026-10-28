@@ -188,12 +188,6 @@ section{padding:56px 0}
   background: #0E7C6B;
 }
 
-.floating-messengers img {
-  width: 28px;
-  height: 28px;
-  filter: brightness(0) invert(1);
-}
-
 @media(max-width: 1200px) {
   .floating-messengers {
     display: none;
@@ -501,10 +495,14 @@ h += '</div>';
 <!-- Плавающие кнопки мессенджеров -->
 <div class="floating-messengers">
   <a href="https://t.me/reabroute?utm_source=floating&utm_campaign=messenger_signup" target="_blank" rel="noopener" class="telegram" title="Telegram">
-    <img src="/logo-telegram.svg" alt="Telegram">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+    </svg>
   </a>
   <a href="https://max.ru/join/Zr3HRfbnBpOvouCh0gf180-xrOWeSG7XalgBMxV4cuk?utm_source=floating&utm_campaign=messenger_signup" target="_blank" rel="noopener" class="max" title="MAX">
-    <img src="/logo-max.svg" alt="MAX">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+    </svg>
   </a>
 </div>
 
