@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Уход за лежачим больным после инсульта: пролежни, пересаживание, питание | РеабМаршрут</title>
+<meta name="description" content="Уход за лежачим больным после инсульта: профилактика пролежней, как пересаживать, питание при дисфагии, как не выгореть родственнику. Практические советы и чек-листы.">
+<link rel="canonical" href="https://reabmarshrut.ru/care/">
+<link rel="icon" type="image/svg+xml" href="/logo-mark.svg">
+<meta property="og:title" content="Уход за лежачим больным после инсульта: практический гид">
+<meta property="og:description" content="Профилактика пролежней, пересаживание, питание при дисфагии и защита от выгорания. Из опыта семей сообщества РеабМаршрут.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://reabmarshrut.ru/care/">
+<meta property="og:image" content="https://reabmarshrut.ru/og-cover.png">
+<meta property="og:locale" content="ru_RU">
+<style>
+html{scroll-behavior:smooth;}
+:root{
+  --teal:#0E7C6B; --teal-dark:#0A5C4F; --teal-light:#E6F4F1;
+  --coral:#E76F51; --coral-dark:#D45A3C;
+  --text:#1F2937; --text-light:#4A5568; --border:#E5E7EB;
+  --max:#7B68EE; --tg:#29A9EB;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:system-ui,-apple-system,'Segoe UI',sans-serif;color:var(--text);line-height:1.6;}
+.container{max-width:1100px;margin:0 auto;padding:0 20px;}
+header{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;}
+.logo{font-size:20px;font-weight:800;color:var(--teal);text-decoration:none;display:flex;align-items:center;gap:10px;}
+.logo img{height:40px;}
+.nav-links a{margin-left:24px;text-decoration:none;color:var(--text);font-weight:500;}
+.nav-links a.cta{background:var(--teal);color:#fff;padding:10px 20px;border-radius:8px;}
+.breadcrumbs{padding:14px 20px 0;font-size:13px;color:var(--text-light);}
+.breadcrumbs a{color:var(--teal);text-decoration:none;}
+.hero-article{background:linear-gradient(160deg,var(--teal),var(--teal-dark));color:#fff;padding:56px 20px 48px;text-align:center;}
+.hero-article h1{font-size:34px;font-weight:900;line-height:1.25;max-width:860px;margin:0 auto 16px;}
+.hero-article p{max-width:640px;margin:0 auto;opacity:.92;font-size:17px;}
+.hero-meta{margin-top:14px;font-size:13px;opacity:.75;}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 34px;border-radius:10px;text-decoration:none;font-weight:700;font-size:17px;transition:.2s;border:none;cursor:pointer;}
+.btn-tg{background:var(--tg);color:#fff;}
+.btn-tg:hover{background:#1f95d1;}
+.btn-max{background:var(--max);color:#fff;}
+.btn-max:hover{background:#6a58d8;}
+.btn-icon{width:22px;height:22px;vertical-align:middle;}
+.btn-max .btn-icon{filter:brightness(0) invert(1);}
+.article{max-width:760px;margin:0 auto;padding:40px 20px 10px;}
+.article h2{font-size:26px;color:var(--teal-dark);margin:42px 0 14px;line-height:1.3;}
+.article h2:first-child{margin-top:0;}
+.article p{margin:0 0 14px;color:var(--text);}
+.article ul,.article ol{margin:0 0 16px 22px;color:var(--text);}
+.article li{margin-bottom:8px;}
+.article a{color:var(--teal);}
+.law-card{background:var(--teal-light);border-left:4px solid var(--teal);border-radius:10px;padding:16px 20px;margin:18px 0;font-size:15px;}
+.warn-card{background:#FDECE7;border-left:4px solid var(--coral);border-radius:10px;padding:16px 20px;margin:18px 0;font-size:15px;}
+.step-badge{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;background:var(--teal);color:#fff;border-radius:10px;font-weight:800;margin-right:10px;vertical-align:middle;}
+.check{list-style:none;margin:0 0 16px 0;}
+.check li{list-style:none;position:relative;padding-left:30px;margin-bottom:10px;}
+.check li:before{content:"✓";position:absolute;left:0;color:var(--teal);font-weight:800;}
+details.faq{border:1px solid var(--border);border-radius:12px;padding:14px 18px;margin-bottom:12px;background:#fff;}
+details.faq summary{cursor:pointer;font-weight:700;color:var(--teal-dark);list-style:none;position:relative;padding-right:26px;}
+details.faq summary:after{content:"+";position:absolute;right:0;top:0;font-size:20px;color:var(--teal);}
+details.faq[open] summary:after{content:"–";}
+details.faq p{margin:10px 0 0;color:var(--text-light);font-size:15px;}
+.lead-form{background:var(--teal-light);border-radius:20px;padding:52px 32px;text-align:center;margin:50px 0 0;}
+.lead-form h2{font-size:30px;color:var(--teal-dark);margin-bottom:12px;}
+.lead-form p{max-width:560px;margin:0 auto 30px;color:var(--text);}
+.lead-form .btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+.lead-gift{margin-top:26px;display:inline-block;background:#fff;border:1px dashed var(--teal);border-radius:10px;padding:12px 22px;font-size:15px;color:var(--teal-dark);}
+.also{background:#F9FAFB;padding:56px 0;}
+.section-title{font-size:32px;font-weight:800;text-align:center;margin-bottom:14px;color:var(--teal-dark);}
+.section-sub{text-align:center;color:var(--text-light);max-width:600px;margin:0 auto 48px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;}
+.card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:28px;text-decoration:none;display:block;}
+.card h3{font-size:19px;margin-bottom:10px;color:var(--teal-dark);}
+.card p{color:var(--text-light);font-size:15px;}
+footer{background:#111827;color:#9CA3AF;padding:48px 20px;font-size:14px;}
+.footer-inner{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;}
+footer a{color:#fff;text-decoration:none;}
+.disclaimer{margin-top:28px;padding-top:20px;border-top:1px solid #374151;font-size:12px;line-height:1.6;}
+@media (max-width:700px){
+  .hero-article h1{font-size:26px;}
+  .nav-links a:not(.cta){display:none;}
+  .article h2{font-size:22px;}
+}
+
+.read-more {
+  margin-top: 64px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border, #E5E7EB);
+}
+.read-more h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: var(--text, #1F2937);
+}
+.read-more-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+.read-more-card {
+  display: block;
+  padding: 24px;
+  background: #fff;
+  border: 1px solid var(--border, #E5E7EB);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all .2s;
+}
+.read-more-card:hover {
+  border-color: var(--teal, #0E7C6B);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(14,124,107,.08);
+}
+.read-more-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--teal, #0E7C6B);
+  margin: 0 0 8px;
+}
+.read-more-card p {
+  font-size: .95rem;
+  color: var(--text-light, #6B7280);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.read-more {
+  max-width: 900px; /* та же ширина, что у article */
+  margin: 64px auto 0; /* auto по бокам = центрирование */
+  margin-bottom: 64px;
+  padding: 40px 20px 0; /* внутренние отступы */
+  border-top: 1px solid var(--border, #E5E7EB);
+}
+
+.legal-basis {
+  max-width: 900px;
+  margin: 64px auto;
+  padding: 32px;
+  background: #f8fafc;
+  border-left: 4px solid var(--teal, #0E7C6B);
+  border-radius: 12px;
+
+}
+.legal-basis h2 {
+  font-size: 1.4rem;
+  margin-bottom: 16px;
+  color: var(--text, #1F2937);
+}
+.legal-basis ul {
+  list-style: none;
+  padding: 0;
+}
+.legal-basis li {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border, #E5E7EB);
+  line-height: 1.6;
+}
+.legal-basis li:last-child {
+  border-bottom: none;
+}
+.legal-basis a {
+  color: var(--teal, #0E7C6B);
+  text-decoration: none;
+  font-weight: 500;
+}
+.legal-basis a:hover {
+  text-decoration: underline;
+}
+.legal-note {
+  margin-top: 16px;
+  font-size: 0.9rem;
+  color: var(--text-light, #6B7280);
+  font-style: italic;
+}
+</style>
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LECXN94BQF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LECXN94BQF');
+</script>
+
+<!-- Schema.org: Article + Breadcrumbs + FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Уход за лежачим больным после инсульта: пролежни, питание, выгорание родственника",
+      "description": "Практический гид по уходу за лежачим больным после инсульта: профилактика пролежней, пересаживание, питание при дисфагии, защита от выгорания.",
+      "inLanguage": "ru",
+      "datePublished": "2026-10-16",
+      "dateModified": "2026-10-16",
+      "author": { "@type": "Organization", "name": "РеабМаршрут", "url": "https://reabmarshrut.ru" },
+      "publisher": { "@type": "Organization", "name": "РеабМаршрут", "logo": { "@type": "ImageObject", "url": "https://reabmarshrut.ru/logo-mark.svg" } },
+      "mainEntityOfPage": "https://reabmarshrut.ru/care/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://reabmarshrut.ru/" },
+        { "@type": "ListItem", "position": 2, "name": "Уход за лежачим больным", "item": "https://reabmarshrut.ru/care/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Как часто нужно переворачивать лежачего больного после инсульта?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Каждые 2–3 часа днём и 1 раз ночью — это базовое правило профилактики пролежней. Повороты чередуются: на правый бок, на спину, на левый бок. Фиксируйте время в дневнике ухода — это помогает не пропускать смены положения." }
+        },
+        {
+          "@type": "Question",
+          "name": "Чем обрабатывать кожу для профилактики пролежней?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Кожа должна быть чистой и сухой. Используйте барьерные кремы с цинком или пантенолом на зоны давления (крестец, пятки, лопатки). Нельзя массировать покрасневшие зоны — это усугубляет повреждение. При стойком покраснении — противопролежневый матрас и консультация врача." }
+        },
+        {
+          "@type": "Question",
+          "name": "Как правильно кормить лежачего больного после инсульта?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Положение полусидя (угол 30–45°), голова слегка наклонена вперёд. При дисфагии — только густая или загущённая жидкость, пюреобразная еда, никаких крошек и жидких супов без загустителя. После еды — проверка рта на остатки пищи. При поперхивании — логопед и обследование глотания." }
+        },
+        {
+          "@type": "Question",
+          "name": "Как пересаживать лежачего больного с кровати на коляску?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Техника зависит от состояния пациента. Базовый принцип: сначала пациент садится на край кровати, затем переносит вес на здоровую сторону, помощник поддерживает за таз и плечо. Используйте скользящие простыни и пояс для пересаживания. Не тяните за больную руку — риск вывиха плеча." }
+        },
+        {
+          "@type": "Question",
+          "name": "Как не выгореть родственнику, ухаживающему за лежачим больным?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Выгорание — не слабость, а закономерная реакция на хронический стресс. Профилактика: делегирование (соцработник, платная сиделка хотя бы 1 день в неделю), сон минимум 7 часов, собственная еда и движение, группы поддержки. Признаки, когда пора к врачу: апатия, раздражительность, мысли о бессмысленности, физическое истощение." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113671243', 'ym');
+
+    ym(113671243, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/113671243" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalWebPage",
+      "url": "https://reabmarshrut.ru/care/",
+      "name": "Уход за лежачим больным после инсульта: пролежни, пересаживание, питание",
+      "inLanguage": "ru-RU",
+      "dateModified": "2026-10-23",
+      "about": { "@type": "MedicalCondition", "name": "Инсульт" },
+      "publisher": { "@type": "Organization", "name": "РеабМаршрут", "url": "https://reabmarshrut.ru/", "email": "info@reabmarshrut.ru" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://reabmarshrut.ru/" },
+        { "@type": "ListItem", "position": 2, "name": "Уход за лежачим больным", "item": "https://reabmarshrut.ru/care/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header>
+  <div class="nav container">
+    <a href="/" class="logo"><img src="/logo-mark.svg" alt="РеабМаршрут"> РеабМаршрут</a>
+    <nav class="nav-links">
+      <a href="/">На главную</a>
+    </nav>
+  </div>
+</header>
+
+<nav class="breadcrumbs container">
+  <a href="/">Главная</a> / <span>Уход за лежачим больным</span>
+</nav>
+
+<main>
+<section class="hero-article">
+  <h1>Уход за лежачим больным после инсульта: пролежни, пересаживание, питание | РеабМаршрут</h1>
+   <div class="hero-meta">Обновлено: 22 октября 2026 • Чтение: 8 минут • РеабМаршрут</div>
+</section>
+
+<article class="article">
+  <p>Когда близкий после инсульта не встаёт, жизнь семьи превращается в непрерывный уход: перевороты, кормления, гигиена, ночные подъёмы. Это работа без выходных, и от её качества зависит не только здоровье пациента, но и выживание самого родственника. Ниже — каркас ухода, который семьи сообщества выстроили на собственном опыте и который помогает не потерять ни пациента, ни себя.</p>
+
+  <h2>Что входит в ежедневный уход: 6 блоков</h2>
+  <ul>
+    <li><b>Положение и перевороты</b> — профилактика пролежней и контрактур.</li>
+    <li><b>Гигиена</b> — умывание, подмывание, смена белья, уход за полостью рта.</li>
+    <li><b>Питание и питьё</b> — с учётом дисфагии, риска поперхивания и запоров.</li>
+    <li><b>Туалет</b> — судно, мочеприёмник или подгузник, профилактика инфекций.</li>
+    <li><b>Движение</b> — пассивная гимнастика, пересаживания, вертикализация по возможности.</li>
+    <li><b>Психологическая связь</b> — разговор, музыка, присутствие: человек слышит и чувствует даже без речи.</li>
+  </ul>
+  <div class="law-card">💡 Зафиксируйте распорядок дня на бумаге и повесьте над кроватью. Это снимает тревогу «а всё ли я сделал» и помогает другим членам семьи подменять вас без хаоса. Шаблон распорядка — в материалах сообщества.</div>
+
+  <h2><span class="step-badge">1</span>Пролежни: профилактика и лечение в домашних условиях</h2>
+  <p>Пролежень — это не «неприятность», а рана, которая у лежачего больного после инсульта может стать причиной сепсиса и госпитализации. Профилактика дешевле и проще лечения.</p>
+  <ul class="check">
+    <li><b>Перевороты каждые 2–3 часа днём, 1 раз ночью.</b> Чередование: правый бок → спина → левый бок. Фиксируйте время в дневнике.</li>
+    <li><b>Противопролежневый матрас.</b> Ячеистый или баллонный — обязателен при лежачем состоянии. Получают бесплатно по ИПРА через СФР (маршрут в <a href="/tsr/">гайде по ТСР</a>).</li>
+    <li><b>Кожа чистая и сухая.</b> После подмывания — промокайте, не трите. Барьерный крем с цинком на зоны давления.</li>
+    <li><b>Никакого массажа покрасневших зон.</b> Это миф: массаж повреждённой ткани ускоряет некроз.</li>
+    <li><b>Постель без складок.</b> Простыня натянута, бельё без швов в зонах давления, одежда без пуговиц на спине.</li>
+    <li><b>Питание с белком.</b> Недостаток белка = кожа не восстанавливается. Даже при дисфагии — белковые добавки по согласованию с врачом.</li>
+  </ul>
+  <div class="warn-card"> Стоп-сигналы: стойкое покраснение, не проходящее после смены положения; пузырьки; тёмные пятна; мокнущие зоны. Это уже не «скоро будет пролежень», а начинающееся повреждение — нужна консультация врача и усиление мер.</div>
+
+  <h2><span class="step-badge">2</span>Пересаживание: как не травмировать пациента и себя</h2>
+  <p>Пересаживание — одна из самых травмоопасных операций в домашнем уходе. Неправильная техника = вывих плеча у пациента и сорванная спина у родственника.</p>
+  <ul>
+    <li><b>Подготовка:</b> кровать на уровне ваших бёдер, коляска рядом и заторможена, скользящая простыня или пояс для пересаживания под рукой.</li>
+    <li><b>Последовательность:</b> пациент садится на край кровати → переносит вес на здоровую сторону → вы поддерживаете за таз и здоровое плечо → плавный перенос на коляску.</li>
+    <li><b>Никогда не тяните за больную руку</b> — риск сублюксации плечевого сустава.</li>
+    <li><b>Не поднимайте пациента спиной.</b> Работайте ногами и бёдрами, спина прямая. Если вес пациента больше вашего — зовите второго помощника или используйте подъёмник.</li>
+    <li><b>Первые пересаживания — с инструктором ЛФК.</b> Попросите медсестру или реабилитолога показать технику при выписке или на амбулаторном приёме.</li>
+  </ul>
+  <div class="law-card">📓 Запишите технику на видео на телефон при первом обучении — потом будете пересматривать, когда устанете и начнёте «халтурить» движения.</div>
+
+  <h2><span class="step-badge">3</span>Дисфагия и безопасное кормление лежачего больного</h2>
+  <p>После инсульта у 30–65% пациентов нарушено глотание. Это не «каприз» и не «плохой аппетит» — это риск аспирационной пневмонии, которая у лежачих больных часто заканчивается реанимацией.</p>
+  <ul class="check">
+    <li>Положение <b>полусидя (30–45°)</b>, голова слегка наклонена вперёд — ни в коем случае не запрокинута назад.</li>
+    <li>Консистенция: пюре, загущённые жидкости. <b>Жидкие супы и вода без загустителя — под запретом</b> при подтверждённой дисфагии.</li>
+    <li>Маленькие порции, медленный темп, паузы между ложками.</li>
+    <li>После еды — <b>проверка рта</b> на остатки пищи (пациент может не чувствовать их на поражённой стороне).</li>
+    <li>30 минут после еды — вертикальное положение, не укладывать сразу.</li>
+    <li>При частом поперхивании, «мокром» голосе после еды, кашле во время питья — <b>срочно к логопеду</b> на оценку глотания.</li>
+  </ul>
+  <div class="warn-card">🚨 Аспирационная пневмония — одна из главных причин повторной госпитализации после инсульта. Если пациент начал «по-другому» кашлять во время еды, температура поднялась без видимой причины, дыхание стало поверхностным — это не «простуда», это повод для срочного вызова врача.</div>
+
+  <h2><span class="step-badge">4</span>Гигиена: ежедневный минимум</h2>
+  <ul>
+    <li>Умывание утром и вечером, чистка зубов или обработка полости рта марлевым тампоном с антисептиком.</li>
+    <li>Подмывание после каждого туалета, смена подгузника по мере загрязнения (не по расписанию).</li>
+    <li>Смена нательного белья — ежедневно, постельного — 1–2 раза в неделю или при загрязнении.</li>
+    <li>Осмотр кожи при каждом перевороте: покраснения, опрелости, целостность.</li>
+    <li>Уход за ногтями: стричь по прямой линии, не закруглять углы (профилактика вросших ногтей).</li>
+  </ul>
+
+  <h2><span class="step-badge">5</span>Движение: даже лежачий пациент должен двигаться</h2>
+  <ul>
+    <li>Пассивная гимнастика всех суставов 1–2 раза в день — профилактика контрактур.</li>
+    <li>Дыхательная гимнастика — профилактика застойной пневмонии.</li>
+    <li>Вертикализация: хотя бы сидение в кресле 30–60 минут в день, если позволяет состояние.</li>
+    <li>Прогулки на коляске на свежем воздухе — это не «развлечение», а часть реабилитации.</li>
+  </ul>
+  <p>Набор упражнений и их интенсивность согласуйте с инструктором ЛФК — универсальных «видео из интернета» не существует, у каждого пациента свои ограничения. Подборку проверенных уроков от реабилитологов — в материалах сообщества.</p>
+
+  <h2><span class="step-badge">6</span>Выгорание родственника: как не сломаться</h2>
+  <p>Это самый игнорируемый блок ухода, и именно он чаще всего ломает всю систему. Выгоревший родственник = пациент без ухода. Поэтому забота о себе — не эгоизм, а часть ухода.</p>
+  <ul class="check">
+    <li><b>Сон минимум 7 часов.</b> Ночные подъёмы неизбежны, но компенсируйте их дневным сном, когда пациент спит.</li>
+    <li><b>Делегирование.</b> Соцработник по направлению поликлиники, платная сиделка хотя бы 1 день в неделю, помощь родственников по графику. Не «когда получится», а по расписанию.</li>
+    <li><b>Собственная еда и движение.</b> Вы не сможете кормить пациента, если сами питаетесь всухомятку и не выходите из комнаты.</li>
+    <li><b>Группы поддержки.</b> Живые или онлайн: разговор с теми, кто проходит тот же путь, снижает тревогу лучше любых советов.</li>
+    <li><b>Признаки, когда пора к врачу:</b> апатия, раздражительность, мысли о бессмысленности, физическое истощение, потеря аппетита, нарушения сна дольше 2 недель.</li>
+  </ul>
+  <div class="warn-card">🚨 «Я справлюсь сам» — главная фраза, которая ломает семьи. Уход за лежачим больным после инсульта — это марафон на годы, а не спринт на неделю. Просить помощь — это не слабость, это профессионализм.</div>
+
+  <h2>Красные флаги ухода: когда вызывать врача срочно</h2>
+  <ul>
+    <li>Температура выше 38°C без очевидной причины — риск пневмонии или инфекции мочевых путей.</li>
+    <li>Появление пролежня 2-й стадии и выше (пузыри, мокнутие, тёмные пятна).</li>
+    <li>Отказ от еды и питья более суток.</li>
+    <li>Резкое ухудшение сознания, новая асимметрия лица, слабость — подозрение на повторный инсульт, 103.</li>
+    <li>Кровь в моче, кале, мокроте.</li>
+    <li>Признаки депрессии у пациента или у вас — это лечится, не ждите, «пока само пройдёт».</li>
+  </ul>
+
+  <h2>Частые вопросы</h2>
+  <details class="faq">
+    <summary>Как часто нужно переворачивать лежачего больного после инсульта?</summary>
+    <p>Каждые 2–3 часа днём и 1 раз ночью — это базовое правило профилактики пролежней. Повороты чередуются: на правый бок, на спину, на левый бок. Фиксируйте время в дневнике ухода — это помогает не пропускать смены положения.</p>
+  </details>
+  <details class="faq">
+    <summary>Чем обрабатывать кожу для профилактики пролежней?</summary>
+    <p>Кожа должна быть чистой и сухой. Используйте барьерные кремы с цинком или пантенолом на зоны давления (крестец, пятки, лопатки). Нельзя массировать покрасневшие зоны — это усугубляет повреждение. При стойком покраснении — противопролежневый матрас и консультация врача.</p>
+  </details>
+  <details class="faq">
+    <summary>Как правильно кормить лежачего больного после инсульта?</summary>
+    <p>Положение полусидя (угол 30–45°), голова слегка наклонена вперёд. При дисфагии — только густая или загущённая жидкость, пюреобразная еда, никаких крошек и жидких супов без загустителя. После еды — проверка рта на остатки пищи. При поперхивании — логопед и обследование глотания.</p>
+  </details>
+  <details class="faq">
+    <summary>Как пересаживать лежачего больного с кровати на коляску?</summary>
+    <p>Техника зависит от состояния пациента. Базовый принцип: сначала пациент садится на край кровати, затем переносит вес на здоровую сторону, помощник поддерживает за таз и плечо. Используйте скользящие простыни и пояс для пересаживания. Не тяните за больную руку — риск вывиха плеча.</p>
+  </details>
+  <details class="faq">
+    <summary>Как не выгореть родственнику, ухаживающему за лежачим больным?</summary>
+    <p>Выгорание — не слабость, а закономерная реакция на хронический стресс. Профилактика: делегирование (соцработник, платная сиделка хотя бы 1 день в неделю), сон минимум 7 часов, собственная еда и движение, группы поддержки. Признаки, когда пора к врачу: апатия, раздражительность, мысли о бессмысленности, физическое истощение.</p>
+  </details>
+
+  <div class="lead-form">
+    <h2>📘 Заберите чек-листы ухода — бесплатно</h2>
+    <p>Чек-лист профилактики пролежней, шаблон распорядка дня, памятка по питанию при дисфагии. Подпишитесь на канал — всё в закрепе, доступно сразу.</p>
+    <div class="btns">
+      <a href="https://t.me/reabroute" target="_blank" class="btn btn-tg">
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.941z" fill="#FFFFFF"/></svg>
+        Подписаться в Telegram
+      </a>
+      <a href="https://max.ru/join/Zr3HRfbnBpOvouCh0gf18O-xrOWeSG7XaIgBMxV4cuk" target="_blank" class="btn btn-max">
+        <img src="/logo-max.svg" alt="MAX" class="btn-icon">
+        Подписаться в МАХ
+      </a>
+    </div>
+    <div class="lead-gift"> Чек-листы и ОМС-гид — бесплатно, в закреплённом сообщении. Без регистрации и оплат.</div>
+  </div>
+  </article>
+</main>
+
+<section class="legal-basis">
+  <h2>📜 Нормативная база</h2>
+  <p>Материалы раздела подготовлены на основе действующего законодательства РФ:</p>
+  <ul>
+    <li>
+      <strong>Приказ Минздрава России от 31.07.2020 № 788н</strong> 
+      «Об утверждении Порядка организации медицинской реабилитации взрослых» 
+      — <a href="https://www.garant.ru/products/ipo/prime/doc/74581688/" target="_blank" rel="noopener">открыть в системе Гарант ↗</a>
+    </li>
+    <li>
+      <strong>Федеральный закон № 323-ФЗ</strong> «Об основах охраны здоровья граждан в РФ» 
+      — <a href="https://base.garant.ru/12191967/" target="_blank" rel="noopener">открыть в системе Гарант ↗</a>
+    </li>
+    <li>
+      <strong>Приказ Минтруда № 585н</strong> об утверждении ИПРА 
+      — <a href="https://base.garant.ru/411423407/" target="_blank" rel="noopener">открыть в системе Гарант ↗</a>
+    </li>
+  </ul>
+  <p class="legal-note">
+    ⚠️ Информация носит справочный характер. Актуальные редакции документов проверяйте 
+    на официальных правовых порталах.
+  </p>
+</section>
+
+<div class="care-cta" style="max-width: 900px; margin: 48px auto; padding: 32px; background: #fff; border: 2px solid #0E7C6B; border-radius: 12px; text-align: center;">
+  <h3 style="color: #0E7C6B; margin-top: 0;">Не знаете, с чего начать?</h3>
+  <p style="color: #475569; margin-bottom: 24px; line-height: 1.6;">
+    Уход за лежачим больным требует не только знаний, но и правильного оборудования. 
+    Узнайте, как получить функциональную кровать и противопролежневый матрас <strong>бесплатно</strong> по ИПРА, 
+    и как оформить реабилитацию по полису ОМС.
+  </p>
+  <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+    <a href="/tsr/" style="background: #0E7C6B; color: #fff; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: 0.2s;">🛏️ Получить ТСР бесплатно</a>
+    <a href="/oms-rehabilitation/" style="background: #fff; color: #0E7C6B; border: 2px solid #0E7C6B; padding: 12px 26px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: 0.2s;">📄 Гид по реабилитации ОМС</a>
+  </div>
+</div>
+
+<style>
+  .care-cta a:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(14, 124, 107, 0.2); }
+</style>
+
+<section class="read-more">
+  <h2>Читайте также</h2>
+  <div class="read-more-grid">
+    <a href="/home-rehab/" class="read-more-card">
+      <h3>Домашняя реабилитация</h3>
+      <p>Распорядок дня, упражнения, безопасность пространства.</p>
+    </a>
+    <a href="/recovery-stages/" class="read-more-card">
+      <h3>Этапы восстановления</h3>
+      <p>Сколько длится реабилитация и когда бить тревогу.</p>
+    </a>
+    <a href="/tsr/" class="read-more-card">
+      <h3>ТСР для лежачих</h3>
+      <p>Функциональная кровать, противопролежневый матрас, подъёмник.</p>
+    </a>
+  </div>
+  <div class="expert-review" style="background: #f8fafc; border-left: 4px solid #0E7C6B; padding: 16px 20px; margin: 32px 0; border-radius: 8px;">
+    <p style="margin: 0 0 8px; font-weight: 600; color: #1e293b; font-size: 0.95rem;">
+    🩺 Медицинская экспертиза
+  </p>
+  <p style="margin: 0; color: #475569; font-size: 0.9rem; line-height: 1.5;">
+    Информация на этой странице проверена и актуализирована <strong>врачом-реабилитологом</strong>. 
+    Материал носит информационно-справочный характер и не заменяет очную консультацию специалиста. 
+    При ухудшении состояния немедленно обращайтесь за медицинской помощью.
+  </p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="logo" style="color:#fff;"><img src="/logo-mark.svg" alt="РеабМаршрут" style="height:32px;"> РеабМаршрут</div>
+        <p>Сообщество поддержки после инсульта • 2026</p>
+      </div>
+      <div>
+        <a href="/">Главная</a> •
+        <a href="https://t.me/reabroute" target="_blank" rel="noopener">Telegram</a> •
+        <a href="https://max.ru/join/Zr3HRfbnBpOvouCh0gf18O-xrOWeSG7XaIgBMxV4cuk">МАХ</a> •
+		<a href="mailto:info@reabmarshrut.ru" style="color:#94A3B8;text-decoration:none">info@reabmarshrut.ru</a> •
+		<a href="/privacy/" style="color:#94A3B8;text-decoration:none">Политика</a>
+      </div>
+    </div>
+	    <div class="disclaimer">
+      ⚠️ Дисклеймер: Информация на сайте и в канале носит организационно-справочный характер и не является медицинской консультацией, диагнозом или назначением лечения. При острых симптомах немедленно вызывайте скорую помощь: 103 / 112. Перед принятием решений, касающихся здоровья, обязательно проконсультируйтесь с лечащим врачом.
+    </div>
+  </div>
+</footer>
+
+<div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#0F172A; color:#CBD5E1; padding:16px 24px; z-index:1000; box-shadow:0 -2px 10px rgba(0,0,0,0.1);">
+  <div style="max-width:1100px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap;">
+    <p style="margin:0; font-size:0.9rem; line-height:1.5;">
+      🍪 Мы используем файлы cookie и сервис Яндекс.Метрика для улучшения работы сайта. 
+      Продолжая использовать сайт, вы соглашаетесь с 
+      <a href="/privacy/" style="color:#5EEAD4;text-decoration:underline">Политикой конфиденциальности</a>.
+    </p>
+    <button onclick="acceptCookies()" style="background:#0E7C6B;color:#fff;border:none;padding:8px 20px;border-radius:6px;cursor:pointer;font-size:0.9rem;">Принять</button>
+  </div>
+</div>
+<script>
+  function acceptCookies() {
+    localStorage.setItem('cookiesAccepted', 'true');
+    document.getElementById('cookie-banner').style.display = 'none';
+  }
+  if (!localStorage.getItem('cookiesAccepted')) {
+    document.getElementById('cookie-banner').style.display = 'block';
+  }
+</script>
+</body>
+</html>
