@@ -169,11 +169,16 @@
 <body>
 
 <header>
-  <div class="header-inner">
-    <a href="/" class="logo">🫀 РеабМаршрут</a>
-    <nav class="header-nav">
-      <a href="/">На главную</a>
-      <a href="https://t.me/reabroute" target="_blank" rel="noopener" class="btn-tg">Telegram</a>
+  <div class="container header-inner">
+    <a href="/" class="logo">
+      <img src="/logo-mark.svg" alt="РеабМаршрут" style="width:32px;height:32px;">
+      РеабМаршрут
+    </a>
+    <nav class="nav-links">
+      <a href="#route">Определить этап</a>
+      <a href="/centers/">Центры</a>
+      <a href="/medications/">Лекарства</a>
+      <a href="#articles">Статьи</a>
     </nav>
   </div>
 </header>
