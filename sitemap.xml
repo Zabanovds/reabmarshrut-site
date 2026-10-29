@@ -6,6 +6,12 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+    <url>
+  <loc>https://reabmarshrut.ru/medications/</loc>
+  <lastmod>2026-10-29</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.95</priority>
+</url>
   <url>
     <loc>https://reabmarshrut.ru/oms-rehabilitation/</loc>
     <lastmod>2026-10-22</lastmod>
@@ -54,10 +60,4 @@
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
-  <url>
-  <loc>https://reabmarshrut.ru/medications/</loc>
-  <lastmod>2026-10-29</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.95</priority>
-</url>
 </urlset>
