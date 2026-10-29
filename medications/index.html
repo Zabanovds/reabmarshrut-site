@@ -319,6 +319,33 @@ footer a:hover { color: #fff; }
     display: none;
   }
 }
+
+/* Принудительное ограничение ширины для всех секций */
+.hero, .content {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.hero .container,
+.content .container,
+.cta-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+  .hero { padding: 40px 16px 30px; }
+  .content { padding: 30px 16px; }
+  .cta-section { padding: 30px 16px; }
+}
+
+@media (max-width: 480px) {
+  .hero { padding: 30px 12px 20px; }
+  .content { padding: 20px 12px; }
+  .cta-section { padding: 24px 12px; }
+}
   </style>
   
   <!-- Schema.org: BreadcrumbList -->
